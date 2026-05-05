@@ -1,0 +1,90 @@
+name: MiND-Shot Engine
+
+# Run every 1 minute via GitHub-hosted cron + manual trigger button.
+# NOTE: GitHub Actions cron is best-effort — actual interval may stretch
+# to 5-10 min during high load. The engine itself runs an internal poll
+# loop (POLLS_PER_RUN × POLL_INTERVAL_SEC) so each workflow execution
+# covers multiple minutes worth of checks for true ~1-min granularity.
+on:
+  schedule:
+    - cron: '*/1 * * * *'
+  workflow_dispatch:
+
+# Required so the workflow can commit updated state/state.json back to the repo
+permissions:
+  contents: write
+
+# Prevent overlapping runs (5-min cron + slow Kraken response could otherwise stack)
+concurrency:
+  group: mind-shot-engine
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+
+    steps:
+      - name: Checkout repo (with state)
+        uses: actions/checkout@v4
+        with:
+          # Token with write access so we can push state changes back
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run MiND-Shot Engine
+        env:
+          # Pick ONE delivery method below. Set in your repo:
+          #   Settings → Secrets and variables → Actions → "New repository secret"
+          WEBHOOK_URL:       ${{ secrets.WEBHOOK_URL }}        # Make.com / n8n / Pipedream URL
+          TG_TOKEN:          ${{ secrets.TG_TOKEN }}           # OR direct Telegram bot token
+          TG_CHAT_ID:        ${{ secrets.TG_CHAT_ID }}         # OR direct Telegram chat id
+          LEVERAGE:          ${{ vars.LEVERAGE || '10' }}      # Repo variable (not secret)
+          POLLS_PER_RUN:     '5'                               # Internal iterations per workflow run
+          POLL_INTERVAL_SEC: '60'                              # Sleep between internal polls (1-min cadence)
+        run: python mind_shot_engine.py
+
+      - name: Commit updated state (race-safe)
+        run: |
+          set -e
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add state/state.json || true
+          if git diff --cached --quiet; then
+            echo "✓ No state changes to commit."
+            exit 0
+          fi
+
+          git commit -m "state: $(date -u +'%Y-%m-%d %H:%M UTC')"
+
+          # Retry push with pull-rebase fallback to handle race conditions:
+          #   - concurrent workflow runs both trying to push
+          #   - manual commits to main happening mid-workflow
+          # `-X theirs` during rebase = keep OUR (just-generated) state.json on conflict.
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main 2>&1; then
+              echo "✓ Pushed successfully on attempt $attempt"
+              exit 0
+            fi
+            echo "✗ Push attempt $attempt failed — pulling rebase and retrying…"
+            git pull --rebase -X theirs origin main || {
+              echo "  rebase had conflicts — aborting and trying force-with-lease as last resort"
+              git rebase --abort || true
+              # On the LAST attempt, just take our state.json over remote's
+              if [ "$attempt" = "5" ]; then
+                git fetch origin main
+                git reset --soft origin/main
+                git add state/state.json
+                git commit -m "state: $(date -u +'%Y-%m-%d %H:%M UTC') (force-applied)"
+                git push origin HEAD:main && exit 0
+              fi
+            }
+            sleep $((attempt * 2))
+          done
+          echo "❌ Could not push after 5 attempts — giving up gracefully (state will retry next run)"
+          exit 0   # Don't fail the workflow — state will catch up next run

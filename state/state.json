@@ -1,0 +1,133 @@
+{
+  "BTC_15m": {
+    "active_trade": null,
+    "last_signal_bar": 1777957200,
+    "ml": {
+      "mode": {},
+      "rsi": {},
+      "ses": {},
+      "total_trades": 0,
+      "vol": {}
+    }
+  },
+  "BTC_1d": {
+    "active_trade": {
+      "be_moved": false,
+      "entry": 79849.9,
+      "last_bar": 1777852800,
+      "ml_snap": {
+        "mode_b": 1,
+        "rsi_b": 2,
+        "ses_b": 0,
+        "vol_b": 1
+      },
+      "opened_bar": 1777852800,
+      "side": "long",
+      "sl": 78347.59386448919,
+      "tp1": 80922.97581107914,
+      "tp1_hit": false,
+      "tp2": 81996.0516221583,
+      "tp2_hit": false,
+      "tp3": 83498.35775766912,
+      "tp3_hit": false,
+      "tp4": 85215.27905539576,
+      "tp4_hit": false
+    },
+    "last_signal_bar": 1777852800,
+    "ml": {
+      "mode": {},
+      "rsi": {},
+      "ses": {},
+      "total_trades": 0,
+      "vol": {}
+    }
+  },
+  "BTC_1h": {
+    "active_trade": null,
+    "last_signal_bar": 1777953600,
+    "ml": {
+      "mode": {},
+      "rsi": {},
+      "ses": {},
+      "total_trades": 0,
+      "vol": {}
+    }
+  },
+  "BTC_30m": {
+    "active_trade": null,
+    "last_signal_bar": 1777955400,
+    "ml": {
+      "mode": {},
+      "rsi": {},
+      "ses": {},
+      "total_trades": 0,
+      "vol": {}
+    }
+  },
+  "BTC_4h": {
+    "active_trade": null,
+    "last_signal_bar": 1777939200,
+    "ml": {
+      "mode": {},
+      "rsi": {},
+      "ses": {},
+      "total_trades": 0,
+      "vol": {}
+    }
+  },
+  "ETH_15m": {
+    "active_trade": null,
+    "last_signal_bar": 1777957200,
+    "ml": {
+      "mode": {},
+      "rsi": {},
+      "ses": {},
+      "total_trades": 0,
+      "vol": {}
+    }
+  },
+  "ETH_1d": {
+    "active_trade": null,
+    "last_signal_bar": 1777852800,
+    "ml": {
+      "mode": {},
+      "rsi": {},
+      "ses": {},
+      "total_trades": 0,
+      "vol": {}
+    }
+  },
+  "ETH_1h": {
+    "active_trade": null,
+    "last_signal_bar": 1777953600,
+    "ml": {
+      "mode": {},
+      "rsi": {},
+      "ses": {},
+      "total_trades": 0,
+      "vol": {}
+    }
+  },
+  "ETH_30m": {
+    "active_trade": null,
+    "last_signal_bar": 1777955400,
+    "ml": {
+      "mode": {},
+      "rsi": {},
+      "ses": {},
+      "total_trades": 0,
+      "vol": {}
+    }
+  },
+  "ETH_4h": {
+    "active_trade": null,
+    "last_signal_bar": 1777939200,
+    "ml": {
+      "mode": {},
+      "rsi": {},
+      "ses": {},
+      "total_trades": 0,
+      "vol": {}
+    }
+  }
+}

@@ -1,0 +1,2 @@
+# MiND-Shot Engine has zero third-party dependencies — pure stdlib.
+# This file is intentionally empty (kept for tooling that expects to find one).
