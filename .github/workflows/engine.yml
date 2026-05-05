@@ -22,7 +22,9 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 4
+    # 7 min covers: setup (~30s) + 4 internal polls × 60s (4 min) + commit step (~30s)
+    # plus a comfortable buffer for slow Kraken responses or push retries.
+    timeout-minutes: 10
 
     steps:
       - name: Checkout repo (with state)
@@ -44,8 +46,8 @@ jobs:
           TG_TOKEN:          ${{ secrets.TG_TOKEN }}           # OR direct Telegram bot token
           TG_CHAT_ID:        ${{ secrets.TG_CHAT_ID }}         # OR direct Telegram chat id
           LEVERAGE:          ${{ vars.LEVERAGE || '10' }}      # Repo variable (not secret)
-          POLLS_PER_RUN:     '5'                               # Internal iterations per workflow run
-          POLL_INTERVAL_SEC: '60'                              # Sleep between internal polls (1-min cadence)
+          POLLS_PER_RUN:     '4'                               # 4 internal polls × 60s = 4 min coverage
+          POLL_INTERVAL_SEC: '60'                              # 1-min granularity between polls
         run: python mind_shot_engine.py
 
       - name: Commit updated state (race-safe)
