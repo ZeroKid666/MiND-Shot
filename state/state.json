@@ -44,13 +44,33 @@
   },
   "BTC_1h": {
     "active_trade": null,
-    "last_signal_bar": 1778050800,
+    "last_signal_bar": 1778058000,
     "ml": {
-      "mode": {},
-      "rsi": {},
-      "ses": {},
-      "total_trades": 0,
-      "vol": {}
+      "mode": {
+        "4": [
+          1,
+          0
+        ]
+      },
+      "rsi": {
+        "2": [
+          1,
+          0
+        ]
+      },
+      "ses": {
+        "1": [
+          1,
+          0
+        ]
+      },
+      "total_trades": 1,
+      "vol": {
+        "1": [
+          1,
+          0
+        ]
+      }
     }
   },
   "BTC_30m": {
