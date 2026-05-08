@@ -44,7 +44,7 @@
   },
   "BTC_1h": {
     "active_trade": null,
-    "last_signal_bar": 1778216400,
+    "last_signal_bar": 1778223600,
     "ml": {
       "mode": {
         "4": [
@@ -88,7 +88,7 @@
     "active_trade": {
       "be_moved": false,
       "entry": 79883.3,
-      "last_bar": 1778212800,
+      "last_bar": 1778227200,
       "ml_snap": {
         "mode_b": 0,
         "rsi_b": 1,
@@ -162,7 +162,7 @@
   },
   "ETH_4h": {
     "active_trade": null,
-    "last_signal_bar": 1778198400,
+    "last_signal_bar": 1778212800,
     "ml": {
       "mode": {},
       "rsi": {},
