@@ -44,7 +44,7 @@
   },
   "BTC_1h": {
     "active_trade": null,
-    "last_signal_bar": 1778436000,
+    "last_signal_bar": 1778439600,
     "ml": {
       "mode": {
         "4": [
@@ -86,7 +86,7 @@
   },
   "BTC_4h": {
     "active_trade": null,
-    "last_signal_bar": 1778414400,
+    "last_signal_bar": 1778428800,
     "ml": {
       "mode": {
         "0": [
@@ -161,9 +161,9 @@
   },
   "ETH_4h": {
     "active_trade": {
-      "be_moved": false,
+      "be_moved": true,
       "entry": 2348.36,
-      "last_bar": 1778428800,
+      "last_bar": 1778443200,
       "ml_snap": {
         "mode_b": 0,
         "rsi_b": 2,
@@ -172,9 +172,9 @@
       },
       "opened_bar": 1778414400,
       "side": "long",
-      "sl": 2324.984410072799,
+      "sl": 2348.36,
       "tp1": 2364.722912949041,
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2": 2381.0858258980816,
       "tp2_hit": false,
       "tp3": 2404.461415825283,
