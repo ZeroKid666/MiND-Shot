@@ -44,15 +44,19 @@
   },
   "BTC_1h": {
     "active_trade": null,
-    "last_signal_bar": 1778662800,
+    "last_signal_bar": 1778670000,
     "ml": {
       "mode": {
         "4": [
-          1,
+          2,
           0
         ]
       },
       "rsi": {
+        "1": [
+          1,
+          0
+        ],
         "2": [
           1,
           0
@@ -60,14 +64,14 @@
       },
       "ses": {
         "1": [
-          1,
+          2,
           0
         ]
       },
-      "total_trades": 1,
+      "total_trades": 2,
       "vol": {
         "1": [
-          1,
+          2,
           0
         ]
       }
@@ -87,41 +91,49 @@
   "BTC_4h": {
     "active_trade": {
       "be_moved": false,
-      "entry": 81229.2,
-      "last_bar": 1778659200,
+      "entry": 80517.5,
+      "last_bar": 1778673600,
       "ml_snap": {
         "mode_b": 0,
-        "rsi_b": 2,
-        "ses_b": 0,
+        "rsi_b": 1,
+        "ses_b": 1,
         "vol_b": 1
       },
-      "opened_bar": 1778630400,
-      "side": "long",
-      "sl": 80508.46899274012,
-      "tp1": 81733.7117050819,
+      "opened_bar": 1778659200,
+      "side": "short",
+      "sl": 81224.96803379581,
+      "tp1": 80022.27237634294,
       "tp1_hit": false,
-      "tp2": 82238.22341016383,
+      "tp2": 79527.04475268586,
       "tp2_hit": false,
-      "tp3": 82958.95441742371,
+      "tp3": 78819.57671889006,
       "tp3_hit": false,
-      "tp4": 83823.83162613556,
+      "tp4": 77970.61507833509,
       "tp4_hit": false
     },
-    "last_signal_bar": 1778630400,
+    "last_signal_bar": 1778659200,
     "ml": {
       "mode": {
         "0": [
           1,
-          4
+          6
         ]
       },
       "rsi": {
         "1": [
           1,
           4
+        ],
+        "2": [
+          0,
+          2
         ]
       },
       "ses": {
+        "0": [
+          0,
+          2
+        ],
         "1": [
           1,
           2
@@ -131,11 +143,11 @@
           2
         ]
       },
-      "total_trades": 3,
+      "total_trades": 4,
       "vol": {
         "1": [
           1,
-          4
+          6
         ]
       }
     }
@@ -186,7 +198,7 @@
   },
   "ETH_4h": {
     "active_trade": null,
-    "last_signal_bar": 1778644800,
+    "last_signal_bar": 1778659200,
     "ml": {
       "mode": {
         "0": [
