@@ -1,0 +1,57 @@
+name: Weekly ML Retrain
+
+# Every Sunday at 00:00 UTC — walk-forward retrain on latest BTC/ETH data
+# Output: state/trained_model.json (auto-committed back to repo)
+on:
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mind-shot-retrain
+  cancel-in-progress: false
+
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Train ML on historical BTC + ETH data
+        run: python ml_trainer.py
+        env:
+          PYTHONIOENCODING: 'utf-8'
+          PYTHONUTF8:       '1'
+
+      - name: Commit trained model
+        run: |
+          set -e
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state/trained_model.json
+          if git diff --cached --quiet; then
+            echo "✓ No model changes to commit."
+            exit 0
+          fi
+          git commit -m "ml: retrain $(date -u +'%Y-%m-%d %H:%M UTC')"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "✓ Pushed trained model on attempt $attempt"
+              exit 0
+            fi
+            git pull --rebase -X theirs origin main || git rebase --abort
+            sleep $((attempt * 3))
+          done
+          exit 0
