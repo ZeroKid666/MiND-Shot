@@ -1,36 +1,48 @@
 name: MiND-Shot Engine
 
-# Run every 1 minute via GitHub-hosted cron + manual trigger button.
-# NOTE: GitHub Actions cron is best-effort — actual interval may stretch
-# to 5-10 min during high load. The engine itself runs an internal poll
-# loop (POLLS_PER_RUN × POLL_INTERVAL_SEC) so each workflow execution
-# covers multiple minutes worth of checks for true ~1-min granularity.
+# ── WHY TWO CRONS? ────────────────────────────────────────────────────────────
+# GitHub Actions cron fires every 5 min at best (*/1 is silently capped).
+# During peak load it can stretch to 10-15 min.
+#
+# Solution: two staggered schedules offset by 2 min + each run does 7 internal
+# polls × 50s ≈ 6 min coverage. Timeline:
+#
+#   Cron A fires: :00 → polls :00 :50 1:40 2:30 3:20 4:10 5:00
+#   Cron B fires: :02 → polls :02 :52 1:42 2:32 3:22 4:12 5:02
+#   Cron A fires: :05 → polls :05 ...
+#
+# Even if GitHub delays either cron by 3-4 min, the other fills the gap.
+# Worst-case blind spot: ~1-2 min instead of 10-15 min with a single cron.
+#
+# Each run uses a unique concurrency group (run_id) so A and B execute
+# simultaneously and never cancel each other.
+# ──────────────────────────────────────────────────────────────────────────────
+
 on:
   schedule:
-    - cron: '*/1 * * * *'
-  workflow_dispatch:
+    - cron: '*/5 * * * *'       # Cron A — fires at :00 :05 :10 … (offset 0)
+    - cron: '2-57/5 * * * *'    # Cron B — fires at :02 :07 :12 … (offset +2 min)
+  workflow_dispatch:             # Manual trigger still works
 
-# Required so the workflow can commit updated state/state.json back to the repo
 permissions:
   contents: write
 
-# Prevent overlapping runs (5-min cron + slow Kraken response could otherwise stack)
+# Unique group per run so Cron A and Cron B never cancel each other.
 concurrency:
-  group: mind-shot-engine
+  group: mind-shot-${{ github.run_id }}
   cancel-in-progress: false
 
 jobs:
   run:
     runs-on: ubuntu-latest
-    # 7 min covers: setup (~30s) + 4 internal polls × 60s (4 min) + commit step (~30s)
-    # plus a comfortable buffer for slow Kraken responses or push retries.
-    timeout-minutes: 10
+    # 7 polls × 50s = 350s ≈ 6 min of engine work
+    # + ~30s setup + ~30s commit/push + retry headroom = 8 min is safe
+    timeout-minutes: 8
 
     steps:
       - name: Checkout repo (with state)
         uses: actions/checkout@v4
         with:
-          # Token with write access so we can push state changes back
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
@@ -40,14 +52,17 @@ jobs:
 
       - name: Run MiND-Shot Engine
         env:
-          # Pick ONE delivery method below. Set in your repo:
-          #   Settings → Secrets and variables → Actions → "New repository secret"
-          WEBHOOK_URL:       ${{ secrets.WEBHOOK_URL }}        # Make.com / n8n / Pipedream URL
-          TG_TOKEN:          ${{ secrets.TG_TOKEN }}           # OR direct Telegram bot token
-          TG_CHAT_ID:        ${{ secrets.TG_CHAT_ID }}         # OR direct Telegram chat id
-          LEVERAGE:          ${{ vars.LEVERAGE || '10' }}      # Repo variable (not secret)
-          POLLS_PER_RUN:     '4'                               # 4 internal polls × 60s = 4 min coverage
-          POLL_INTERVAL_SEC: '60'                              # 1-min granularity between polls
+          # ── Delivery — set ONE in repo Settings → Secrets → Actions ──
+          WEBHOOK_URL:       ${{ secrets.WEBHOOK_URL }}         # Make.com / n8n / Pipedream
+          TG_TOKEN:          ${{ secrets.TG_TOKEN }}            # OR Telegram bot token
+          TG_CHAT_ID:        ${{ secrets.TG_CHAT_ID }}          # OR Telegram chat id
+          LEVERAGE:          ${{ vars.LEVERAGE || '10' }}       # Repo variable (not secret)
+          # 7 polls × 50s = 350s ≈ 6 min of coverage per run.
+          # With two crons staggered by 2 min, every minute has at least one active poll.
+          POLLS_PER_RUN:     '7'
+          POLL_INTERVAL_SEC: '50'
+          # Electron JSON output — disabled on GitHub Actions (stdout not read there)
+          OUTPUT_JSON:       '0'
         run: python mind_shot_engine.py
 
       - name: Commit updated state (race-safe)
@@ -55,38 +70,32 @@ jobs:
           set -e
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
           git add state/state.json || true
           if git diff --cached --quiet; then
             echo "✓ No state changes to commit."
             exit 0
           fi
-
           git commit -m "state: $(date -u +'%Y-%m-%d %H:%M UTC')"
-
-          # Retry push with pull-rebase fallback to handle race conditions:
-          #   - concurrent workflow runs both trying to push
-          #   - manual commits to main happening mid-workflow
-          # `-X theirs` during rebase = keep OUR (just-generated) state.json on conflict.
+          # Retry push with pull-rebase fallback.
+          # Two concurrent runs (Cron A + Cron B) may race to push — this handles it.
+          # `-X theirs` keeps OUR freshly-generated state.json on rebase conflict.
           for attempt in 1 2 3 4 5; do
             if git push origin HEAD:main 2>&1; then
-              echo "✓ Pushed successfully on attempt $attempt"
+              echo "✓ Pushed on attempt $attempt"
               exit 0
             fi
-            echo "✗ Push attempt $attempt failed — pulling rebase and retrying…"
+            echo "✗ Push attempt $attempt failed — rebasing…"
             git pull --rebase -X theirs origin main || {
-              echo "  rebase had conflicts — aborting and trying force-with-lease as last resort"
               git rebase --abort || true
-              # On the LAST attempt, just take our state.json over remote's
               if [ "$attempt" = "5" ]; then
                 git fetch origin main
                 git reset --soft origin/main
                 git add state/state.json
-                git commit -m "state: $(date -u +'%Y-%m-%d %H:%M UTC') (force-applied)"
+                git commit -m "state: $(date -u +'%Y-%m-%d %H:%M UTC') (force)"
                 git push origin HEAD:main && exit 0
               fi
             }
             sleep $((attempt * 2))
           done
-          echo "❌ Could not push after 5 attempts — giving up gracefully (state will retry next run)"
-          exit 0   # Don't fail the workflow — state will catch up next run
+          echo "❌ Could not push after 5 attempts — state will retry next run"
+          exit 0   # Never fail the workflow over a push race
