@@ -105,8 +105,8 @@
       "duration_sec": 388800,
       "entry": 79173.7,
       "last_bar": 1779235200,
-      "live_pnl_leveraged": 32.82,
-      "live_pnl_pct": 3.282,
+      "live_pnl_leveraged": 32.8,
+      "live_pnl_pct": 3.28,
       "ml_snap": {
         "mode_b": 0,
         "rsi_b": 1,
