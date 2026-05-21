@@ -44,7 +44,7 @@
   },
   "BTC_1h": {
     "active_trade": null,
-    "last_signal_bar": 1779350400,
+    "last_signal_bar": 1779361200,
     "ml": {
       "gross_loss": 2.0,
       "gross_profit": 0.8749999999999821,
@@ -104,40 +104,15 @@
     }
   },
   "BTC_4h": {
-    "active_trade": {
-      "be_moved": false,
-      "duration_sec": 28800,
-      "entry": 78098.4,
-      "init_sl": 77394.47935502962,
-      "last_bar": 1779350400,
-      "live_pnl_leveraged": -5.26,
-      "live_pnl_pct": -0.526,
-      "ml_snap": {
-        "mode_b": 0,
-        "rsi_b": 2,
-        "ses_b": 0,
-        "vol_b": 1
-      },
-      "opened_bar": 1779321600,
-      "side": "long",
-      "sl": 77394.47935502962,
-      "tp1": 78591.14445147927,
-      "tp1_hit": false,
-      "tp2": 79083.88890295853,
-      "tp2_hit": false,
-      "tp3": 79787.80954792892,
-      "tp3_hit": false,
-      "tp4": 80632.51432189338,
-      "tp4_hit": false
-    },
-    "last_signal_bar": 1779321600,
+    "active_trade": null,
+    "last_signal_bar": 1779350400,
     "ml": {
-      "gross_loss": 0.0,
+      "gross_loss": 1.0,
       "gross_profit": 0.8571428571428569,
       "mode": {
         "0": [
           3,
-          8
+          10
         ]
       },
       "rsi": {
@@ -147,13 +122,13 @@
         ],
         "2": [
           0,
-          4
+          6
         ]
       },
       "ses": {
         "0": [
           0,
-          2
+          4
         ],
         "1": [
           3,
@@ -164,11 +139,11 @@
           2
         ]
       },
-      "total_trades": 7,
+      "total_trades": 8,
       "vol": {
         "1": [
           3,
-          8
+          10
         ]
       },
       "wins": 1
@@ -220,7 +195,7 @@
   },
   "ETH_4h": {
     "active_trade": null,
-    "last_signal_bar": 1779336000,
+    "last_signal_bar": 1779350400,
     "ml": {
       "mode": {
         "0": [
@@ -256,14 +231,14 @@
   "__global": {
     "account_size": 0,
     "cooldown_minutes_after_sl": 240,
-    "cur_loss_streak": 1,
+    "cur_loss_streak": 2,
     "cur_win_streak": 0,
     "daily_loss_limit_r": -3.0,
     "daily_r": {
       "2026-05-15": 0.8571428571428569,
       "2026-05-17": 0.8749999999999821,
       "2026-05-18": -1.0,
-      "2026-05-21": -1.0
+      "2026-05-21": -2.0
     },
     "funding_pause_threshold": 0.05,
     "heatmap": [
@@ -564,7 +539,7 @@
       [
         [
           0,
-          1
+          2
         ],
         [
           0,
@@ -1014,16 +989,32 @@
         "tp3_hit": false,
         "tp4_hit": false,
         "won": false
+      },
+      {
+        "asset": "BTC",
+        "closed_at": 1779364800,
+        "entry": 78098.4,
+        "exit": 77394.47935502962,
+        "opened_at": 1779321600,
+        "pnl_r": -1.0,
+        "side": "long",
+        "tf": "4h",
+        "tp1_hit": false,
+        "tp2_hit": false,
+        "tp3_hit": false,
+        "tp4_hit": false,
+        "won": false
       }
     ],
     "last_weekly_summary": null,
     "max_concurrent_trades": 4,
-    "max_loss_streak": 1,
+    "max_loss_streak": 2,
     "max_win_streak": 1,
     "paper_mode": false,
     "risk_per_trade_pct": 1.0,
     "sl_cooldowns": {
-      "BTC_1h": 1779353954.735618
+      "BTC_1h": 1779353954.735618,
+      "BTC_4h": 1779365655.06953
     }
   }
 }
