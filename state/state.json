@@ -45,12 +45,12 @@
   "BTC_1h": {
     "active_trade": {
       "be_moved": false,
-      "duration_sec": 10800,
+      "duration_sec": 14400,
       "entry": 77691.7,
       "init_sl": 77294.00938893546,
-      "last_bar": 1779404400,
-      "live_pnl_leveraged": 0.47,
-      "live_pnl_pct": 0.047,
+      "last_bar": 1779408000,
+      "live_pnl_leveraged": -2.48,
+      "live_pnl_pct": -0.248,
       "ml_snap": {
         "mode_b": 4,
         "rsi_b": 2,
@@ -130,7 +130,7 @@
   },
   "BTC_4h": {
     "active_trade": null,
-    "last_signal_bar": 1779379200,
+    "last_signal_bar": 1779393600,
     "ml": {
       "gross_loss": 1.0,
       "gross_profit": 0.8571428571428569,
@@ -187,7 +187,7 @@
   },
   "ETH_1d": {
     "active_trade": null,
-    "last_signal_bar": 1779235200,
+    "last_signal_bar": 1779321600,
     "ml": {
       "mode": {},
       "rsi": {},
@@ -220,7 +220,7 @@
   },
   "ETH_4h": {
     "active_trade": null,
-    "last_signal_bar": 1779379200,
+    "last_signal_bar": 1779393600,
     "ml": {
       "mode": {
         "0": [
