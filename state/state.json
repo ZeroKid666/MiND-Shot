@@ -110,8 +110,8 @@
       "entry": 77106.9,
       "init_sl": 76356.85008781876,
       "last_bar": 1779739200,
-      "live_pnl_leveraged": 2.95,
-      "live_pnl_pct": 0.295,
+      "live_pnl_leveraged": 2.39,
+      "live_pnl_pct": 0.239,
       "ml_snap": {
         "mode_b": 0,
         "rsi_b": 2,
