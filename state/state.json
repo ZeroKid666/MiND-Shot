@@ -44,7 +44,7 @@
   },
   "BTC_1h": {
     "active_trade": null,
-    "last_signal_bar": 1779811200,
+    "last_signal_bar": 1779818400,
     "ml": {
       "gross_loss": 4.0,
       "gross_profit": 0.8749999999999821,
