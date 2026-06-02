@@ -44,7 +44,7 @@
   },
   "BTC_1h": {
     "active_trade": null,
-    "last_signal_bar": 1780405200,
+    "last_signal_bar": 1780408800,
     "ml": {
       "gross_loss": 5.0,
       "gross_profit": 0.8749999999999821,
@@ -171,8 +171,8 @@
       "entry": 2009.59,
       "init_sl": 2160.441777404438,
       "last_bar": 1780358400,
-      "live_pnl_leveraged": 32.76,
-      "live_pnl_pct": 3.276,
+      "live_pnl_leveraged": 48.27,
+      "live_pnl_pct": 4.827,
       "ml_snap": {
         "mode_b": 0,
         "rsi_b": 1,
