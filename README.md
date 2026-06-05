@@ -1,114 +1,124 @@
-# MiND-Shot Engine — GitHub Actions Cloud Cron
+<div align="center">
 
-A free, fully-autonomous trading signal engine that runs on GitHub's free Actions
-infrastructure. Polls Kraken every minute, runs the MiND-Shot signal logic on
-**BTC + ETH** across multiple timeframes, ships rich alerts to your Telegram via a
-Make.com / n8n / Pipedream webhook (or direct Telegram Bot API), and **retrains its
-ML model every Sunday** on the latest historical data.
+<h1>📡 MiND-Shot</h1>
 
-**Cost: $0 forever** (public repo gets unlimited GitHub Actions minutes).
+<p><strong>A free, fully-autonomous crypto trading signal engine that runs entirely on GitHub Actions — no server, no cost, no dependencies.</strong></p>
 
-## ✨ What it does (full feature set)
+[![Stars](https://img.shields.io/github/stars/aashir-athar/MiND-Shot?style=for-the-badge&logo=github&color=FFD33D)](https://github.com/aashir-athar/MiND-Shot/stargazers)
+[![License](https://img.shields.io/github/license/aashir-athar/MiND-Shot?style=for-the-badge&color=blue)](./LICENSE)
+[![Last commit](https://img.shields.io/github/last-commit/aashir-athar/MiND-Shot?style=for-the-badge)](https://github.com/aashir-athar/MiND-Shot/commits)
+[![Top language](https://img.shields.io/github/languages/top/aashir-athar/MiND-Shot?style=for-the-badge&logo=python&logoColor=white)](https://github.com/aashir-athar/MiND-Shot)
+[![Workflow status](https://img.shields.io/github/actions/workflow/status/aashir-athar/MiND-Shot/engine.yml?style=for-the-badge&label=engine)](https://github.com/aashir-athar/MiND-Shot/actions)
 
-### Signal Engine
-- Polls Kraken's free OHLCV API for 4 starred preset pairs (BTC/ETH × 4h/1h/1d)
-- 5 trading modes: Advanced · Standard · Classic · Channel · Oscillator
-- Universal SL ratchet: TP1 → BE · TP2 → TP1 · TP3 → TP2 · TP4 → exit
-- Bayesian per-feature-bucket ML self-learning (learns from every closed trade)
-- Multi-engine ML: Bayes · kNN · Logistic · Q-Learning · Ensemble
+<a href="#-getting-started"><strong>Getting Started</strong></a> ·
+<a href="#-how-it-works"><strong>How It Works</strong></a> ·
+<a href="https://github.com/aashir-athar/MiND-Shot/issues"><strong>Report Bug</strong></a> ·
+<a href="https://github.com/aashir-athar/MiND-Shot/issues"><strong>Request Feature</strong></a>
 
-### Decision Support
-- **Trade Verdict scoring** (0-100) combining ML + Whale + Funding + Session
-- **Whale flow detection** (Binance Futures L/S ratio · OI · taker buy/sell · Whale Alert)
-- **Per-pair TP/SL hit accuracy** computed from journal data
-- **BTC ↔ ETH correlation** with lead/lag intelligence
-- **Weekly summary** (this week vs prior week R-multiples)
+</div>
 
-### Risk Management
-- Daily loss limit auto-pause (default -3R)
-- Max concurrent trades cap (default 4)
-- Post-SL cool-down per pair (default 240 min)
-- Funding pause threshold (default 0.05%)
-- Configurable risk-per-trade % (default 1%)
-- Paper mode toggle (state isolated)
+---
 
-### ML Pipeline
-- Walk-forward trained logistic regression on 2yr Kraken hourly data
-- 12 engineered features (returns, RSI, ATR, EMA ratio, vol z-score, hour cyclic, distance from S/R)
-- Honest out-of-sample accuracy reporting (52-62% typical)
-- **Auto-retrains every Sunday** via `retrain.yml` workflow
+**MiND-Shot** is an open-source, autonomous **crypto trading signal engine** that runs as a **GitHub Actions cron job** — meaning $0 hosting, no VPS, and no third-party pip dependencies (pure Python stdlib). It polls Kraken's free OHLCV API every minute, runs self-learning trading logic on **BTC and ETH** across multiple timeframes, and ships rich entry/exit alerts straight to your Telegram via a webhook (Make.com / n8n / Pipedream) or the direct Telegram Bot API. A built-in **machine-learning pipeline retrains every Sunday** on fresh historical data, so the engine adapts as the market moves.
 
-## 📋 Prerequisites
+> 🚧 **Active development.** MiND-Shot is an evolving research/automation project. It is a decision-support tool, **not financial advice** — see [Honest expectations](#-honest-expectations).
 
-- **GitHub account** (free)
-- **Make.com / n8n / Pipedream account** for Telegram delivery (free tiers fine)
-- OR a Telegram Bot token + chat ID (also free)
+## ✨ Features
 
-Zero pip dependencies. Pure Python stdlib.
+| | Feature | Description |
+|---|---|---|
+| 💸 | **$0 forever** | Runs on a public repo's free GitHub Actions minutes — no server, no VPS, no bill |
+| 🐍 | **Zero dependencies** | Pure Python standard library — nothing to `pip install` |
+| 📊 | **5 trading modes** | Advanced · Standard · Classic · Channel · Oscillator presets per pair |
+| 🧠 | **Self-learning ML** | Bayesian buckets · kNN · online logistic regression · Q-learning ensemble |
+| 🎯 | **Trade Verdict score** | 0–100 score blending ML confidence, whale flow, funding, and session |
+| 🐋 | **Whale-flow signals** | Binance Futures long/short ratio, open interest, and taker buy/sell context |
+| 🪜 | **SL ratchet** | Universal stop-loss laddering: TP1 → BE · TP2 → TP1 · TP3 → TP2 · TP4 → exit |
+| 🛡️ | **Risk controls** | Daily loss limit, max concurrent trades, post-SL cool-down, funding pause |
+| 🔁 | **Weekly retrain** | Walk-forward logistic model auto-retrains every Sunday via `retrain.yml` |
+| 📲 | **Telegram alerts** | Pre-formatted HTML alerts via webhook or direct Bot API |
 
-## 🚀 Setup (5 minutes)
+## 🛠️ Tech Stack
 
-### 1. Fork or clone this repo
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
+![Kraken](https://img.shields.io/badge/Kraken_API-5741D9?style=for-the-badge&logo=kraken&logoColor=white)
+![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)
+![Make](https://img.shields.io/badge/Make.com-6D00CC?style=for-the-badge&logo=make&logoColor=white)
+![n8n](https://img.shields.io/badge/n8n-EA4B71?style=for-the-badge&logo=n8n&logoColor=white)
+
+| Layer | Choice |
+|---|---|
+| **Language** | Python 3 (standard library only) |
+| **Runtime** | GitHub Actions scheduled workflows (cron) |
+| **Market data** | Kraken public OHLCV API · Binance Futures (whale-flow context) |
+| **ML** | Custom Bayesian / kNN / logistic / Q-learning ensemble + walk-forward trainer |
+| **Delivery** | Telegram Bot API or Make.com / n8n / Pipedream webhook |
+| **State** | Git-committed JSON (`state/state.json`, `state/trained_model.json`) |
+
+## 🚀 Getting Started
+
+Setup takes about 5 minutes. Keep your repo **public** to receive unlimited free GitHub Actions minutes.
+
+### Prerequisites
+- A **GitHub account** (free)
+- A delivery channel — **one of**:
+  - A Make.com / n8n / Pipedream account (free tiers are fine), **or**
+  - A Telegram Bot token + chat ID (from [@BotFather](https://t.me/BotFather))
+
+No Python install or `pip install` required — everything runs in the GitHub Actions runner.
+
+### 1. Fork or clone
 
 ```bash
-git clone https://github.com/<you>/mind-shot.git
-cd mind-shot
+git clone https://github.com/aashir-athar/MiND-Shot.git
+cd MiND-Shot
 ```
-
-Keep the repo **public** to get unlimited free GitHub Actions minutes.
 
 ### 2. Add your delivery secret
 
-In your GitHub repo → **Settings → Secrets and variables → Actions → New repository secret**:
+In your repo go to **Settings → Secrets and variables → Actions → New repository secret**:
 
-**Option A — Make.com / n8n / Pipedream webhook (recommended)**
-- Name: `WEBHOOK_URL`
-- Value: `https://hook.eu1.make.com/...` (your scenario's webhook URL)
+```text
+# Option A — webhook (recommended)
+WEBHOOK_URL = https://hook.eu1.make.com/...      # your Make/n8n/Pipedream URL
 
-**Option B — Direct Telegram Bot API**
-- Name: `TG_TOKEN`  · Value: `1234567890:AAEhBxxxxxxxxxxxxxxxxx` (from @BotFather)
-- Name: `TG_CHAT_ID` · Value: `123456789`
-
-> Set EITHER one or both. If both are present, `WEBHOOK_URL` wins.
-
-### 3. (Optional) Set leverage display
-
-Settings → Secrets and variables → Actions → **Variables** tab → New variable:
-- Name: `LEVERAGE` · Value: `10`
-
-### 4. Enable Actions
-
-Repo → **Actions tab** → click "I understand my workflows, go ahead and enable them"
-
-Two workflows are set up:
-- **MiND-Shot Engine** — runs every 1 minute (cron `*/1 * * * *`)
-- **Weekly ML Retrain** — runs every Sunday at 00:00 UTC (cron `0 0 * * 0`)
-
-### 5. First run
-
-The cron fires automatically. To trigger immediately:
-- Actions tab → "MiND-Shot Engine" → Run workflow
-- Or for ML training: "Weekly ML Retrain" → Run workflow
-
-## 🛠 File structure
-
-```
-mind_shot_github/
-├── .github/workflows/
-│   ├── engine.yml         # 1-min cron · runs signal engine
-│   └── retrain.yml        # weekly cron · retrains ML model
-├── mind_shot_engine.py    # main signal engine (~1100 lines)
-├── ml_trainer.py          # walk-forward ML training
-├── state/
-│   ├── state.json         # auto-committed: trades + ML buckets + journal + risk
-│   └── trained_model.json # auto-committed: weekly walk-forward weights
-├── requirements.txt       # empty (zero pip deps)
-└── README.md
+# Option B — direct Telegram Bot API
+TG_TOKEN    = 1234567890:AAEh...                 # from @BotFather
+TG_CHAT_ID  = 123456789
 ```
 
-## 📡 Webhook payload format
+Set either one or both. If both are present, `WEBHOOK_URL` wins. Optionally add a `LEVERAGE` repository **variable** (e.g. `10`) for display.
 
-Each entry signal POSTs JSON like this to your webhook URL:
+### 3. Enable Actions and run
+
+Open the **Actions** tab and enable workflows. Two are included:
+
+- **MiND-Shot Engine** — runs every minute (`*/1 * * * *`)
+- **Weekly ML Retrain** — runs every Sunday at 00:00 UTC (`0 0 * * 0`)
+
+The cron fires automatically. To trigger immediately, open a workflow and click **Run workflow**.
+
+## 📖 Usage
+
+### Customising the active pairs
+
+Edit the `ACTIVE` list near the top of [`mind_shot_engine.py`](./mind_shot_engine.py):
+
+```python
+ACTIVE = [
+    ('BTC', '4h'),
+    ('ETH', '4h'),
+    ('BTC', '1h'),
+    ('ETH', '1d'),
+]
+```
+
+Add any `(asset, timeframe)` pair — anything not in the `PRESETS` dict falls back to `DEFAULT_PRESET`.
+
+### Webhook payload
+
+Each entry signal POSTs JSON to your webhook. The `text` field is pre-formatted Telegram HTML ready to forward:
 
 ```json
 {
@@ -116,60 +126,87 @@ Each entry signal POSTs JSON like this to your webhook URL:
   "side": "LONG",
   "asset": "BTC",
   "tf": "4h",
-  "preset": "🏆 BTC 4h Optimal",
   "ml_conf": 67.3,
   "leverage": 10,
   "entry": 67234.50,
-  "sl":    65812.10,
-  "tp1":   68420.30,
-  "tp2":   69612.80,
-  "tp3":   70894.20,
-  "tp4":   72510.40,
-  "text":  "🟢 <b>MiND-Shot LONG</b>  ⚡ 10x\n\n..."
+  "sl": 65812.10,
+  "tp1": 68420.30,
+  "tp2": 69612.80,
+  "tp3": 70894.20,
+  "tp4": 72510.40,
+  "text": "🟢 <b>MiND-Shot LONG</b>  ⚡ 10x\n\n..."
 }
 ```
 
-The `text` field is pre-formatted Telegram HTML. In Make.com:
-1. Webhook trigger → Re-determine data structure
-2. Trigger one workflow run (Actions → Run workflow) so Make ingests the schema
-3. Telegram action → map Text field to `{{1.text}}` → Parse Mode `HTML`
+TP/SL hit events use `type: "event"` with `event: "tp1" | "tp2" | "tp3" | "tp4" | "sl"`.
 
-For TP/SL hit events, the payload has `type: "event"` and `event: "tp1"|"tp2"|"tp3"|"tp4"|"sl"` plus pre-formatted text.
+<details>
+<summary><strong>Project structure</strong></summary>
 
-## ⚙️ Customising
-
-Edit `mind_shot_engine.py` near the top:
-
-```python
-ACTIVE = [
-    ('BTC', '4h'),   # 🏆 BTC 4h Optimal       (88.9% WR backtested)
-    ('ETH', '4h'),   # 🏆 ETH 4h Optimal       (90.5% WR backtested)
-    ('BTC', '1h'),   # 🏆 BTC 1h Oscillator    (77.3% WR backtested)
-    ('ETH', '1d'),   # 🏆 ETH 1d Swing         (82.6% WR backtested)
-]
+```text
+.github/workflows/
+├── engine.yml          # 1-min cron · runs the signal engine
+└── retrain.yml         # weekly cron · retrains the ML model
+mind_shot_engine.py     # main signal engine
+ml_trainer.py           # walk-forward ML training
+state/
+├── state.json          # auto-committed: trades · ML buckets · journal · risk
+└── trained_model.json  # auto-committed: weekly walk-forward weights
+requirements.txt        # intentionally empty (zero pip deps)
 ```
 
-Add more (asset, tf) pairs — anything not in the `PRESETS` dict uses `DEFAULT_PRESET`.
+</details>
 
-## 🧠 ML Self-Learning
+## 🧠 How It Works
 
-Every closed trade updates:
-- **Bayesian buckets** (vol regime · ADX · RSI level · hour-of-day · trading mode)
-- **kNN history** (last 100 trade feature vectors)
-- **Logistic weights** (online SGD)
-- **Q-table** (state-action rewards)
+Every closed trade updates the engine's self-learning state — **Bayesian buckets** (volatility regime, ADX, RSI level, hour-of-day, mode), a **kNN** history of recent feature vectors, **online logistic** weights, and a **Q-table** of state–action rewards. Signals are blocked when geometric-mean confidence across the current buckets drops below threshold (after enough closed trades for that pair), and stop-loss losses are weighted more heavily than wins so the system actively learns to avoid losing setups.
 
-Signals get blocked when geometric-mean confidence across current buckets drops below 40% (only after 10+ closed trades for that pair). SL losses are weighted 2× harder than TP wins, so the system actively learns to avoid losing setups.
+In parallel, `ml_trainer.py` runs a **walk-forward logistic regression** on ~2 years of Kraken hourly data using 12 engineered features (returns, RSI, ATR, EMA ratio, volume z-score, cyclic hour, distance from support/resistance) and reports **honest out-of-sample accuracy**. This gives every signal a second, independent opinion.
 
-The walk-forward trained model gives a SECOND opinion using 12 engineered features. After the first Sunday retrain, `state/trained_model.json` will contain weights + out-of-sample accuracy stats.
+## ⚠️ Honest Expectations
 
-## ⚠️ Honest expectations
+- Real ML on retail crypto data delivers roughly **52–62% out-of-sample directional accuracy** — not magic.
+- Combined with the universal SL ratchet (TP1 → break-even), the goal is **positive expectancy over time**, not perfect predictions.
+- Any tool promising "100% accuracy" is overfit and will lose money live.
+- **This is not financial advice.** Past performance does not guarantee future results. Use responsibly and at your own risk.
 
-- Real ML on retail crypto data: **52-62% out-of-sample directional accuracy**
-- Combined with universal SL ratchet (TP1 → BE) = positive expectancy over time
-- Any tool promising "100% accuracy" is overfit and will lose money live
-- Past performance ≠ future results · use responsibly
+## 🗺️ Roadmap
 
-## 📜 License
+- [x] GitHub Actions cron engine (1-minute polling)
+- [x] Self-learning ML ensemble (Bayes · kNN · logistic · Q-learning)
+- [x] Weekly walk-forward retraining workflow
+- [x] Telegram / webhook alert delivery
+- [ ] Additional exchanges and trading pairs
+- [ ] Backtest reporting dashboard
+- [ ] Configurable strategy presets via repo variables
 
-MIT
+## 🤝 Contributing
+
+Contributions are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+1. Fork the repo
+2. Create a branch (`git checkout -b feat/your-idea`)
+3. Commit your changes and push
+4. Open a Pull Request
+
+## 📄 License
+
+Distributed under the **MIT License**. See [LICENSE](./LICENSE) for details.
+
+## 👤 Author
+
+**Aashir Athar**
+
+[![GitHub](https://img.shields.io/badge/GitHub-aashir--athar-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/aashir-athar)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-aashirathar-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aashirathar/)
+[![X](https://img.shields.io/badge/X_(Twitter)-aashirathar-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/aashirathar)
+
+<div align="center">
+
+<sub>Built by <a href="https://github.com/aashir-athar">aashir-athar</a> · If MiND-Shot helped you, consider leaving a ⭐</sub>
+
+<br/><br/>
+
+<sub><strong>Keywords:</strong> crypto trading signal engine · algorithmic trading bot · GitHub Actions cron · Bitcoin & Ethereum signals · Kraken API · Telegram trading alerts · machine learning crypto · Python trading automation · serverless trading bot</sub>
+
+</div>
