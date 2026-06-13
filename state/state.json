@@ -175,8 +175,8 @@
       "entry": 2009.59,
       "init_sl": 2160.441777404438,
       "last_bar": 1781308800,
-      "live_pnl_leveraged": 166.24,
-      "live_pnl_pct": 16.624,
+      "live_pnl_leveraged": 167.59,
+      "live_pnl_pct": 16.759,
       "ml_snap": {
         "mode_b": 0,
         "rsi_b": 1,
@@ -233,8 +233,8 @@
       "entry": 1665.83,
       "init_sl": 1631.586201305363,
       "last_bar": 1781366400,
-      "live_pnl_leveraged": 5.82,
-      "live_pnl_pct": 0.582,
+      "live_pnl_leveraged": 4.19,
+      "live_pnl_pct": 0.419,
       "ml_snap": {
         "mode_b": 0,
         "rsi_b": 2,
