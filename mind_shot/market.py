@@ -1,9 +1,14 @@
 """
-Market data — Binance USD-M perpetual futures klines (pure standard library).
+Live market data — Kraken public OHLC (pure standard library).
 
-This is the same source the strategies were backtested on, so live signals match
-the research. All network calls go through :func:`_get_json`, which retries with
-exponential backoff and never raises on transient failures unless the caller asks.
+Kraken is used for the live feed because it is reachable from GitHub Actions
+runners (Binance returns HTTP 451 to the US IPs those runners use). The five
+strategies are price-based and exchange-agnostic, so Kraken's BTC/ETH 4h candles
+drive identical signals; the in-repo backtest still validates against the original
+Binance playbook data via committed fixtures (see ``backtest.py``).
+
+All network calls go through :func:`_get_json`, which retries with exponential
+backoff and raises only after exhausting attempts.
 """
 from __future__ import annotations
 
@@ -11,21 +16,20 @@ import json
 import logging
 import time
 import urllib.error
-import urllib.parse
 import urllib.request
-from typing import List, Optional
+from typing import Any, List, Optional
 
 from .models import Candle
 
 log = logging.getLogger("mind_shot.market")
 
-BINANCE_FAPI = "https://fapi.binance.com"
-SYMBOLS = {"BTC": "BTCUSDT", "ETH": "ETHUSDT"}
+KRAKEN_OHLC = "https://api.kraken.com/0/public/OHLC"
+PAIRS = {"BTC": "XBTUSDT", "ETH": "ETHUSDT"}
+TF_MIN = {"5m": 5, "15m": 15, "30m": 30, "1h": 60, "4h": 240, "1d": 1440}
 _USER_AGENT = "MiND-Shot/2.0 (+https://github.com/aashir-athar/MiND-Shot)"
-_MAX_LIMIT = 1500  # Binance hard cap per klines request
 
 
-def _get_json(url: str, timeout: float = 20.0, retries: int = 4):
+def _get_json(url: str, timeout: float = 25.0, retries: int = 4) -> Any:
     """GET ``url`` and parse JSON, retrying transient errors with backoff."""
     last_err: Optional[Exception] = None
     for attempt in range(retries):
@@ -42,55 +46,27 @@ def _get_json(url: str, timeout: float = 20.0, retries: int = 4):
     raise RuntimeError(f"request failed after {retries} attempts: {url}") from last_err
 
 
-def _to_candle(row: list) -> Candle:
-    # Binance kline row: [openTime_ms, open, high, low, close, volume, closeTime_ms, ...]
-    return (
-        int(row[0]) // 1000,        # open_time in SECONDS (matches engine convention)
-        float(row[1]),
-        float(row[2]),
-        float(row[3]),
-        float(row[4]),
-        float(row[5]),
-    )
+def fetch_klines(asset: str, interval: str, limit: int = 720) -> List[Candle]:
+    """Fetch the most recent klines for ``asset`` on ``interval``.
 
-
-def fetch_klines(asset: str, interval: str, limit: int = 500) -> List[Candle]:
-    """Fetch the most recent ``limit`` closed+forming klines for ``asset``.
-
-    Returns oldest→newest. The final element is the still-forming candle.
+    Returns oldest→newest ``Candle`` tuples (open time in SECONDS). The final
+    element is the still-forming candle.
     """
-    if asset not in SYMBOLS:
+    if asset not in PAIRS:
         raise ValueError(f"unknown asset {asset!r}")
-    symbol = SYMBOLS[asset]
-    q = urllib.parse.urlencode({"symbol": symbol, "interval": interval, "limit": min(limit, _MAX_LIMIT)})
-    rows = _get_json(f"{BINANCE_FAPI}/fapi/v1/klines?{q}")
-    return [_to_candle(r) for r in rows]
+    if interval not in TF_MIN:
+        raise ValueError(f"unsupported interval {interval!r}")
+    url = f"{KRAKEN_OHLC}?pair={PAIRS[asset]}&interval={TF_MIN[interval]}"
+    data = _get_json(url)
+    if isinstance(data, dict) and data.get("error"):
+        raise RuntimeError(f"Kraken error: {data['error']}")
+    result = (data or {}).get("result", {}) if isinstance(data, dict) else {}
+    pair_key = next((k for k in result if k != "last"), None)
+    if pair_key is None:
+        raise RuntimeError("Kraken returned no OHLC series")
+    rows = result.get(pair_key, [])[-limit:]
+    # Kraken row: [time_s, open, high, low, close, vwap, volume, count]
+    return [(int(r[0]), float(r[1]), float(r[2]), float(r[3]), float(r[4]), float(r[6])) for r in rows]
 
 
-def fetch_klines_since(asset: str, interval: str, start_ms: int) -> List[Candle]:
-    """Fetch every kline from ``start_ms`` (epoch ms) to now, paginating as needed.
-
-    Used by the backtest; deduplicates by open time and returns oldest→newest.
-    """
-    if asset not in SYMBOLS:
-        raise ValueError(f"unknown asset {asset!r}")
-    symbol = SYMBOLS[asset]
-    rows: dict[int, list] = {}
-    cursor = start_ms
-    while True:
-        q = urllib.parse.urlencode(
-            {"symbol": symbol, "interval": interval, "startTime": cursor, "limit": _MAX_LIMIT}
-        )
-        batch = _get_json(f"{BINANCE_FAPI}/fapi/v1/klines?{q}")
-        if not batch:
-            break
-        for r in batch:
-            rows[int(r[0])] = r
-        if len(batch) < _MAX_LIMIT:
-            break
-        cursor = int(batch[-1][0]) + 1
-        time.sleep(0.2)  # be polite to the public endpoint
-    return [_to_candle(rows[k]) for k in sorted(rows)]
-
-
-__all__ = ["fetch_klines", "fetch_klines_since", "SYMBOLS", "BINANCE_FAPI"]
+__all__ = ["fetch_klines", "PAIRS", "TF_MIN"]
