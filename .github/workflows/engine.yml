@@ -20,7 +20,7 @@ name: MiND-Shot Engine
 
 on:
   schedule:
-    - cron: '*/5 * * * *'       # Cron A — fires at :00 :05 :10 … (offset 0)
+    - cron: '*/2 * * * *'       # Cron A — fires at :00 :05 :10 … (offset 0)
     - cron: '2-57/5 * * * *'    # Cron B — fires at :02 :07 :12 … (offset +2 min)
   workflow_dispatch:             # Manual trigger still works
 
@@ -57,6 +57,8 @@ jobs:
           TG_TOKEN:          ${{ secrets.TG_TOKEN }}            # OR Telegram bot token
           TG_CHAT_ID:        ${{ secrets.TG_CHAT_ID }}          # OR Telegram chat id
           LEVERAGE:          ${{ vars.LEVERAGE || '10' }}       # Repo variable (not secret)
+          ACCOUNT_USD:       ${{ vars.ACCOUNT_USD || '100' }}   # wallet size for sizing display
+          ALLOC_PCT:         ${{ vars.ALLOC_PCT || '15' }}      # % of wallet per trade
           # 7 polls × 50s = 350s ≈ 6 min of coverage per run.
           # With two crons staggered by 2 min, every minute has at least one active poll.
           POLLS_PER_RUN:     '7'

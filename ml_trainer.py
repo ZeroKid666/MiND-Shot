@@ -219,8 +219,9 @@ def evaluate(probs, y):
 # ── Walk-forward training for one asset ──
 def train_pair(asset_pair, asset_name):
     print(f"\n── Training {asset_name} ──", file=sys.stderr)
-    candles = fetch_history(asset_pair, interval=60)
-    print(f"  Fetched {len(candles)} hourly candles ({(candles[-1][0]-candles[0][0])/86400:.0f} days)", file=sys.stderr)
+    # Train on 4h bars to match the timeframe the engine applies the model on.
+    candles = fetch_history(asset_pair, interval=240)
+    print(f"  Fetched {len(candles)} 4h candles ({(candles[-1][0]-candles[0][0])/86400:.0f} days)", file=sys.stderr)
     X, y = build_features(candles, horizon_bars=4)
     if len(X) < 100:
         print(f"  Not enough samples after feature engineering: {len(X)}", file=sys.stderr)

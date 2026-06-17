@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mind-shot"
+version = "2.0.0"
+description = "Autonomous, zero-dependency crypto signal engine driven by five backtested mean-reversion strategies."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Aashir Athar" }]
+keywords = [
+  "crypto", "trading", "signals", "mean-reversion", "bitcoin", "ethereum",
+  "github-actions", "telegram", "algorithmic-trading",
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Office/Business :: Financial :: Investment",
+]
+# Intentionally no runtime dependencies — pure standard library.
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/aashir-athar/MiND-Shot"
+Repository = "https://github.com/aashir-athar/MiND-Shot"
+
+[project.scripts]
+mind-shot = "mind_shot.engine:main"
+
+[tool.setuptools]
+packages = ["mind_shot"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]
