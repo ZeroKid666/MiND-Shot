@@ -46,6 +46,7 @@ ALLOC_PCT = _env_float("ALLOC_PCT", 15.0)          # % of wallet per trade (marg
 POLLS_PER_RUN = _env_int("POLLS_PER_RUN", 1)
 POLL_INTERVAL_SEC = _env_int("POLL_INTERVAL_SEC", 60)
 OUTPUT_JSON = _env_bool("OUTPUT_JSON", False)       # Electron reads stdout JSON
+TEST_ALERT = _env_bool("TEST_ALERT", False)         # send one delivery-test alert, then exit
 
 # ── ML gating (the Bayesian second opinion may veto a strategy signal) ──────
 ML_MIN_TRADES = _env_int("ML_MIN_TRADES", 12)
