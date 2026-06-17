@@ -267,6 +267,11 @@ def _build_blob(results, ml_summary, market_ctx, whale_ctx, strat_stats, verdict
 
 def main() -> None:
     config.configure_logging()
+    if config.TEST_ALERT:
+        payload, text = notifier.heartbeat_alert()
+        ok = notifier.deliver(payload, text)
+        log.info("Test alert: %s (%s)", "delivered" if ok else "not delivered", config.delivery_label())
+        return
     log.info("Delivery: %s", config.delivery_label())
     log.info("MiND-Shot Engine %s — %s", _version(), datetime.now(tz=timezone.utc).isoformat())
     log.info("Strategies: %d  ·  pairs: %s  ·  polls/run: %d  ·  interval: %ds",

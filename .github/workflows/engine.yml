@@ -11,7 +11,12 @@ name: MiND-Shot Engine
 on:
   schedule:
     - cron: '* * * * *'          # every minute (subject to GitHub throttling)
-  workflow_dispatch:             # manual trigger still works
+  workflow_dispatch:
+    inputs:
+      test_alert:
+        description: 'Send one delivery-test alert (verify webhook -> Telegram), then exit'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -52,6 +57,8 @@ jobs:
           POLL_INTERVAL_SEC: '60'
           # Electron JSON output — disabled on GitHub Actions (stdout not read there)
           OUTPUT_JSON:       '0'
+          # Manual "Run workflow" with test_alert=true sends one delivery-test alert.
+          TEST_ALERT:        ${{ inputs.test_alert && '1' || '0' }}
         run: python mind_shot_engine.py
 
       - name: Commit updated state (race-safe)

@@ -59,6 +59,23 @@ def fmt(price: float) -> str:
     return f"{price:,.2f}" if price >= 1000 else f"{price:,.4f}"
 
 
+def heartbeat_alert() -> Tuple[Dict[str, Any], str]:
+    """A clearly-labelled one-off message to confirm the delivery path works."""
+    from datetime import datetime, timezone
+
+    ts = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    text = (
+        "🧪━━━━━━━━━━━━━━━━━━━━━🧪\n"
+        "   <b>MiND-Shot · delivery test</b>\n"
+        "🧪━━━━━━━━━━━━━━━━━━━━━🧪\n\n"
+        "✅ Webhook → Telegram is working.\n"
+        f"🕒 {ts}\n\n"
+        "<i>One-off test, not a trade signal. Real alerts fire only when a strategy "
+        "triggers (a 4h close with ADX&lt;25 at an extreme), so quiet periods are normal.</i>"
+    )
+    return {"type": "test", "ts": ts, "text": text}, text
+
+
 def entry_alert(trade: Trade, strategy: Strategy, ml_conf: float) -> Tuple[Dict[str, Any], str]:
     """Build the (payload, html_text) pair for a new entry."""
     lev = config.LEVERAGE
@@ -146,4 +163,4 @@ def event_alert(event: Dict[str, Any], trade: Trade, strategy: Strategy) -> Tupl
     return payload, text
 
 
-__all__ = ["deliver", "fmt", "entry_alert", "event_alert"]
+__all__ = ["deliver", "fmt", "entry_alert", "event_alert", "heartbeat_alert"]
