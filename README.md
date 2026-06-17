@@ -56,14 +56,14 @@ These numbers are **in-sample backtests, not promises.** Win rate alone is not e
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
-![Binance](https://img.shields.io/badge/Binance_API-F0B90B?style=for-the-badge&logo=binance&logoColor=black)
+![Kraken](https://img.shields.io/badge/Kraken_API-5741D9?style=for-the-badge&logo=kraken&logoColor=white)
 ![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)
 
 | Layer | Choice |
 |---|---|
 | **Language** | Python 3.10+ (standard library only) |
 | **Runtime** | GitHub Actions scheduled workflows (cron) |
-| **Market data** | Binance USD-M perpetual futures klines (the source the strategies were backtested on) |
+| **Market data** | Kraken public OHLC for the live feed (reachable from GitHub Actions; Binance geo-blocks the US runner IPs). The backtest validates against committed Binance 4h fixtures. |
 | **Context** | Binance whale-flow · CoinGecko dominance · alternative.me Fear & Greed |
 | **ML** | Bayesian buckets + walk-forward logistic ensemble |
 | **Delivery** | Telegram Bot API or Make.com / n8n / Pipedream webhook |
@@ -134,7 +134,7 @@ TP / SL / exit events use `type: "event"` with `event: "tp" | "sl" | "exit"`.
 
 ## 🧠 How It Works
 
-1. **Data** — every poll fetches recent **Binance 4h** candles for ETH and BTC.
+1. **Data** — every poll fetches recent **Kraken 4h** candles for ETH and BTC (Kraken is reachable from GitHub Actions runners; Binance returns HTTP 451 to their US IPs). The strategies are price-based, so the signals match the backtest.
 2. **Signals** — each strategy checks, on the most recently *closed* bar, whether its oscillator is at an extreme **and** `ADX(14) < 25`. If so it proposes a long or short; the engine acts on the next bar's open.
 3. **Second opinion** — a self-learning **Bayesian ensemble** scores the setup from past outcomes (stop-losses weighted more heavily than wins) and can veto weak signals once a strategy has enough history. A weekly **walk-forward logistic model** adds an independent directional tilt to the Trade Verdict.
 4. **Management** — bracket strategies exit on a fixed take-profit / stop; revert strategies ride back to VWAP or the mean with a hard ATR stop. Stops are checked intrabar, stop-first.
@@ -142,11 +142,11 @@ TP / SL / exit events use `type: "event"` with `event: "tp" | "sl" | "exit"`.
 
 ## 🧪 Validation
 
-The strategies are **self-validating** — the same indicator/strategy code the live engine uses is replayed over the real backtest window:
+The strategies are **self-validating** — the same indicator/strategy code the live engine uses is replayed **offline** over committed fixtures of the original backtest window (`tests/fixtures/*_4h.csv`):
 ```bash
 python -m mind_shot.backtest
 ```
-It prints each strategy's win rate, trade count, and $100→ result, and fails if any strategy drifts materially from its documented numbers. CI runs this on every push.
+It prints each strategy's win rate, trade count, and $100→ result, and fails if any strategy drifts materially from its documented numbers. It needs no network, so CI runs it deterministically on every push.
 
 ## 🧰 Development
 ```bash
@@ -162,7 +162,7 @@ OUTPUT_JSON=1 python mind_shot_engine.py      # one local dry-run (no secrets = 
 mind_shot/
 ├── indicators.py     # pure-stdlib SMA/STD/z-score/RSI/ATR/ADX/Stochastic/VWAP
 ├── strategies.py     # the 5 backtested strategies (the registry)
-├── market.py         # Binance 4h klines
+├── market.py         # Kraken 4h klines (live feed)
 ├── trading.py        # trade lifecycle (bracket + revert exits)
 ├── ml.py             # Bayesian ensemble + trained-model application
 ├── context.py        # Fear & Greed / dominance / funding
@@ -175,7 +175,7 @@ mind_shot/
 └── backtest.py       # in-repo validation backtest
 mind_shot_engine.py   # entrypoint (used by the engine workflow / Electron host)
 ml_trainer.py         # weekly walk-forward trainer
-tests/                # unit tests
+tests/                # unit tests + backtest fixtures (committed 4h playbook data)
 .github/workflows/    # engine.yml · retrain.yml · ci.yml
 ```
 </details>

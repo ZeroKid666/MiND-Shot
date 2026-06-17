@@ -12,11 +12,12 @@ Used both as a CLI and by the CI workflow as a living regression test of the edg
 """
 from __future__ import annotations
 
+import csv
 import math
+import os
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Sequence, Tuple
 
-from . import market
 from .models import C, H, L, O, T, Candle, ExitStyle, Side
 from .strategies import STRATEGIES, Strategy, compute_series
 
@@ -175,47 +176,39 @@ def simulate(
     )
 
 
-# Pinned playbook window — makes validation a deterministic regression test that
-# always reproduces the documented numbers regardless of when it runs.
-PLAYBOOK_HISTORY_START_MS = 1_759_276_800_000  # 2025-10-01 UTC (indicator warm-up)
-PLAYBOOK_TEST_START_S = 1_765_756_800          # 2025-12-15 UTC (6-month window opens)
-PLAYBOOK_TEST_END_S = 1_781_568_000            # 2026-06-16 UTC (window closes)
+# Deterministic regression test off committed fixtures — the original Binance 4h
+# playbook data (Oct 2025 → Jun 2026). Runs offline on any runner, with no network
+# or geo dependency, and reproduces the documented numbers exactly.
+PLAYBOOK_TEST_START_S = 1_765_756_800   # 2025-12-15 UTC (6-month test window opens)
+FIXTURE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "tests", "fixtures")
+_FIXTURE_SYMBOL = {"BTC": "BTCUSDT", "ETH": "ETHUSDT"}
 
 
-def run(verbose: bool = True, pinned: bool = True) -> List[BacktestResult]:
-    """Fetch data, run all strategies, return results (and print a report).
+def _load_fixture(asset: str) -> List[Candle]:
+    """Load a committed 4h fixture as oldest→newest ``Candle`` tuples (seconds)."""
+    path = os.path.join(FIXTURE_DIR, f"{_FIXTURE_SYMBOL[asset]}_4h.csv")
+    out: List[Candle] = []
+    with open(path, newline="", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            out.append((
+                int(row["open_time"]) // 1000,  # ms → s
+                float(row["open"]), float(row["high"]), float(row["low"]),
+                float(row["close"]), float(row["volume"]),
+            ))
+    return out
 
-    ``pinned`` (default) locks the test to the exact playbook window so results
-    are reproducible. Set ``pinned=False`` to evaluate the most recent 6 months.
-    """
-    if pinned:
-        start_ms = PLAYBOOK_HISTORY_START_MS
-    else:
-        start_ms = (int(_now_s()) - (SIX_MONTHS_S + 75 * 86400)) * 1000
 
-    data: Dict[str, List[Candle]] = {}
-    for asset in {s.asset for s in STRATEGIES}:
-        candles = market.fetch_klines_since(asset, "4h", start_ms)
-        if pinned:
-            candles = [c for c in candles if c[T] < PLAYBOOK_TEST_END_S]
-        data[asset] = candles
-
+def run(verbose: bool = True) -> List[BacktestResult]:
+    """Replay the five strategies over the committed playbook fixtures and report."""
+    data = {asset: _load_fixture(asset) for asset in {s.asset for s in STRATEGIES}}
     results: List[BacktestResult] = []
     for strat in STRATEGIES:
         candles = data[strat.asset]
         series = compute_series(candles)
-        test_start = PLAYBOOK_TEST_START_S if pinned else (max(c[T] for c in candles) - SIX_MONTHS_S)
-        results.append(simulate(candles, strat, series, test_start_s=test_start))
-
+        results.append(simulate(candles, strat, series, test_start_s=PLAYBOOK_TEST_START_S))
     if verbose:
         _print_report(results)
     return results
-
-
-def _now_s() -> float:
-    import time as _t
-
-    return _t.time()
 
 
 def _print_report(results: List[BacktestResult]) -> None:
