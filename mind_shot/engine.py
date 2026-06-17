@@ -131,7 +131,7 @@ def process_strategy(strategy, candles, series, state, gs, results, ml_summary) 
                     st["active_trade"] = trade.to_dict()
                     res["active_trade"] = st["active_trade"]
                     res["new_entry"] = {"side": trade.side, "entry": trade.entry, "ml_conf": round(ml_conf, 4)}
-                    payload, text = notifier.entry_alert(trade, strategy, ml_conf)
+                    payload, text = notifier.entry_alert(trade, strategy, ml_conf, adx=series["adx"][confirm_idx])
                     notifier.deliver(payload, text)
                     log.info("[%s] NEW %s @ %s  ml=%.1f%%", strategy.id, trade.side.upper(),
                              notifier.fmt(trade.entry), ml_conf * 100)
@@ -268,9 +268,9 @@ def _build_blob(results, ml_summary, market_ctx, whale_ctx, strat_stats, verdict
 def main() -> None:
     config.configure_logging()
     if config.TEST_ALERT:
-        payload, text = notifier.heartbeat_alert()
+        payload, text = notifier.sample_alert()
         ok = notifier.deliver(payload, text)
-        log.info("Test alert: %s (%s)", "delivered" if ok else "not delivered", config.delivery_label())
+        log.info("Sample alert: %s (%s)", "delivered" if ok else "not delivered", config.delivery_label())
         return
     log.info("Delivery: %s", config.delivery_label())
     log.info("MiND-Shot Engine %s — %s", _version(), datetime.now(tz=timezone.utc).isoformat())

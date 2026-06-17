@@ -1,10 +1,12 @@
 """
 Delivery — webhook (Make.com / n8n / Pipedream) or the direct Telegram Bot API,
-plus the human-readable HTML alert formatting.
+plus the HTML alert formatting.
 
 If ``WEBHOOK_URL`` is set it wins; otherwise a ``TG_TOKEN`` + ``TG_CHAT_ID`` pair
-posts straight to Telegram. With neither, :func:`deliver` is a no-op (dry run),
-so the engine runs end-to-end locally without any secrets.
+posts straight to Telegram. With neither, :func:`deliver` is a no-op (dry run).
+
+Alerts are sized from ``ACCOUNT_USD`` / ``ALLOC_PCT`` / ``LEVERAGE`` so every
+message shows the real dollar risk and reward for the configured account.
 """
 from __future__ import annotations
 
@@ -16,12 +18,13 @@ from typing import Any, Dict, Tuple
 
 from . import config
 from .models import Side
-from .strategies import Strategy
+from .strategies import STRATEGY_BY_ID, Strategy
 from .trading import Trade
 
 log = logging.getLogger("mind_shot.notifier")
 
 _TIMEOUT = 15.0
+_RULE = "━━━━━━━━━━━━━━━━━━━━━━━"
 
 
 def deliver(payload: Dict[str, Any], fallback_text: str) -> bool:
@@ -59,51 +62,68 @@ def fmt(price: float) -> str:
     return f"{price:,.2f}" if price >= 1000 else f"{price:,.4f}"
 
 
-def heartbeat_alert() -> Tuple[Dict[str, Any], str]:
-    """A clearly-labelled one-off message to confirm the delivery path works."""
-    from datetime import datetime, timezone
-
-    ts = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-    text = (
-        "🧪━━━━━━━━━━━━━━━━━━━━━🧪\n"
-        "   <b>MiND-Shot · delivery test</b>\n"
-        "🧪━━━━━━━━━━━━━━━━━━━━━🧪\n\n"
-        "✅ Webhook → Telegram is working.\n"
-        f"🕒 {ts}\n\n"
-        "<i>One-off test, not a trade signal. Real alerts fire only when a strategy "
-        "triggers (a 4h close with ADX&lt;25 at an extreme), so quiet periods are normal.</i>"
-    )
-    return {"type": "test", "ts": ts, "text": text}, text
+def _sizing() -> Tuple[float, float]:
+    """(margin, notional) in USD for the configured account."""
+    margin = config.ACCOUNT_USD * config.ALLOC_PCT / 100.0
+    return margin, margin * config.LEVERAGE
 
 
-def entry_alert(trade: Trade, strategy: Strategy, ml_conf: float) -> Tuple[Dict[str, Any], str]:
+def _leg(entry: float, level: float) -> Tuple[float, float, float]:
+    """(price_move_%, usd_on_notional, %_of_account) between entry and a level."""
+    _, notional = _sizing()
+    move_pct = abs(level - entry) / entry * 100.0 if entry else 0.0
+    usd = notional * move_pct / 100.0
+    acct_pct = (usd / config.ACCOUNT_USD * 100.0) if config.ACCOUNT_USD else 0.0
+    return move_pct, usd, acct_pct
+
+
+def entry_alert(trade: Trade, strategy: Strategy, ml_conf: float, adx: float | None = None) -> Tuple[Dict[str, Any], str]:
     """Build the (payload, html_text) pair for a new entry."""
     lev = config.LEVERAGE
+    margin, notional = _sizing()
     is_long = trade.side == Side.LONG.value
-    emoji = "🟢" if is_long else "🔴"
-    side_t = "L O N G" if is_long else "S H O R T"
+    dot = "🟢" if is_long else "🔴"
+    side_word = "LONG" if is_long else "SHORT"
+
+    sl_move, sl_usd, sl_acct = _leg(trade.entry, trade.sl)
+    wr = f"🏆 <i>{strategy.backtest_win_rate:.0f}% backtest</i>" if strategy.backtest_win_rate else ""
+    adx_str = f"   ·   📐 ADX <b>{adx:.0f}</b> (range ✓)" if adx is not None else ""
+
+    lines = [
+        f"{dot} <b>{side_word}</b>   ·   <code>{trade.asset}/USD</code>   ·   <b>{trade.tf}</b>   ·   ⚡<code>{lev}×</code>",
+        _RULE,
+        f"🧩 <b>{strategy.name}</b>   {wr}".rstrip(),
+        f"🧠 ML <b>{ml_conf * 100:.0f}%</b>{adx_str}",
+        "",
+        f"📍 <b>Entry</b>    <code>{fmt(trade.entry)}</code>",
+        f"🛡 <b>Stop</b>     <code>{fmt(trade.sl)}</code>   <b>−{sl_move:.2f}%</b>   ·   −${sl_usd:.2f}",
+    ]
 
     if trade.tp is not None:
-        target_line = f"🎯 <b>TP</b>     <code>{fmt(trade.tp)}</code>   ·  R:R {strategy.tp_atr:g}:{strategy.sl_atr:g}"
+        tp_move, tp_usd, tp_acct = _leg(trade.entry, trade.tp)
+        lines.append(f"🎯 <b>Target</b>   <code>{fmt(trade.tp)}</code>   <b>+{tp_move:.2f}%</b>   ·   +${tp_usd:.2f}")
+        lines += [
+            _RULE,
+            f"💰 <b>Size</b>   ${margin:.0f} margin → ${notional:.0f} notional  ({config.ALLOC_PCT:.0f}% · {lev}×)",
+            f"📊 <b>If hit</b>   🎯 +${tp_usd:.2f} (+{tp_acct:.1f}%)    🛡 −${sl_usd:.2f} (−{sl_acct:.1f}%)",
+        ]
     else:
-        anchor = "VWAP" if strategy.mean_price_key == "vwap" else "mean"
+        anchor = "VWAP" if strategy.mean_price_key == "vwap" else "the mean"
         tgt = fmt(trade.target) if trade.target else "—"
-        target_line = f"🎯 <b>Target</b> <code>{tgt}</code>   ·  exit at {anchor} (dynamic)"
+        lines.append(f"🎯 <b>Exit</b>     ride back to {anchor} ≈ <code>{tgt}</code>  <i>(dynamic)</i>")
+        lines += [
+            _RULE,
+            f"💰 <b>Size</b>   ${margin:.0f} margin → ${notional:.0f} notional  ({config.ALLOC_PCT:.0f}% · {lev}×)",
+            f"📊 <b>Risk</b>   🛡 −${sl_usd:.2f} (−{sl_acct:.1f}%) if stopped  ·  profit taken at {anchor}",
+        ]
 
-    text = (
-        f"{emoji}━━━━━━━━━━━━━━━━━━━━━━{emoji}\n"
-        f"      <b>MiND-Shot</b>\n"
-        f"        <b>{side_t}</b>   ⚡<code>{lev}x</code>\n"
-        f"{emoji}━━━━━━━━━━━━━━━━━━━━━━{emoji}\n\n"
-        f"📊  <code>{trade.asset}/USD</code>   ⏱  <b>{trade.tf}</b>\n"
-        f"🧩  <i>{strategy.name}</i>\n"
-        f"🧠  ML Confidence  ·  <b>{ml_conf * 100:.1f}%</b>\n\n"
-        f"▰▰▰▰  <b>POSITION</b>  ▰▰▰▰▰▰\n"
-        f"📍 <b>Entry</b>   <code>{fmt(trade.entry)}</code>\n"
-        f"🛡 <b>Stop</b>    <code>{fmt(trade.sl)}</code>   ·  {strategy.sl_atr:g}×ATR\n"
-        f"{target_line}\n\n"
-        f"<i>💡 {strategy.description}</i>"
-    )
+    lines += [
+        "",
+        f"💡 <i>{strategy.description}</i>",
+        "⚠️ <i>Educational, not financial advice — manage your own risk.</i>",
+    ]
+    text = "\n".join(lines)
+
     payload = {
         "type": "entry",
         "side": trade.side.upper(),
@@ -120,6 +140,10 @@ def entry_alert(trade: Trade, strategy: Strategy, ml_conf: float) -> Tuple[Dict[
         "tp1": trade.tp,                # back-compat: single TP exposed as tp1
         "tp2": None, "tp3": None, "tp4": None,
         "target": trade.target,
+        "risk_usd": round(sl_usd, 2),
+        "margin_usd": round(margin, 2),
+        "notional_usd": round(notional, 2),
+        "adx": round(adx, 1) if adx is not None else None,
         "text": text,
     }
     return payload, text
@@ -128,23 +152,25 @@ def entry_alert(trade: Trade, strategy: Strategy, ml_conf: float) -> Tuple[Dict[
 def event_alert(event: Dict[str, Any], trade: Trade, strategy: Strategy) -> Tuple[Dict[str, Any], str]:
     """Build the (payload, html_text) pair for a TP / SL / exit event."""
     lev = config.LEVERAGE
+    _, notional = _sizing()
     kind = event["type"]
     price = event["price"]
     sign = 1 if trade.side == Side.LONG.value else -1
-    pct = (price - trade.entry) / trade.entry * 100 * sign
-    lev_pct = pct * lev
-    emoji = "🛡" if kind == "sl" else ("🚀" if kind == "tp" else "🎯")
-    label = {"sl": "STOP", "tp": "TAKE-PROFIT", "exit": "EXIT"}.get(kind, kind.upper())
-    sign_str = "+" if lev_pct >= 0 else ""
+    move = (price - trade.entry) / trade.entry * 100 * sign        # signed price move
+    usd = notional * move / 100.0
+    acct = (usd / config.ACCOUNT_USD * 100.0) if config.ACCOUNT_USD else 0.0
+    margin_pct = move * lev                                         # % on the margin at lev
+
+    emoji = "🛡" if kind == "sl" else ("🎯" if kind == "tp" else "✅")
+    label = {"sl": "STOP HIT", "tp": "TAKE-PROFIT HIT", "exit": "EXIT · reverted to mean"}.get(kind, kind.upper())
+    money = f"{'+' if usd >= 0 else '−'}${abs(usd):.2f}"
 
     text = (
-        f"{emoji}━━━━━━━━━━━━━━━━━━━━━{emoji}\n"
-        f"     <b>{label} HIT</b>\n"
-        f"     <b>{sign_str}{lev_pct:.2f}%</b>   @  ⚡<code>{lev}x</code>\n"
-        f"{emoji}━━━━━━━━━━━━━━━━━━━━━{emoji}\n\n"
-        f"📊  <code>{trade.asset}/USD</code>  ·  <b>{trade.tf}</b>\n"
-        f"🧩  <i>{strategy.name}</i>\n"
-        f"💰  Price:  <code>{fmt(price)}</code>"
+        f"{emoji} <b>{label}</b>   ·   <code>{trade.asset}/USD</code>  <b>{trade.tf}</b>\n"
+        f"{_RULE}\n"
+        f"🧩 <i>{strategy.name}</i>\n"
+        f"💰 <b>{money}</b>   ({acct:+.1f}% acct  ·  {margin_pct:+.0f}% on margin @{lev}×)\n"
+        f"📍 @ <code>{fmt(price)}</code>"
     )
     payload = {
         "type": "event",
@@ -152,15 +178,36 @@ def event_alert(event: Dict[str, Any], trade: Trade, strategy: Strategy) -> Tupl
         "asset": trade.asset,
         "tf": trade.tf,
         "strategy": strategy.id,
-        "side": trade.side.upper(),     # back-compat aliases for v1 webhook mappings
+        "side": trade.side.upper(),     # back-compat aliases
         "entry": trade.entry,
         "leverage": lev,
         "price": price,
-        "pct": round(pct, 2),
-        "pct_leveraged": round(lev_pct, 2),
+        "pnl_usd": round(usd, 2),
+        "pct": round(move, 2),
+        "pct_leveraged": round(margin_pct, 2),
         "text": text,
     }
     return payload, text
 
 
-__all__ = ["deliver", "fmt", "entry_alert", "event_alert", "heartbeat_alert"]
+def sample_alert() -> Tuple[Dict[str, Any], str]:
+    """A realistic, clearly-labelled SAMPLE entry — shows exactly what a real
+    signal looks like and doubles as a delivery test."""
+    strat = STRATEGY_BY_ID["vwap_bracket_eth"]
+    entry, atr = 1800.0, 31.0
+    trade = Trade(
+        strategy_id=strat.id, asset=strat.asset, tf=strat.timeframe, side="long",
+        entry=entry, init_sl=entry - 1.5 * atr, sl=entry - 1.5 * atr, tp=entry + 0.75 * atr,
+        exit_style="bracket", opened_bar=0, last_bar=0, ml_snap={},
+    )
+    _, text = entry_alert(trade, strat, 0.58, adx=18.0)
+    banner = (
+        "🧪 <b>SAMPLE ALERT</b> — this is exactly what a real signal looks like.\n"
+        "Not a live trade. Real alerts fire only on a 4h close with ADX&lt;25.\n"
+        f"{_RULE}\n"
+    )
+    text = banner + text
+    return {"type": "test", "text": text}, text
+
+
+__all__ = ["deliver", "fmt", "entry_alert", "event_alert", "sample_alert"]
