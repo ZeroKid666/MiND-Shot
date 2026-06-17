@@ -1,33 +1,22 @@
 name: MiND-Shot Engine
 
-# ── WHY TWO CRONS? ────────────────────────────────────────────────────────────
-# GitHub Actions cron fires every 5 min at best (*/1 is silently capped).
-# During peak load it can stretch to 10-15 min.
-#
-# Solution: two staggered schedules offset by 2 min + each run does 7 internal
-# polls × 50s ≈ 6 min coverage. Timeline:
-#
-#   Cron A fires: :00 → polls :00 :50 1:40 2:30 3:20 4:10 5:00
-#   Cron B fires: :02 → polls :02 :52 1:42 2:32 3:22 4:12 5:02
-#   Cron A fires: :05 → polls :05 ...
-#
-# Even if GitHub delays either cron by 3-4 min, the other fills the gap.
-# Worst-case blind spot: ~1-2 min instead of 10-15 min with a single cron.
-#
-# Each run uses a unique concurrency group (run_id) so A and B execute
-# simultaneously and never cancel each other.
+# ── SCHEDULE ──────────────────────────────────────────────────────────────────
+# Fires every minute. Note: GitHub Actions throttles scheduled workflows under
+# load — a 1-minute cron commonly runs every ~5 min and can stretch further at
+# peak; this is a GitHub limitation, not a config error. Each run does a single
+# fast poll, and the commit step skips when state is unchanged, so minutes with
+# no new 4h candle and no open-trade change cost almost nothing.
 # ──────────────────────────────────────────────────────────────────────────────
 
 on:
   schedule:
-    - cron: '*/5 * * * *'       # Cron A — fires at :00 :05 :10 … (offset 0)
-    - cron: '2-57/5 * * * *'    # Cron B — fires at :02 :07 :12 … (offset +2 min)
-  workflow_dispatch:             # Manual trigger still works
+    - cron: '* * * * *'          # every minute (subject to GitHub throttling)
+  workflow_dispatch:             # manual trigger still works
 
 permissions:
   contents: write
 
-# Unique group per run so Cron A and Cron B never cancel each other.
+# Unique group per run so overlapping minute-runs never cancel each other.
 concurrency:
   group: mind-shot-${{ github.run_id }}
   cancel-in-progress: false
@@ -35,9 +24,8 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
-    # 7 polls × 50s = 350s ≈ 6 min of engine work
-    # + ~30s setup + ~30s commit/push + retry headroom = 8 min is safe
-    timeout-minutes: 8
+    # One poll + checkout + commit/push (with retry headroom). 5 min is ample.
+    timeout-minutes: 5
 
     steps:
       - name: Checkout repo (with state)
@@ -57,10 +45,11 @@ jobs:
           TG_TOKEN:          ${{ secrets.TG_TOKEN }}            # OR Telegram bot token
           TG_CHAT_ID:        ${{ secrets.TG_CHAT_ID }}          # OR Telegram chat id
           LEVERAGE:          ${{ vars.LEVERAGE || '10' }}       # Repo variable (not secret)
-          # 7 polls × 50s = 350s ≈ 6 min of coverage per run.
-          # With two crons staggered by 2 min, every minute has at least one active poll.
-          POLLS_PER_RUN:     '7'
-          POLL_INTERVAL_SEC: '50'
+          ACCOUNT_USD:       ${{ vars.ACCOUNT_USD || '100' }}   # wallet size for sizing display
+          ALLOC_PCT:         ${{ vars.ALLOC_PCT || '15' }}      # % of wallet per trade
+          # Cron fires every minute, so a single poll per run is enough.
+          POLLS_PER_RUN:     '1'
+          POLL_INTERVAL_SEC: '60'
           # Electron JSON output — disabled on GitHub Actions (stdout not read there)
           OUTPUT_JSON:       '0'
         run: python mind_shot_engine.py

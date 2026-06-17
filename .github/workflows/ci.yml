@@ -1,0 +1,51 @@
+name: CI
+
+# Fast, dependency-free checks: unit tests + the living backtest that proves the
+# five strategies still reproduce the documented edge on real data.
+
+on:
+  push:
+    branches: [main, "feat/**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Byte-compile (syntax gate)
+        run: python -m compileall -q mind_shot mind_shot_engine.py ml_trainer.py
+
+      - name: Unit tests
+        run: python -m unittest discover -s tests -p "test_*.py" -v
+
+  validate-strategies:
+    # Network-dependent regression test — kept separate so a market-data hiccup
+    # never blocks a pure-code PR.
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Backtest validation (strategies reproduce the playbook)
+        run: python -m mind_shot.backtest
