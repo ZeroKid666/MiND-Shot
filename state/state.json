@@ -726,8 +726,8 @@
       "exit_style": "bracket",
       "init_sl": 1629.1411923117553,
       "last_bar": 1781870400,
-      "live_pnl_leveraged": 1.51,
-      "live_pnl_pct": 0.151,
+      "live_pnl_leveraged": 6.4,
+      "live_pnl_pct": 0.64,
       "ml_snap": {
         "rsi_b": 1,
         "ses_b": 0,
@@ -790,8 +790,8 @@
       "exit_style": "revert",
       "init_sl": 61596.089856895465,
       "last_bar": 1781870400,
-      "live_pnl_leveraged": -21.05,
-      "live_pnl_pct": -2.105,
+      "live_pnl_leveraged": -19.62,
+      "live_pnl_pct": -1.962,
       "ml_snap": {
         "rsi_b": 1,
         "ses_b": 2,
@@ -802,7 +802,7 @@
       "side": "long",
       "sl": 61596.089856895465,
       "strategy_id": "zscore_revert_btc",
-      "target": 64161.95,
+      "target": 64166.55,
       "tf": "4h",
       "tp": null
     },
