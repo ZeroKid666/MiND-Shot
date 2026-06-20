@@ -2,10 +2,11 @@
   "__global": {
     "account_size": 100.0,
     "cooldown_minutes_after_sl": 240,
-    "cur_loss_streak": 0,
-    "cur_win_streak": 1,
+    "cur_loss_streak": 1,
+    "cur_win_streak": 0,
     "daily_loss_limit_r": -3.0,
     "daily_r": {
+      "2026-06-17": -0.043,
       "2026-06-19": 0.375
     },
     "funding_pause_threshold": 0.05,
@@ -289,7 +290,7 @@
         ],
         [
           0,
-          0
+          1
         ],
         [
           0,
@@ -710,19 +711,56 @@
         "strategy": "stoch_bracket_eth",
         "tf": "4h",
         "won": true
+      },
+      {
+        "asset": "BTC",
+        "closed_at": 1781956800,
+        "entry": 64300.6,
+        "exit": 64183.6,
+        "kind": "exit",
+        "opened_at": 1781726400,
+        "pnl_r": -0.043,
+        "side": "long",
+        "strategy": "zscore_revert_btc",
+        "tf": "4h",
+        "won": false
       }
     ],
     "last_weekly_summary": null,
     "max_concurrent_trades": 4,
-    "max_loss_streak": 0,
+    "max_loss_streak": 1,
     "max_win_streak": 1,
     "paper_mode": false,
     "risk_per_trade_pct": 15.0,
-    "sl_cooldowns": {}
+    "sl_cooldowns": {
+      "zscore_revert_btc": 1781971501.462314
+    }
   },
   "rsi2_bracket_eth": {
-    "active_trade": null,
-    "last_signal_bar": 1781942400,
+    "active_trade": {
+      "asset": "ETH",
+      "duration_sec": 0,
+      "entry": 1738.3,
+      "exit_style": "bracket",
+      "init_sl": 1777.88648882864,
+      "last_bar": 1781971200,
+      "live_pnl_leveraged": 0.0,
+      "live_pnl_pct": 0.0,
+      "ml_snap": {
+        "rsi_b": 2,
+        "ses_b": 1,
+        "strat_b": 1,
+        "vol_b": 1
+      },
+      "opened_bar": 1781971200,
+      "side": "short",
+      "sl": 1777.88648882864,
+      "strategy_id": "rsi2_bracket_eth",
+      "target": null,
+      "tf": "4h",
+      "tp": 1718.50675558568
+    },
+    "last_signal_bar": 1781956800,
     "ml": {
       "gross_loss": 0.0,
       "gross_profit": 0.0,
@@ -735,8 +773,30 @@
     }
   },
   "stoch_bracket_eth": {
-    "active_trade": null,
-    "last_signal_bar": 1781942400,
+    "active_trade": {
+      "asset": "ETH",
+      "duration_sec": 0,
+      "entry": 1738.3,
+      "exit_style": "bracket",
+      "init_sl": 1791.0819851048534,
+      "last_bar": 1781971200,
+      "live_pnl_leveraged": 0.0,
+      "live_pnl_pct": 0.0,
+      "ml_snap": {
+        "rsi_b": 2,
+        "ses_b": 1,
+        "strat_b": 3,
+        "vol_b": 1
+      },
+      "opened_bar": 1781971200,
+      "side": "short",
+      "sl": 1791.0819851048534,
+      "strategy_id": "stoch_bracket_eth",
+      "target": null,
+      "tf": "4h",
+      "tp": 1718.50675558568
+    },
+    "last_signal_bar": 1781956800,
     "ml": {
       "gross_loss": 0.0,
       "gross_profit": 0.37499999999999867,
@@ -770,7 +830,7 @@
   },
   "vwap_bracket_eth": {
     "active_trade": null,
-    "last_signal_bar": 1781942400,
+    "last_signal_bar": 1781956800,
     "ml": {
       "gross_loss": 0.0,
       "gross_profit": 0.0,
@@ -784,7 +844,7 @@
   },
   "vwap_revert_eth": {
     "active_trade": null,
-    "last_signal_bar": 1781942400,
+    "last_signal_bar": 1781956800,
     "ml": {
       "gross_loss": 0.0,
       "gross_profit": 0.0,
@@ -797,38 +857,36 @@
     }
   },
   "zscore_revert_btc": {
-    "active_trade": {
-      "asset": "BTC",
-      "duration_sec": 230400,
-      "entry": 64300.6,
-      "exit_style": "revert",
-      "init_sl": 61596.089856895465,
-      "last_bar": 1781942400,
-      "live_pnl_leveraged": -13.58,
-      "live_pnl_pct": -1.358,
-      "ml_snap": {
-        "rsi_b": 1,
-        "ses_b": 2,
-        "strat_b": 4,
-        "vol_b": 1
-      },
-      "opened_bar": 1781726400,
-      "side": "long",
-      "sl": 61596.089856895465,
-      "strategy_id": "zscore_revert_btc",
-      "target": 63620.82500000001,
-      "tf": "4h",
-      "tp": null
-    },
-    "last_signal_bar": 1781712000,
+    "active_trade": null,
+    "last_signal_bar": 1781956800,
     "ml": {
-      "gross_loss": 0.0,
+      "gross_loss": 0.04326106903252157,
       "gross_profit": 0.0,
-      "rsi": {},
-      "ses": {},
-      "strat": {},
-      "total_trades": 0,
-      "vol": {},
+      "rsi": {
+        "1": [
+          0,
+          2
+        ]
+      },
+      "ses": {
+        "2": [
+          0,
+          2
+        ]
+      },
+      "strat": {
+        "4": [
+          0,
+          2
+        ]
+      },
+      "total_trades": 1,
+      "vol": {
+        "1": [
+          0,
+          2
+        ]
+      },
       "wins": 0
     }
   }
