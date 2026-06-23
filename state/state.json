@@ -785,8 +785,8 @@
       "exit_style": "bracket",
       "init_sl": 1643.3308239275846,
       "last_bar": 1782201600,
-      "live_pnl_leveraged": 0.0,
-      "live_pnl_pct": 0.0,
+      "live_pnl_leveraged": -12.73,
+      "live_pnl_pct": -1.273,
       "ml_snap": {
         "rsi_b": 1,
         "ses_b": 0,
@@ -841,8 +841,8 @@
       "exit_style": "bracket",
       "init_sl": 1630.6077652367796,
       "last_bar": 1782201600,
-      "live_pnl_leveraged": 0.0,
-      "live_pnl_pct": 0.0,
+      "live_pnl_leveraged": -12.73,
+      "live_pnl_pct": -1.273,
       "ml_snap": {
         "rsi_b": 1,
         "ses_b": 0,
@@ -905,8 +905,8 @@
       "exit_style": "bracket",
       "init_sl": 1643.3308239275846,
       "last_bar": 1782201600,
-      "live_pnl_leveraged": 0.0,
-      "live_pnl_pct": 0.0,
+      "live_pnl_leveraged": -12.73,
+      "live_pnl_pct": -1.273,
       "ml_snap": {
         "rsi_b": 1,
         "ses_b": 0,
@@ -941,8 +941,8 @@
       "exit_style": "revert",
       "init_sl": 1630.6077652367796,
       "last_bar": 1782201600,
-      "live_pnl_leveraged": 0.0,
-      "live_pnl_pct": 0.0,
+      "live_pnl_leveraged": -12.73,
+      "live_pnl_pct": -1.273,
       "ml_snap": {
         "rsi_b": 1,
         "ses_b": 0,
