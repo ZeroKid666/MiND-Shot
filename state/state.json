@@ -898,8 +898,8 @@
       "exit_style": "bracket",
       "init_sl": 1710.9001483363666,
       "last_bar": 1782993600,
-      "live_pnl_leveraged": 0.0,
-      "live_pnl_pct": 0.0,
+      "live_pnl_leveraged": -30.74,
+      "live_pnl_pct": -3.074,
       "ml_snap": {
         "rsi_b": 2,
         "ses_b": 1,
@@ -962,8 +962,8 @@
       "exit_style": "bracket",
       "init_sl": 1695.7626112522748,
       "last_bar": 1782993600,
-      "live_pnl_leveraged": 0.0,
-      "live_pnl_pct": 0.0,
+      "live_pnl_leveraged": -30.74,
+      "live_pnl_pct": -3.074,
       "ml_snap": {
         "rsi_b": 2,
         "ses_b": 1,
@@ -1018,8 +1018,8 @@
       "exit_style": "revert",
       "init_sl": 1710.9001483363666,
       "last_bar": 1782993600,
-      "live_pnl_leveraged": 0.0,
-      "live_pnl_pct": 0.0,
+      "live_pnl_leveraged": -30.74,
+      "live_pnl_pct": -3.074,
       "ml_snap": {
         "rsi_b": 2,
         "ses_b": 1,
