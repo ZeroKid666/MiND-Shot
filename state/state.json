@@ -898,8 +898,8 @@
       "exit_style": "bracket",
       "init_sl": 1710.9001483363666,
       "last_bar": 1782993600,
-      "live_pnl_leveraged": -29.49,
-      "live_pnl_pct": -2.949,
+      "live_pnl_leveraged": -33.63,
+      "live_pnl_pct": -3.363,
       "ml_snap": {
         "rsi_b": 2,
         "ses_b": 1,
@@ -962,8 +962,8 @@
       "exit_style": "bracket",
       "init_sl": 1695.7626112522748,
       "last_bar": 1782993600,
-      "live_pnl_leveraged": -29.49,
-      "live_pnl_pct": -2.949,
+      "live_pnl_leveraged": -33.63,
+      "live_pnl_pct": -3.363,
       "ml_snap": {
         "rsi_b": 2,
         "ses_b": 1,
@@ -1018,8 +1018,8 @@
       "exit_style": "revert",
       "init_sl": 1710.9001483363666,
       "last_bar": 1782993600,
-      "live_pnl_leveraged": -29.49,
-      "live_pnl_pct": -2.949,
+      "live_pnl_leveraged": -33.63,
+      "live_pnl_pct": -3.363,
       "ml_snap": {
         "rsi_b": 2,
         "ses_b": 1,
@@ -1030,7 +1030,7 @@
       "side": "short",
       "sl": 1710.9001483363666,
       "strategy_id": "vwap_revert_eth",
-      "target": 1603.557847864921,
+      "target": 1604.236406144636,
       "tf": "4h",
       "tp": null
     },
