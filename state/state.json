@@ -2,8 +2,8 @@
   "__global": {
     "account_size": 100.0,
     "cooldown_minutes_after_sl": 240,
-    "cur_loss_streak": 0,
-    "cur_win_streak": 1,
+    "cur_loss_streak": 1,
+    "cur_win_streak": 0,
     "daily_loss_limit_r": -3.0,
     "daily_r": {
       "2026-06-17": -0.043,
@@ -11,7 +11,8 @@
       "2026-06-20": 0.875,
       "2026-06-22": 0.356,
       "2026-06-23": -4.0,
-      "2026-06-24": 0.216
+      "2026-06-24": 0.216,
+      "2026-07-02": -1.0
     },
     "funding_pause_threshold": 0.05,
     "heatmap": [
@@ -360,7 +361,7 @@
         ],
         [
           0,
-          0
+          1
         ],
         [
           0,
@@ -832,6 +833,19 @@
         "strategy": "zscore_revert_btc",
         "tf": "4h",
         "won": true
+      },
+      {
+        "asset": "ETH",
+        "closed_at": 1783008000,
+        "entry": 1650.35,
+        "exit": 1695.7626112522748,
+        "kind": "sl",
+        "opened_at": 1782993600,
+        "pnl_r": -1.0,
+        "side": "short",
+        "strategy": "vwap_bracket_eth",
+        "tf": "4h",
+        "won": false
       }
     ],
     "last_weekly_summary": null,
@@ -843,14 +857,14 @@
     "sl_cooldowns": {
       "rsi2_bracket_eth": 1782323825.843138,
       "stoch_bracket_eth": 1782323826.412027,
-      "vwap_bracket_eth": 1782323825.577963,
+      "vwap_bracket_eth": 1783023229.419876,
       "vwap_revert_eth": 1782323826.14818,
       "zscore_revert_btc": 1781971501.462314
     }
   },
   "rsi2_bracket_eth": {
     "active_trade": null,
-    "last_signal_bar": 1782993600,
+    "last_signal_bar": 1783008000,
     "ml": {
       "gross_loss": 1.0,
       "gross_profit": 0.5,
@@ -893,13 +907,13 @@
   "stoch_bracket_eth": {
     "active_trade": {
       "asset": "ETH",
-      "duration_sec": 14400,
+      "duration_sec": 28800,
       "entry": 1650.35,
       "exit_style": "bracket",
       "init_sl": 1710.9001483363666,
-      "last_bar": 1782993600,
-      "live_pnl_leveraged": -33.63,
-      "live_pnl_pct": -3.363,
+      "last_bar": 1783008000,
+      "live_pnl_leveraged": -29.97,
+      "live_pnl_pct": -2.997,
       "ml_snap": {
         "rsi_b": 2,
         "ses_b": 1,
@@ -955,35 +969,17 @@
     }
   },
   "vwap_bracket_eth": {
-    "active_trade": {
-      "asset": "ETH",
-      "duration_sec": 14400,
-      "entry": 1650.35,
-      "exit_style": "bracket",
-      "init_sl": 1695.7626112522748,
-      "last_bar": 1782993600,
-      "live_pnl_leveraged": -33.63,
-      "live_pnl_pct": -3.363,
-      "ml_snap": {
-        "rsi_b": 2,
-        "ses_b": 1,
-        "strat_b": 0,
-        "vol_b": 1
-      },
-      "opened_bar": 1782993600,
-      "side": "short",
-      "sl": 1695.7626112522748,
-      "strategy_id": "vwap_bracket_eth",
-      "target": null,
-      "tf": "4h",
-      "tp": 1627.6436943738624
-    },
-    "last_signal_bar": 1782979200,
+    "active_trade": null,
+    "last_signal_bar": 1783008000,
     "ml": {
-      "gross_loss": 1.0,
+      "gross_loss": 2.0,
       "gross_profit": 0.0,
       "rsi": {
         "1": [
+          0,
+          2
+        ],
+        "2": [
           0,
           2
         ]
@@ -992,19 +988,23 @@
         "0": [
           0,
           2
+        ],
+        "1": [
+          0,
+          2
         ]
       },
       "strat": {
         "0": [
           0,
-          2
+          4
         ]
       },
-      "total_trades": 1,
+      "total_trades": 2,
       "vol": {
         "1": [
           0,
-          2
+          4
         ]
       },
       "wins": 0
@@ -1013,13 +1013,13 @@
   "vwap_revert_eth": {
     "active_trade": {
       "asset": "ETH",
-      "duration_sec": 14400,
+      "duration_sec": 28800,
       "entry": 1650.35,
       "exit_style": "revert",
       "init_sl": 1710.9001483363666,
-      "last_bar": 1782993600,
-      "live_pnl_leveraged": -33.63,
-      "live_pnl_pct": -3.363,
+      "last_bar": 1783008000,
+      "live_pnl_leveraged": -29.97,
+      "live_pnl_pct": -2.997,
       "ml_snap": {
         "rsi_b": 2,
         "ses_b": 1,
@@ -1030,7 +1030,7 @@
       "side": "short",
       "sl": 1710.9001483363666,
       "strategy_id": "vwap_revert_eth",
-      "target": 1604.236406144636,
+      "target": 1611.5292886393895,
       "tf": "4h",
       "tp": null
     },
@@ -1068,7 +1068,7 @@
   },
   "zscore_revert_btc": {
     "active_trade": null,
-    "last_signal_bar": 1782993600,
+    "last_signal_bar": 1783008000,
     "ml": {
       "gross_loss": 0.04326106903252157,
       "gross_profit": 0.5729519240339108,
