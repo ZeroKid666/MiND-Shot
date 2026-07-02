@@ -850,7 +850,7 @@
   },
   "rsi2_bracket_eth": {
     "active_trade": null,
-    "last_signal_bar": 1782979200,
+    "last_signal_bar": 1782993600,
     "ml": {
       "gross_loss": 1.0,
       "gross_profit": 0.5,
@@ -893,13 +893,13 @@
   "stoch_bracket_eth": {
     "active_trade": {
       "asset": "ETH",
-      "duration_sec": 0,
+      "duration_sec": 14400,
       "entry": 1650.35,
       "exit_style": "bracket",
       "init_sl": 1710.9001483363666,
       "last_bar": 1782993600,
-      "live_pnl_leveraged": -30.74,
-      "live_pnl_pct": -3.074,
+      "live_pnl_leveraged": -29.49,
+      "live_pnl_pct": -2.949,
       "ml_snap": {
         "rsi_b": 2,
         "ses_b": 1,
@@ -957,13 +957,13 @@
   "vwap_bracket_eth": {
     "active_trade": {
       "asset": "ETH",
-      "duration_sec": 0,
+      "duration_sec": 14400,
       "entry": 1650.35,
       "exit_style": "bracket",
       "init_sl": 1695.7626112522748,
       "last_bar": 1782993600,
-      "live_pnl_leveraged": -30.74,
-      "live_pnl_pct": -3.074,
+      "live_pnl_leveraged": -29.49,
+      "live_pnl_pct": -2.949,
       "ml_snap": {
         "rsi_b": 2,
         "ses_b": 1,
@@ -1013,13 +1013,13 @@
   "vwap_revert_eth": {
     "active_trade": {
       "asset": "ETH",
-      "duration_sec": 0,
+      "duration_sec": 14400,
       "entry": 1650.35,
       "exit_style": "revert",
       "init_sl": 1710.9001483363666,
       "last_bar": 1782993600,
-      "live_pnl_leveraged": -30.74,
-      "live_pnl_pct": -3.074,
+      "live_pnl_leveraged": -29.49,
+      "live_pnl_pct": -2.949,
       "ml_snap": {
         "rsi_b": 2,
         "ses_b": 1,
@@ -1030,7 +1030,7 @@
       "side": "short",
       "sl": 1710.9001483363666,
       "strategy_id": "vwap_revert_eth",
-      "target": 1596.5873806346506,
+      "target": 1603.557847864921,
       "tf": "4h",
       "tp": null
     },
@@ -1068,7 +1068,7 @@
   },
   "zscore_revert_btc": {
     "active_trade": null,
-    "last_signal_bar": 1782979200,
+    "last_signal_bar": 1782993600,
     "ml": {
       "gross_loss": 0.04326106903252157,
       "gross_profit": 0.5729519240339108,
