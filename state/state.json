@@ -912,8 +912,8 @@
       "exit_style": "bracket",
       "init_sl": 1710.9001483363666,
       "last_bar": 1783008000,
-      "live_pnl_leveraged": -29.97,
-      "live_pnl_pct": -2.997,
+      "live_pnl_leveraged": -30.09,
+      "live_pnl_pct": -3.009,
       "ml_snap": {
         "rsi_b": 2,
         "ses_b": 1,
@@ -1018,8 +1018,8 @@
       "exit_style": "revert",
       "init_sl": 1710.9001483363666,
       "last_bar": 1783008000,
-      "live_pnl_leveraged": -29.97,
-      "live_pnl_pct": -2.997,
+      "live_pnl_leveraged": -30.09,
+      "live_pnl_pct": -3.009,
       "ml_snap": {
         "rsi_b": 2,
         "ses_b": 1,
@@ -1030,7 +1030,7 @@
       "side": "short",
       "sl": 1710.9001483363666,
       "strategy_id": "vwap_revert_eth",
-      "target": 1611.5292886393895,
+      "target": 1613.9176990069,
       "tf": "4h",
       "tp": null
     },
