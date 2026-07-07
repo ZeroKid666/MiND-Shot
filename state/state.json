@@ -1064,8 +1064,8 @@
       "exit_style": "revert",
       "init_sl": 66368.52074074758,
       "last_bar": 1783440000,
-      "live_pnl_leveraged": 0.0,
-      "live_pnl_pct": 0.0,
+      "live_pnl_leveraged": -2.14,
+      "live_pnl_pct": -0.214,
       "ml_snap": {
         "rsi_b": 2,
         "ses_b": 1,
