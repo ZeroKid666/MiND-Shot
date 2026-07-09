@@ -1092,8 +1092,8 @@
       "exit_style": "revert",
       "init_sl": 59836.31126354645,
       "last_bar": 1783598400,
-      "live_pnl_leveraged": 6.85,
-      "live_pnl_pct": 0.685,
+      "live_pnl_leveraged": 16.76,
+      "live_pnl_pct": 1.676,
       "ml_snap": {
         "rsi_b": 1,
         "ses_b": 1,
@@ -1104,7 +1104,7 @@
       "side": "long",
       "sl": 59836.31126354645,
       "strategy_id": "zscore_revert_btc",
-      "target": 62984.795,
+      "target": 63015.64999999999,
       "tf": "4h",
       "tp": null
     },
