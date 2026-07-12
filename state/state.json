@@ -1630,13 +1630,13 @@
   "zscore_revert_btc": {
     "active_trade": {
       "asset": "BTC",
-      "duration_sec": 221229,
+      "duration_sec": 224719,
       "entry": 63985.6,
       "exit_style": "revert",
       "init_sl": 66287.04310315913,
       "last_bar": 1783872000,
-      "live_pnl_leveraged": -2.03,
-      "live_pnl_pct": -0.203,
+      "live_pnl_leveraged": 2.37,
+      "live_pnl_pct": 0.237,
       "ml_snap": {
         "rsi_b": 2,
         "ses_b": 0,
@@ -1647,7 +1647,7 @@
       "side": "short",
       "sl": 66287.04310315913,
       "strategy_id": "zscore_revert_btc",
-      "target": 64022.135000000024,
+      "target": 64008.07000000002,
       "tf": "4h",
       "tp": null
     },
