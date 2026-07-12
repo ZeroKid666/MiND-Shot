@@ -947,6 +947,20 @@
     "max_concurrent_trades": 4,
     "max_loss_streak": 4,
     "max_win_streak": 3,
+    "ml_shared": {
+      "dims": {
+        "rsi": {},
+        "ses": {},
+        "vol": {}
+      },
+      "dl": 0.0,
+      "dw": 0.0,
+      "ftrl": {
+        "n": {},
+        "z": {}
+      },
+      "version": 1
+    },
     "paper_mode": false,
     "risk_per_trade_pct": 15.0,
     "sl_cooldowns": {
@@ -1017,10 +1031,11 @@
       "gross_loss": 2.0,
       "gross_profit": 0.5,
       "hedge": {
-        "base": 0.55,
-        "buckets": 0.2,
-        "ftrl": 0.2,
-        "trained": 0.05
+        "base": 0.45833333333333337,
+        "buckets": 0.16666666666666669,
+        "ftrl": 0.16666666666666669,
+        "pool": 0.16666666666666669,
+        "trained": 0.04166666666666667
       },
       "legacy_v1": {
         "rsi": {
@@ -1180,10 +1195,11 @@
       "gross_loss": 3.0,
       "gross_profit": 1.1249999999999991,
       "hedge": {
-        "base": 0.55,
-        "buckets": 0.2,
-        "ftrl": 0.2,
-        "trained": 0.05
+        "base": 0.45833333333333337,
+        "buckets": 0.16666666666666669,
+        "ftrl": 0.16666666666666669,
+        "pool": 0.16666666666666669,
+        "trained": 0.04166666666666667
       },
       "legacy_v1": {
         "rsi": {
@@ -1343,10 +1359,11 @@
       "gross_loss": 2.0,
       "gross_profit": 0.0,
       "hedge": {
-        "base": 0.55,
-        "buckets": 0.2,
-        "ftrl": 0.2,
-        "trained": 0.05
+        "base": 0.45833333333333337,
+        "buckets": 0.16666666666666669,
+        "ftrl": 0.16666666666666669,
+        "pool": 0.16666666666666669,
+        "trained": 0.04166666666666667
       },
       "legacy_v1": {
         "rsi": {
@@ -1506,10 +1523,11 @@
       "gross_loss": 2.0,
       "gross_profit": 0.0,
       "hedge": {
-        "base": 0.55,
-        "buckets": 0.2,
-        "ftrl": 0.2,
-        "trained": 0.05
+        "base": 0.45833333333333337,
+        "buckets": 0.16666666666666669,
+        "ftrl": 0.16666666666666669,
+        "pool": 0.16666666666666669,
+        "trained": 0.04166666666666667
       },
       "legacy_v1": {
         "rsi": {
@@ -1612,13 +1630,13 @@
   "zscore_revert_btc": {
     "active_trade": {
       "asset": "BTC",
-      "duration_sec": 170023,
+      "duration_sec": 170644,
       "entry": 63985.6,
       "exit_style": "revert",
       "init_sl": 66287.04310315913,
       "last_bar": 1783814400,
-      "live_pnl_leveraged": 2.83,
-      "live_pnl_pct": 0.283,
+      "live_pnl_leveraged": 1.95,
+      "live_pnl_pct": 0.195,
       "ml_snap": {
         "rsi_b": 2,
         "ses_b": 0,
@@ -1629,7 +1647,7 @@
       "side": "short",
       "sl": 66287.04310315913,
       "strategy_id": "zscore_revert_btc",
-      "target": 63722.24500000002,
+      "target": 63725.05000000001,
       "tf": "4h",
       "tp": null
     },
@@ -1695,10 +1713,11 @@
       "gross_loss": 0.04326106903252157,
       "gross_profit": 1.4395446859414764,
       "hedge": {
-        "base": 0.55,
-        "buckets": 0.2,
-        "ftrl": 0.2,
-        "trained": 0.05
+        "base": 0.45833333333333337,
+        "buckets": 0.16666666666666669,
+        "ftrl": 0.16666666666666669,
+        "pool": 0.16666666666666669,
+        "trained": 0.04166666666666667
       },
       "legacy_v1": {
         "rsi": {
