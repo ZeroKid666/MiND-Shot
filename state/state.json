@@ -1208,13 +1208,13 @@
   "rsi2_bracket_eth": {
     "active_trade": {
       "asset": "ETH",
-      "duration_sec": 71010,
+      "duration_sec": 76196,
       "entry": 1927.26,
       "exit_style": "bracket",
       "init_sl": 1962.4654289478988,
-      "last_bar": 1784649600,
-      "live_pnl_leveraged": 1.74,
-      "live_pnl_pct": 0.174,
+      "last_bar": 1784664000,
+      "live_pnl_leveraged": -5.73,
+      "live_pnl_pct": -0.573,
       "ml_snap": {
         "_pred": {
           "experts": {
@@ -1471,13 +1471,13 @@
   "stoch_bracket_eth": {
     "active_trade": {
       "asset": "ETH",
-      "duration_sec": 27810,
+      "duration_sec": 32996,
       "entry": 1931.93,
       "exit_style": "bracket",
       "init_sl": 1977.5281182694528,
-      "last_bar": 1784649600,
-      "live_pnl_leveraged": 4.15,
-      "live_pnl_pct": 0.415,
+      "last_bar": 1784664000,
+      "live_pnl_leveraged": -3.3,
+      "live_pnl_pct": -0.33,
       "ml_snap": {
         "_pred": {
           "experts": {
@@ -1737,7 +1737,7 @@
   },
   "vwap_bracket_eth": {
     "active_trade": null,
-    "last_signal_bar": 1784649600,
+    "last_signal_bar": 1784664000,
     "ml": {
       "cal": {
         "a": 0.9939391810500956,
@@ -1949,7 +1949,7 @@
   },
   "vwap_revert_eth": {
     "active_trade": null,
-    "last_signal_bar": 1784649600,
+    "last_signal_bar": 1784664000,
     "ml": {
       "cal": {
         "a": 1.004632036987167,
@@ -2160,13 +2160,13 @@
   "zscore_revert_btc": {
     "active_trade": {
       "asset": "BTC",
-      "duration_sec": 114210,
+      "duration_sec": 119396,
       "entry": 65605.4,
       "exit_style": "revert",
       "init_sl": 67531.54681397663,
-      "last_bar": 1784649600,
-      "live_pnl_leveraged": -12.85,
-      "live_pnl_pct": -1.285,
+      "last_bar": 1784664000,
+      "live_pnl_leveraged": -15.31,
+      "live_pnl_pct": -1.531,
       "ml_snap": {
         "_pred": {
           "experts": {
@@ -2208,7 +2208,7 @@
       "side": "short",
       "sl": 67531.54681397663,
       "strategy_id": "zscore_revert_btc",
-      "target": 65240.13000000003,
+      "target": 65347.16000000003,
       "tf": "4h",
       "tp": null
     },
