@@ -2443,13 +2443,13 @@
   "zscore_revert_btc": {
     "active_trade": {
       "asset": "BTC",
-      "duration_sec": 5445,
+      "duration_sec": 9308,
       "entry": 63859.8,
       "exit_style": "revert",
       "init_sl": 65553.30686411861,
       "last_bar": 1785787200,
-      "live_pnl_leveraged": 2.02,
-      "live_pnl_pct": 0.202,
+      "live_pnl_leveraged": 5.01,
+      "live_pnl_pct": 0.501,
       "ml_snap": {
         "_pred": {
           "experts": {
