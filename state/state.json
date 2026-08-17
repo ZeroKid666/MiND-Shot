@@ -2072,13 +2072,13 @@
   "stoch_bracket_eth": {
     "active_trade": {
       "asset": "ETH",
-      "duration_sec": 13259,
+      "duration_sec": 14378,
       "entry": 1904.69,
       "exit_style": "bracket",
       "init_sl": 1929.6933735585308,
       "last_bar": 1786968000,
-      "live_pnl_leveraged": -2.21,
-      "live_pnl_pct": -0.221,
+      "live_pnl_leveraged": -4.43,
+      "live_pnl_pct": -0.443,
       "ml_snap": {
         "_pred": {
           "experts": {
@@ -2361,13 +2361,13 @@
   "vwap_bracket_eth": {
     "active_trade": {
       "asset": "ETH",
-      "duration_sec": 27659,
+      "duration_sec": 28778,
       "entry": 1900.94,
       "exit_style": "bracket",
       "init_sl": 1919.1250324895825,
       "last_bar": 1786953600,
-      "live_pnl_leveraged": -4.19,
-      "live_pnl_pct": -0.419,
+      "live_pnl_leveraged": -6.41,
+      "live_pnl_pct": -0.641,
       "ml_snap": {
         "_pred": {
           "experts": {
@@ -2634,13 +2634,13 @@
   "vwap_revert_eth": {
     "active_trade": {
       "asset": "ETH",
-      "duration_sec": 42059,
+      "duration_sec": 43178,
       "entry": 1901.7,
       "exit_style": "revert",
       "init_sl": 1925.6995338311954,
       "last_bar": 1786953600,
-      "live_pnl_leveraged": -3.79,
-      "live_pnl_pct": -0.379,
+      "live_pnl_leveraged": -6.01,
+      "live_pnl_pct": -0.601,
       "ml_snap": {
         "_pred": {
           "experts": {
@@ -2682,7 +2682,7 @@
       "side": "short",
       "sl": 1925.6995338311954,
       "strategy_id": "vwap_revert_eth",
-      "target": 1885.7159134123244,
+      "target": 1885.9870064802262,
       "tf": "4h",
       "tp": null
     },
@@ -2905,13 +2905,13 @@
   "zscore_revert_btc": {
     "active_trade": {
       "asset": "BTC",
-      "duration_sec": 13259,
+      "duration_sec": 14378,
       "entry": 63631.3,
       "exit_style": "revert",
       "init_sl": 64579.35785645989,
       "last_bar": 1786968000,
-      "live_pnl_leveraged": -6.77,
-      "live_pnl_pct": -0.677,
+      "live_pnl_leveraged": -8.62,
+      "live_pnl_pct": -0.862,
       "ml_snap": {
         "_pred": {
           "experts": {
