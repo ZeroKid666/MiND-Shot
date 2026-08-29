@@ -1991,13 +1991,13 @@
   "rsi2_bracket_eth": {
     "active_trade": {
       "asset": "ETH",
-      "duration_sec": 0,
+      "duration_sec": 12059,
       "entry": 2453.05,
       "exit_style": "bracket",
       "init_sl": 2502.488255391545,
       "last_bar": 1788033600,
-      "live_pnl_leveraged": 0.0,
-      "live_pnl_pct": 0.0,
+      "live_pnl_leveraged": -1.02,
+      "live_pnl_pct": -0.102,
       "ml_snap": {
         "_pred": {
           "experts": {
