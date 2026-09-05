@@ -10,7 +10,7 @@ name: MiND-Shot Engine
 
 on:
   schedule:
-    - cron: '* * * * *'          # every minute (subject to GitHub throttling)
+    - cron: '*/5 * * * *'          # every minute (subject to GitHub throttling)
   workflow_dispatch:
     inputs:
       test_alert:
