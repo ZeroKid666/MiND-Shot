@@ -3,59 +3,22 @@
     "account_size": 100.0,
     "cooldown_minutes_after_sl": 240,
     "cur_loss_streak": 0,
-    "cur_win_streak": 6,
+    "cur_win_streak": 0,
     "daily_loss_limit_r": -3.0,
-    "daily_r": {
-      "2026-06-17": -0.043,
-      "2026-06-19": 0.375,
-      "2026-06-20": 0.875,
-      "2026-06-22": 0.356,
-      "2026-06-23": -4.0,
-      "2026-06-24": 0.216,
-      "2026-07-02": -3.0,
-      "2026-07-07": 0.488,
-      "2026-07-08": 0.379,
-      "2026-07-09": 0.375,
-      "2026-07-10": -1.911,
-      "2026-07-13": 1.462,
-      "2026-07-14": -4.0,
-      "2026-07-18": -1.0,
-      "2026-07-19": 0.375,
-      "2026-07-20": -3.034,
-      "2026-07-21": 1.75,
-      "2026-07-24": 1.77,
-      "2026-07-26": -3.0,
-      "2026-07-27": 3.6879999999999997,
-      "2026-07-28": 1.2269999999999999,
-      "2026-07-30": 0.375,
-      "2026-07-31": -2.2270000000000003,
-      "2026-08-01": 0.5,
-      "2026-08-02": 0.375,
-      "2026-08-03": -0.255,
-      "2026-08-04": 0.5,
-      "2026-08-05": 0.0,
-      "2026-08-06": -0.104,
-      "2026-08-07": 1.375,
-      "2026-08-10": 2.504,
-      "2026-08-11": 0.75,
-      "2026-08-12": 0.875,
-      "2026-08-14": 0.875,
-      "2026-08-16": 0.375,
-      "2026-08-17": -0.25,
-      "2026-08-18": -1.625,
-      "2026-08-19": -4.0,
-      "2026-08-29": -1.0,
-      "2026-08-30": 0.5,
-      "2026-08-31": 0.843,
-      "2026-09-01": -0.757,
-      "2026-09-02": -0.625,
-      "2026-09-03": 2.202
-    },
+    "daily_r": {},
     "funding_pause_threshold": 0.05,
     "heatmap": [
       [
         [
-          3,
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
           0
         ],
         [
@@ -71,23 +34,7 @@
           0
         ],
         [
-          4,
-          1
-        ],
-        [
           0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          1,
           0
         ],
         [
@@ -103,10 +50,6 @@
           0
         ],
         [
-          1,
-          4
-        ],
-        [
           0,
           0
         ],
@@ -116,60 +59,6 @@
         ],
         [
           0,
-          0
-        ],
-        [
-          5,
-          1
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          3,
-          1
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ]
-      ],
-      [
-        [
-          2,
-          1
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          2,
           0
         ],
         [
@@ -185,24 +74,8 @@
           0
         ],
         [
-          2,
-          4
-        ],
-        [
           0,
           0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          2,
-          1
         ],
         [
           0,
@@ -217,23 +90,7 @@
           0
         ],
         [
-          3,
-          5
-        ],
-        [
           0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          2,
           0
         ],
         [
@@ -268,104 +125,6 @@
         ],
         [
           0,
-          1
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          4,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          1,
-          4
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          2,
-          2
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ]
-      ],
-      [
-        [
-          0,
-          1
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          1,
           0
         ],
         [
@@ -397,23 +156,7 @@
           0
         ],
         [
-          1,
-          3
-        ],
-        [
           0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          4,
           0
         ],
         [
@@ -443,91 +186,9 @@
         [
           0,
           0
-        ]
-      ],
-      [
-        [
-          0,
-          0
         ],
         [
           0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          2,
-          1
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          3,
-          2
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          6,
-          1
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          1,
           0
         ],
         [
@@ -609,10 +270,6 @@
           0
         ],
         [
-          2,
-          0
-        ],
-        [
           0,
           0
         ],
@@ -625,8 +282,12 @@
           0
         ],
         [
-          1,
-          2
+          0,
+          0
+        ],
+        [
+          0,
+          0
         ],
         [
           0,
@@ -659,8 +320,130 @@
           0
         ],
         [
-          1,
-          1
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
         ],
         [
           0,
@@ -707,8 +490,26 @@
           0
         ],
         [
-          1,
-          1
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
         ],
         [
           0,
@@ -723,8 +524,162 @@
           0
         ],
         [
-          2,
-          1
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
         ],
         [
           0,
@@ -740,1338 +695,11 @@
         ]
       ]
     ],
-    "journal": [
-      {
-        "asset": "ETH",
-        "closed_at": 1781928000,
-        "entry": 1693.51,
-        "exit": 1717.6483028830917,
-        "kind": "tp",
-        "opened_at": 1781841600,
-        "pnl_r": 0.375,
-        "side": "long",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "BTC",
-        "closed_at": 1781956800,
-        "entry": 64300.6,
-        "exit": 64183.6,
-        "kind": "exit",
-        "opened_at": 1781726400,
-        "pnl_r": -0.043,
-        "side": "long",
-        "strategy": "zscore_revert_btc",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1782043200,
-        "entry": 1738.3,
-        "exit": 1718.50675558568,
-        "kind": "tp",
-        "opened_at": 1781971200,
-        "pnl_r": 0.5,
-        "side": "short",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1782043200,
-        "entry": 1738.3,
-        "exit": 1718.50675558568,
-        "kind": "tp",
-        "opened_at": 1781971200,
-        "pnl_r": 0.375,
-        "side": "short",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "BTC",
-        "closed_at": 1782172800,
-        "entry": 64841.2,
-        "exit": 64086.9,
-        "kind": "exit",
-        "opened_at": 1782144000,
-        "pnl_r": 0.356,
-        "side": "short",
-        "strategy": "zscore_revert_btc",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1782302400,
-        "entry": 1681.5,
-        "exit": 1643.3308239275846,
-        "kind": "sl",
-        "opened_at": 1782201600,
-        "pnl_r": -1.0,
-        "side": "long",
-        "strategy": "vwap_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1782302400,
-        "entry": 1681.5,
-        "exit": 1643.3308239275846,
-        "kind": "sl",
-        "opened_at": 1782201600,
-        "pnl_r": -1.0,
-        "side": "long",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1782302400,
-        "entry": 1681.5,
-        "exit": 1630.6077652367796,
-        "kind": "sl",
-        "opened_at": 1782201600,
-        "pnl_r": -1.0,
-        "side": "long",
-        "strategy": "vwap_revert_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1782302400,
-        "entry": 1681.5,
-        "exit": 1630.6077652367796,
-        "kind": "sl",
-        "opened_at": 1782201600,
-        "pnl_r": -1.0,
-        "side": "long",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "BTC",
-        "closed_at": 1782561600,
-        "entry": 60269.4,
-        "exit": 60830.9,
-        "kind": "exit",
-        "opened_at": 1782316800,
-        "pnl_r": 0.216,
-        "side": "long",
-        "strategy": "zscore_revert_btc",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1783008000,
-        "entry": 1650.35,
-        "exit": 1695.7626112522748,
-        "kind": "sl",
-        "opened_at": 1782993600,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "vwap_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1783036800,
-        "entry": 1650.35,
-        "exit": 1710.9001483363666,
-        "kind": "sl",
-        "opened_at": 1782993600,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "vwap_revert_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1783036800,
-        "entry": 1650.35,
-        "exit": 1710.9001483363666,
-        "kind": "sl",
-        "opened_at": 1782993600,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "BTC",
-        "closed_at": 1783468800,
-        "entry": 63943.4,
-        "exit": 62761.0,
-        "kind": "exit",
-        "opened_at": 1783440000,
-        "pnl_r": 0.488,
-        "side": "short",
-        "strategy": "zscore_revert_btc",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1783584000,
-        "entry": 1731.99,
-        "exit": 1752.830121781959,
-        "kind": "tp",
-        "opened_at": 1783569600,
-        "pnl_r": 0.375,
-        "side": "long",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "BTC",
-        "closed_at": 1783612800,
-        "entry": 62300.5,
-        "exit": 63234.5,
-        "kind": "exit",
-        "opened_at": 1783512000,
-        "pnl_r": 0.379,
-        "side": "long",
-        "strategy": "zscore_revert_btc",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1783771200,
-        "entry": 1777.03,
-        "exit": 1816.6438435152593,
-        "kind": "sl",
-        "opened_at": 1783656000,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1783771200,
-        "entry": 1773.88,
-        "exit": 1824.3528538760354,
-        "kind": "sl",
-        "opened_at": 1783670400,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "BTC",
-        "closed_at": 1783886400,
-        "entry": 63985.6,
-        "exit": 63780.3,
-        "kind": "exit",
-        "opened_at": 1783670400,
-        "pnl_r": 0.089,
-        "side": "short",
-        "strategy": "zscore_revert_btc",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1784001600,
-        "entry": 1777.12,
-        "exit": 1795.0413999915543,
-        "kind": "tp",
-        "opened_at": 1783958400,
-        "pnl_r": 0.375,
-        "side": "long",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1784030400,
-        "entry": 1798.45,
-        "exit": 1832.9862304659673,
-        "kind": "sl",
-        "opened_at": 1784030400,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "BTC",
-        "closed_at": 1784030400,
-        "entry": 62784.6,
-        "exit": 64750.0,
-        "kind": "exit",
-        "opened_at": 1783915200,
-        "pnl_r": 1.087,
-        "side": "long",
-        "strategy": "zscore_revert_btc",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1784102400,
-        "entry": 1875.79,
-        "exit": 1917.808642575541,
-        "kind": "sl",
-        "opened_at": 1784044800,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "vwap_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1784102400,
-        "entry": 1875.79,
-        "exit": 1931.8148567673882,
-        "kind": "sl",
-        "opened_at": 1784044800,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "vwap_revert_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1784102400,
-        "entry": 1875.79,
-        "exit": 1931.8148567673882,
-        "kind": "sl",
-        "opened_at": 1784044800,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1784491200,
-        "entry": 1858.73,
-        "exit": 1891.0891118401364,
-        "kind": "sl",
-        "opened_at": 1784404800,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1784505600,
-        "entry": 1867.52,
-        "exit": 1852.141811477084,
-        "kind": "tp",
-        "opened_at": 1784433600,
-        "pnl_r": 0.375,
-        "side": "short",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1784592000,
-        "entry": 1893.84,
-        "exit": 1926.6427992179013,
-        "kind": "sl",
-        "opened_at": 1784548800,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "vwap_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1784592000,
-        "entry": 1893.84,
-        "exit": 1937.5770656238685,
-        "kind": "sl",
-        "opened_at": 1784548800,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "vwap_revert_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1784592000,
-        "entry": 1893.84,
-        "exit": 1937.5770656238685,
-        "kind": "sl",
-        "opened_at": 1784548800,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1784635200,
-        "entry": 1933.61,
-        "exit": 1916.3667651313326,
-        "kind": "tp",
-        "opened_at": 1784620800,
-        "pnl_r": 0.5,
-        "side": "short",
-        "strategy": "vwap_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1784635200,
-        "entry": 1936.1,
-        "exit": 1918.7930676219516,
-        "kind": "tp",
-        "opened_at": 1784635200,
-        "pnl_r": 0.375,
-        "side": "short",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1784678400,
-        "entry": 1931.93,
-        "exit": 1914.8307056489552,
-        "kind": "tp",
-        "opened_at": 1784649600,
-        "pnl_r": 0.375,
-        "side": "short",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "BTC",
-        "closed_at": 1784764800,
-        "entry": 65605.4,
-        "exit": 65670.8,
-        "kind": "exit",
-        "opened_at": 1784563200,
-        "pnl_r": -0.034,
-        "side": "short",
-        "strategy": "zscore_revert_btc",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1784793600,
-        "entry": 1927.26,
-        "exit": 1909.6572855260506,
-        "kind": "tp",
-        "opened_at": 1784606400,
-        "pnl_r": 0.5,
-        "side": "short",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1785009600,
-        "entry": 1861.73,
-        "exit": 1880.1035105304034,
-        "kind": "tp",
-        "opened_at": 1784908800,
-        "pnl_r": 0.5,
-        "side": "long",
-        "strategy": "vwap_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1785009600,
-        "entry": 1861.73,
-        "exit": 1880.1035105304034,
-        "kind": "tp",
-        "opened_at": 1784908800,
-        "pnl_r": 0.375,
-        "side": "long",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1785052800,
-        "entry": 1861.73,
-        "exit": 1887.6,
-        "kind": "exit",
-        "opened_at": 1784908800,
-        "pnl_r": 0.528,
-        "side": "long",
-        "strategy": "vwap_revert_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1785067200,
-        "entry": 1882.43,
-        "exit": 1908.2855807633428,
-        "kind": "sl",
-        "opened_at": 1785038400,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "BTC",
-        "closed_at": 1785067200,
-        "entry": 64092.6,
-        "exit": 64769.9,
-        "kind": "exit",
-        "opened_at": 1784908800,
-        "pnl_r": 0.367,
-        "side": "long",
-        "strategy": "zscore_revert_btc",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1785081600,
-        "entry": 1915.31,
-        "exit": 1950.1992035651426,
-        "kind": "sl",
-        "opened_at": 1785081600,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1785096000,
-        "entry": 1914.26,
-        "exit": 1940.5292667685815,
-        "kind": "sl",
-        "opened_at": 1785096000,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1785139200,
-        "entry": 1955.51,
-        "exit": 1940.4137332860157,
-        "kind": "tp",
-        "opened_at": 1785110400,
-        "pnl_r": 0.5,
-        "side": "short",
-        "strategy": "vwap_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1785139200,
-        "entry": 1949.78,
-        "exit": 1934.7827523370145,
-        "kind": "tp",
-        "opened_at": 1785124800,
-        "pnl_r": 0.375,
-        "side": "short",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1785182400,
-        "entry": 1955.51,
-        "exit": 1893.17,
-        "kind": "exit",
-        "opened_at": 1785110400,
-        "pnl_r": 1.549,
-        "side": "short",
-        "strategy": "vwap_revert_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "BTC",
-        "closed_at": 1785182400,
-        "entry": 65405.1,
-        "exit": 63766.1,
-        "kind": "exit",
-        "opened_at": 1785110400,
-        "pnl_r": 1.264,
-        "side": "short",
-        "strategy": "zscore_revert_btc",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1785225600,
-        "entry": 1880.98,
-        "exit": 1900.953102113786,
-        "kind": "tp",
-        "opened_at": 1785211200,
-        "pnl_r": 0.375,
-        "side": "long",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1785240000,
-        "entry": 1876.85,
-        "exit": 1895.3681339654581,
-        "kind": "tp",
-        "opened_at": 1785240000,
-        "pnl_r": 0.375,
-        "side": "long",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "BTC",
-        "closed_at": 1785297600,
-        "entry": 63766.1,
-        "exit": 64568.0,
-        "kind": "exit",
-        "opened_at": 1785196800,
-        "pnl_r": 0.477,
-        "side": "long",
-        "strategy": "zscore_revert_btc",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1785456000,
-        "entry": 1923.61,
-        "exit": 1902.405337891701,
-        "kind": "tp",
-        "opened_at": 1785412800,
-        "pnl_r": 0.375,
-        "side": "short",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1785484800,
-        "entry": 1890.28,
-        "exit": 1850.2446258602197,
-        "kind": "sl",
-        "opened_at": 1785484800,
-        "pnl_r": -1.0,
-        "side": "long",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1785585600,
-        "entry": 1863.0,
-        "exit": 1822.7010294406996,
-        "kind": "sl",
-        "opened_at": 1785513600,
-        "pnl_r": -1.0,
-        "side": "long",
-        "strategy": "vwap_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1785585600,
-        "entry": 1884.59,
-        "exit": 1832.890965350748,
-        "kind": "sl",
-        "opened_at": 1785499200,
-        "pnl_r": -1.0,
-        "side": "long",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1785614400,
-        "entry": 1838.16,
-        "exit": 1855.025230746683,
-        "kind": "tp",
-        "opened_at": 1785614400,
-        "pnl_r": 0.5,
-        "side": "long",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1785686400,
-        "entry": 1863.0,
-        "exit": 1882.15,
-        "kind": "exit",
-        "opened_at": 1785513600,
-        "pnl_r": 0.356,
-        "side": "long",
-        "strategy": "vwap_revert_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "BTC",
-        "closed_at": 1785700800,
-        "entry": 62725.4,
-        "exit": 63570.7,
-        "kind": "exit",
-        "opened_at": 1785513600,
-        "pnl_r": 0.417,
-        "side": "long",
-        "strategy": "zscore_revert_btc",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1785715200,
-        "entry": 1882.15,
-        "exit": 1865.4994814069332,
-        "kind": "tp",
-        "opened_at": 1785700800,
-        "pnl_r": 0.375,
-        "side": "short",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1785916800,
-        "entry": 1875.49,
-        "exit": 1858.9276916403162,
-        "kind": "tp",
-        "opened_at": 1785873600,
-        "pnl_r": 0.5,
-        "side": "short",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1785945600,
-        "entry": 1874.11,
-        "exit": 1914.8642797286452,
-        "kind": "sl",
-        "opened_at": 1785945600,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1785974400,
-        "entry": 1917.5,
-        "exit": 1900.4330633087752,
-        "kind": "tp",
-        "opened_at": 1785960000,
-        "pnl_r": 0.5,
-        "side": "short",
-        "strategy": "vwap_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1785974400,
-        "entry": 1917.5,
-        "exit": 1900.4330633087752,
-        "kind": "tp",
-        "opened_at": 1785960000,
-        "pnl_r": 0.5,
-        "side": "short",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1786075200,
-        "entry": 1897.54,
-        "exit": 1912.8637797327513,
-        "kind": "tp",
-        "opened_at": 1786075200,
-        "pnl_r": 0.5,
-        "side": "long",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1786233600,
-        "entry": 1909.15,
-        "exit": 1913.85,
-        "kind": "exit",
-        "opened_at": 1785974400,
-        "pnl_r": -0.104,
-        "side": "short",
-        "strategy": "vwap_revert_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1786348800,
-        "entry": 1918.7,
-        "exit": 1903.4354474581655,
-        "kind": "tp",
-        "opened_at": 1786132800,
-        "pnl_r": 0.5,
-        "side": "short",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1786348800,
-        "entry": 1916.55,
-        "exit": 1901.6952230875766,
-        "kind": "tp",
-        "opened_at": 1786104000,
-        "pnl_r": 0.375,
-        "side": "short",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "BTC",
-        "closed_at": 1786363200,
-        "entry": 63859.8,
-        "exit": 64292.4,
-        "kind": "exit",
-        "opened_at": 1785787200,
-        "pnl_r": -0.255,
-        "side": "short",
-        "strategy": "zscore_revert_btc",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1786420800,
-        "entry": 1877.03,
-        "exit": 1890.008678961868,
-        "kind": "tp",
-        "opened_at": 1786377600,
-        "pnl_r": 0.5,
-        "side": "long",
-        "strategy": "vwap_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1786420800,
-        "entry": 1877.03,
-        "exit": 1890.008678961868,
-        "kind": "tp",
-        "opened_at": 1786377600,
-        "pnl_r": 0.5,
-        "side": "long",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1786420800,
-        "entry": 1878.42,
-        "exit": 1891.0823447503062,
-        "kind": "tp",
-        "opened_at": 1786392000,
-        "pnl_r": 0.375,
-        "side": "long",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1786435200,
-        "entry": 1878.31,
-        "exit": 1889.998279488492,
-        "kind": "tp",
-        "opened_at": 1786435200,
-        "pnl_r": 0.375,
-        "side": "long",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1786464000,
-        "entry": 1862.55,
-        "exit": 1875.9188226201795,
-        "kind": "tp",
-        "opened_at": 1786464000,
-        "pnl_r": 0.375,
-        "side": "long",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1786521600,
-        "entry": 1877.03,
-        "exit": 1916.12,
-        "kind": "exit",
-        "opened_at": 1786377600,
-        "pnl_r": 1.129,
-        "side": "long",
-        "strategy": "vwap_revert_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1786536000,
-        "entry": 1916.12,
-        "exit": 1903.6031192506948,
-        "kind": "tp",
-        "opened_at": 1786536000,
-        "pnl_r": 0.5,
-        "side": "short",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1786536000,
-        "entry": 1916.12,
-        "exit": 1903.6031192506948,
-        "kind": "tp",
-        "opened_at": 1786536000,
-        "pnl_r": 0.375,
-        "side": "short",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1786708800,
-        "entry": 1874.25,
-        "exit": 1886.8737900369144,
-        "kind": "tp",
-        "opened_at": 1786694400,
-        "pnl_r": 0.5,
-        "side": "long",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1786708800,
-        "entry": 1874.25,
-        "exit": 1886.8737900369144,
-        "kind": "tp",
-        "opened_at": 1786694400,
-        "pnl_r": 0.375,
-        "side": "long",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1786896000,
-        "entry": 1884.3,
-        "exit": 1876.8514552515703,
-        "kind": "tp",
-        "opened_at": 1786896000,
-        "pnl_r": 0.375,
-        "side": "short",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1786939200,
-        "entry": 1901.7,
-        "exit": 1892.7001748133018,
-        "kind": "tp",
-        "opened_at": 1786939200,
-        "pnl_r": 0.5,
-        "side": "short",
-        "strategy": "vwap_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1786939200,
-        "entry": 1901.7,
-        "exit": 1892.7001748133018,
-        "kind": "tp",
-        "opened_at": 1786939200,
-        "pnl_r": 0.375,
-        "side": "short",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "BTC",
-        "closed_at": 1786968000,
-        "entry": 63631.3,
-        "exit": 64579.35785645989,
-        "kind": "sl",
-        "opened_at": 1786968000,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "zscore_revert_btc",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1786996800,
-        "entry": 1900.94,
-        "exit": 1891.8474837552087,
-        "kind": "tp",
-        "opened_at": 1786953600,
-        "pnl_r": 0.5,
-        "side": "short",
-        "strategy": "vwap_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1786996800,
-        "entry": 1904.69,
-        "exit": 1895.313734915551,
-        "kind": "tp",
-        "opened_at": 1786968000,
-        "pnl_r": 0.375,
-        "side": "short",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1787011200,
-        "entry": 1914.03,
-        "exit": 1904.429006235228,
-        "kind": "tp",
-        "opened_at": 1787011200,
-        "pnl_r": 0.375,
-        "side": "short",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1787112000,
-        "entry": 1901.7,
-        "exit": 1925.6995338311954,
-        "kind": "sl",
-        "opened_at": 1786939200,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "vwap_revert_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1787126400,
-        "entry": 1917.99,
-        "exit": 1947.360870673029,
-        "kind": "sl",
-        "opened_at": 1787068800,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "BTC",
-        "closed_at": 1787126400,
-        "entry": 64555.9,
-        "exit": 65643.81170212914,
-        "kind": "sl",
-        "opened_at": 1787011200,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "zscore_revert_btc",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1787155200,
-        "entry": 2086.06,
-        "exit": 2126.8227232490567,
-        "kind": "sl",
-        "opened_at": 1787155200,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "vwap_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1787155200,
-        "entry": 2086.06,
-        "exit": 2126.8227232490567,
-        "kind": "sl",
-        "opened_at": 1787155200,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1787155200,
-        "entry": 2086.06,
-        "exit": 2140.410297665409,
-        "kind": "sl",
-        "opened_at": 1787155200,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "vwap_revert_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1787169600,
-        "entry": 2102.04,
-        "exit": 2157.7738478321653,
-        "kind": "sl",
-        "opened_at": 1787169600,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1788091200,
-        "entry": 2453.05,
-        "exit": 2502.488255391545,
-        "kind": "sl",
-        "opened_at": 1788033600,
-        "pnl_r": -1.0,
-        "side": "short",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1788120000,
-        "entry": 2503.84,
-        "exit": 2482.3019407608112,
-        "kind": "tp",
-        "opened_at": 1788120000,
-        "pnl_r": 0.5,
-        "side": "short",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1788220800,
-        "entry": 2482.42,
-        "exit": 2456.7199417951188,
-        "kind": "tp",
-        "opened_at": 1788206400,
-        "pnl_r": 0.5,
-        "side": "short",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "BTC",
-        "closed_at": 1788249600,
-        "entry": 78918.2,
-        "exit": 78095.7,
-        "kind": "exit",
-        "opened_at": 1788206400,
-        "pnl_r": 0.343,
-        "side": "short",
-        "strategy": "zscore_revert_btc",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1788278400,
-        "entry": 2449.37,
-        "exit": 2401.8850780420175,
-        "kind": "sl",
-        "opened_at": 1788278400,
-        "pnl_r": -1.0,
-        "side": "long",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1788336000,
-        "entry": 2414.35,
-        "exit": 2363.7476135052157,
-        "kind": "sl",
-        "opened_at": 1788321600,
-        "pnl_r": -1.0,
-        "side": "long",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": false
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1788393600,
-        "entry": 2381.19,
-        "exit": 2407.4840135653535,
-        "kind": "tp",
-        "opened_at": 1788350400,
-        "pnl_r": 0.375,
-        "side": "long",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "BTC",
-        "closed_at": 1788422400,
-        "entry": 77322.3,
-        "exit": 77939.8,
-        "kind": "exit",
-        "opened_at": 1788292800,
-        "pnl_r": 0.243,
-        "side": "long",
-        "strategy": "zscore_revert_btc",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1788508800,
-        "entry": 2517.05,
-        "exit": 2487.498873020469,
-        "kind": "tp",
-        "opened_at": 1788451200,
-        "pnl_r": 0.5,
-        "side": "short",
-        "strategy": "vwap_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1788508800,
-        "entry": 2517.05,
-        "exit": 2487.498873020469,
-        "kind": "tp",
-        "opened_at": 1788451200,
-        "pnl_r": 0.5,
-        "side": "short",
-        "strategy": "rsi2_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1788508800,
-        "entry": 2517.05,
-        "exit": 2487.498873020469,
-        "kind": "tp",
-        "opened_at": 1788451200,
-        "pnl_r": 0.375,
-        "side": "short",
-        "strategy": "stoch_bracket_eth",
-        "tf": "4h",
-        "won": true
-      },
-      {
-        "asset": "ETH",
-        "closed_at": 1788523200,
-        "entry": 2517.05,
-        "exit": 2451.87,
-        "kind": "exit",
-        "opened_at": 1788451200,
-        "pnl_r": 0.827,
-        "side": "short",
-        "strategy": "vwap_revert_eth",
-        "tf": "4h",
-        "won": true
-      }
-    ],
+    "journal": [],
     "last_weekly_summary": null,
     "max_concurrent_trades": 4,
-    "max_loss_streak": 8,
-    "max_win_streak": 13,
+    "max_loss_streak": 0,
+    "max_win_streak": 0,
     "ml_shared": {
       "dims": {
         "rsi": {},
@@ -2082,206 +710,200 @@
       "dw": 0.0,
       "ftrl": {
         "n": {
-          "adx": 1.6219691378422483,
-          "atrp": 3.9256262943446867,
-          "dc": 10.527050353312594,
-          "ds": 8.064619060143555,
+          "adx": 1.3381595262751802,
+          "atrp": 3.6223886388156425,
+          "dc": 9.020597783973459,
+          "ds": 6.7277444761591205,
           "fund": 0.0010797879333196386,
-          "hc": 11.350025181255276,
-          "hs": 7.241644232200869,
-          "rsi": 1.6451625430354877,
-          "rsi=1": 5.911185822665579,
-          "rsi=2": 8.915859312032753,
+          "hc": 9.243166869398134,
+          "hs": 6.505175390734445,
+          "rsi": 1.4723875540901432,
+          "rsi=1": 4.665682508499108,
+          "rsi=2": 7.318035472875655,
           "rsi=3": 3.9246242787578156,
-          "ses=0": 4.1278591067556265,
-          "ses=1": 9.659276513664732,
-          "ses=2": 4.964533793035788,
-          "side": 18.59166941345614,
+          "ses=0": 3.593656295166209,
+          "ses=1": 8.184247925523385,
+          "ses=2": 4.130438039442986,
+          "side": 15.748342260132576,
           "side_fund": 0.0010797879333196386,
-          "side_rsi": 1.6451625430354877,
-          "side_t20": 19.615812676460095,
-          "side_t5": 8.632483396335791,
-          "stretch": 11.396826536455775,
-          "t20d": 19.615812676460095,
-          "t5d": 8.632483396335791,
-          "vol=0": 3.179441290458466,
-          "vol=1": 14.099069051352393,
+          "side_rsi": 1.4723875540901432,
+          "side_t20": 7.873197244808239,
+          "side_t5": 7.7735327108918515,
+          "stretch": 9.766029499479743,
+          "t20d": 7.873197244808239,
+          "t5d": 7.7735327108918515,
+          "vol=0": 1.274015395811003,
+          "vol=1": 13.16116779267629,
           "vol=2": 1.4731590716452854,
-          "volr": 1.3118005800709438
+          "volr": 0.991707434831481
         },
         "z": {
-          "adx": 0.48481312265392784,
-          "atrp": 3.6998006688755547,
-          "dc": 1.3829343936804692,
-          "ds": 2.178910488124395,
+          "adx": 0.28232156203935166,
+          "atrp": 2.8387666432104948,
+          "dc": 0.8299393339673465,
+          "ds": 1.7333073695917611,
           "fund": 0.03286012680011504,
-          "hc": -2.926815828671595,
-          "hs": 2.163488113137873,
-          "rsi": 1.7868609593578848,
-          "rsi=1": -5.694212229385471,
-          "rsi=2": -2.4806625400683378,
+          "hc": -5.520309584323217,
+          "hs": 0.892911618385819,
+          "rsi": 2.6088690760712163,
+          "rsi=1": -5.973533432057014,
+          "rsi=2": 0.8789519312731569,
           "rsi=3": 0.3140916286301027,
-          "ses=0": -4.309776251336028,
-          "ses=1": -0.062113596295056646,
-          "ses=2": -3.4264520053693364,
-          "side": -9.155295592519645,
+          "ses=0": -4.818346765973985,
+          "ses=1": 1.390184892157352,
+          "ses=2": -1.5105843198701063,
+          "side": -12.494991059697789,
           "side_fund": 0.03286012680011504,
-          "side_rsi": 1.4670447304627388,
-          "side_t20": 3.367237425046085,
-          "side_t5": -3.908962207699769,
-          "stretch": -2.2099808809174992,
-          "t20d": -0.7049165167811285,
-          "t5d": 6.736322728600429,
-          "vol=0": -0.6640064069576938,
-          "vol=1": -8.814621076356065,
+          "side_rsi": 0.5417090120592686,
+          "side_t20": -4.6954211274891025,
+          "side_t5": -4.817477171349187,
+          "stretch": -0.3428859028480933,
+          "t20d": 3.906553566617892,
+          "t5d": 8.0776926301358,
+          "vol=0": 0.0030095667217246644,
+          "vol=1": -6.4827939385714,
           "vol=2": 1.2877955952903077,
-          "volr": 3.341507472055282
+          "volr": 2.6178938391817144
         }
       },
       "version": 1
     },
     "paper_mode": false,
     "risk_per_trade_pct": 15.0,
-    "sl_cooldowns": {
-      "rsi2_bracket_eth": 1788355916.423829,
-      "stoch_bracket_eth": 1787190285.516356,
-      "vwap_bracket_eth": 1787171850.772749,
-      "vwap_revert_eth": 1787173240.709026,
-      "zscore_revert_btc": 1787151707.884763
-    }
+    "sl_cooldowns": {}
   },
   "rsi2_bracket_eth": {
     "active_trade": null,
     "last_signal_bar": 1788595200,
     "ml": {
       "cal": {
-        "a": 0.9799812491769484,
-        "b": 0.024519632252989143,
-        "n": 21
+        "a": 0.9856413640942802,
+        "b": 0.021589633741208182,
+        "n": 16
       },
       "dims": {
         "rsi": {
           "1": [
-            2.8320312595874615,
-            5.66352930105919
+            2.9150161097376603,
+            3.7886297927767165
           ],
           "2": [
-            8.543594107823225,
-            3.584448367712867
+            5.747225906143338,
+            3.689480722019969
           ],
           "3": [
-            0.9012504626108298,
-            0.9659363289248453
+            0.927659116941309,
+            0.9942404238175473
           ]
         },
         "ses": {
           "0": [
-            2.8000614043329755,
-            4.589250858655047
+            2.8821094662190503,
+            3.7003522813349323
           ],
           "1": [
-            3.7899512439632943,
-            2.8453490674180797
+            2.8717030555377128,
+            1.911244467022218
           ],
           "2": [
-            5.686863181725245,
-            2.7793140716237743
+            3.8360886110655454,
+            2.8607541902570817
           ]
         },
         "strat": {
           "1": [
-            12.276875830021517,
-            10.213913997696904
+            9.589901132822309,
+            8.472350938614232
           ]
         },
         "vol": {
           "0": [
-            2.89841856365064,
-            3.8607577387521586
+            0.9659363289248453,
+            1.933032991536807
           ],
           "1": [
-            9.378457266370878,
-            5.3872199300198975
+            8.623964803897465,
+            5.545077523259878
           ],
           "2": [
             0.0,
-            0.9659363289248453
+            0.9942404238175473
           ]
         }
       },
-      "dl": 10.213913997696904,
+      "dl": 8.472350938614232,
       "drift": {
-        "cum": -0.4858210271735601,
+        "cum": -0.4508316484918663,
         "events": 0,
         "last_at": null,
-        "mean": 0.7297492721947508,
+        "mean": 0.7269404064957985,
         "min_cum": -0.8010564408399701,
-        "n": 21
+        "n": 16
       },
-      "dw": 12.276875830021517,
+      "dw": 9.589901132822309,
       "ftrl": {
         "n": {
-          "adx": 0.6168985519596359,
-          "atrp": 0.9611039005484445,
-          "dc": 2.1592639740680517,
-          "ds": 3.6146511343027354,
-          "hc": 3.304995964550424,
-          "hs": 2.4689191438203624,
-          "rsi": 0.47787887713068056,
-          "rsi=1": 2.3071748974192166,
-          "rsi=2": 2.6869115455611516,
+          "adx": 0.44399936413473406,
+          "atrp": 0.7990735315445366,
+          "dc": 1.5194048157430466,
+          "ds": 2.8189362298193466,
+          "hc": 2.219123164903774,
+          "hs": 2.119217880658619,
+          "rsi": 0.4163984167589125,
+          "rsi=1": 1.544214450708783,
+          "rsi=2": 2.0142979294631917,
           "rsi=3": 0.7798286653904176,
-          "ses=0": 1.5756027390602818,
-          "ses=1": 1.6975827509186088,
-          "ses=2": 2.5007296183918957,
-          "side": 5.773915108370785,
-          "side_rsi": 0.47787887713068056,
-          "side_t20": 8.579736414337049,
-          "side_t5": 3.470682807722562,
-          "strat=1": 5.773915108370785,
-          "stretch": 1.6602332835756795,
-          "t20d": 8.579736414337049,
-          "t5d": 3.470682807722562,
-          "vol=0": 2.091269541770123,
-          "vol=1": 3.2807914237068814,
+          "ses=0": 1.2244791592178612,
+          "ses=1": 1.0794006188349607,
+          "ses=2": 2.034461267509571,
+          "side": 4.338341045562392,
+          "side_rsi": 0.4163984167589125,
+          "side_t20": 2.525035060917264,
+          "side_t5": 3.1063468604898374,
+          "strat=1": 4.338341045562392,
+          "stretch": 0.9997525493325289,
+          "t20d": 2.525035060917264,
+          "t5d": 3.1063468604898374,
+          "vol=0": 0.8620407441773645,
+          "vol=1": 3.0744461584912464,
           "vol=2": 0.4018541428937813,
-          "volr": 0.6157482172535689
+          "volr": 0.3981074482417618
         },
         "z": {
-          "adx": 0.3754669871938927,
-          "atrp": 0.7078774107579897,
-          "dc": 0.6436896689605783,
-          "ds": -0.7786441804406304,
-          "hc": 0.052081289808476726,
-          "hs": 2.1438129318777097,
-          "rsi": -0.17453143380369895,
-          "rsi=1": 1.5036291874992453,
-          "rsi=2": -2.302288104056357,
+          "adx": 0.5606167077540577,
+          "atrp": 0.6216562623174569,
+          "dc": 0.6980769035561791,
+          "ds": -1.9617647822817355,
+          "hc": -0.7664232295714598,
+          "hs": 1.247021840420432,
+          "rsi": 0.32256018149071586,
+          "rsi=1": 0.21415659196301542,
+          "rsi=2": -0.7828077069902961,
           "rsi=3": -0.07730761968728439,
-          "ses=0": -0.10803264962912858,
-          "ses=1": 0.6124076794349378,
-          "ses=2": -1.7447202161359867,
-          "side": -0.40239204901741554,
-          "side_rsi": 0.6013125867513481,
-          "side_t20": 3.022066120605225,
-          "side_t5": -1.0498563387014848,
-          "strat=1": -0.9531923275404399,
-          "stretch": -0.4498839375476315,
-          "t20d": 2.3348180179242206,
-          "t5d": 2.0278940027269945,
-          "vol=0": 0.9577072248372638,
-          "vol=1": -2.4384578008265967,
+          "ses=0": -0.6565058375571237,
+          "ses=1": 0.3587062497508701,
+          "ses=2": -0.7272283771917301,
+          "side": -2.8612278922140044,
+          "side_rsi": 0.4033678343552947,
+          "side_t20": -2.1458886214975745,
+          "side_t5": -0.7775077981217092,
+          "strat=1": -0.6665665781763825,
+          "stretch": -0.04961878922405347,
+          "t20d": 2.3045236571987573,
+          "t5d": 3.13899778904045,
+          "vol=0": 0.6366226933360345,
+          "vol=1": -1.9443290140555478,
           "vol=2": 0.6339196659623215,
-          "volr": 0.584758757563706
+          "volr": 0.4987966925190697
         }
       },
-      "gross_loss": 11.0,
-      "gross_profit": 6.5000000000000036,
+      "gross_loss": 9.0,
+      "gross_profit": 4.999999999999998,
       "hedge": {
-        "base": 0.48846662285621606,
-        "buckets": 0.15888501447851175,
-        "ftrl": 0.1598857872357696,
-        "pool": 0.15109590876283624,
+        "base": 0.4713183196773449,
+        "buckets": 0.1449610884406852,
+        "ftrl": 0.16322247497591005,
+        "pool": 0.17883145023939337,
         "trained": 0.04166666666666667
       },
       "legacy_v1": {
@@ -2319,8 +941,8 @@
         }
       },
       "metrics": {
-        "acc": 11.0,
-        "base_logloss": 14.93766448110566,
+        "acc": 8.0,
+        "base_logloss": 11.465535551362201,
         "bins": [
           [
             0,
@@ -2348,13 +970,13 @@
             3.0
           ],
           [
-            9,
-            5.022235,
-            6.0
+            5,
+            2.793536,
+            3.0
           ],
           [
-            3,
-            1.8557860000000002,
+            2,
+            1.232336,
             1.0
           ],
           [
@@ -2373,13 +995,13 @@
             0.0
           ]
         ],
-        "brier": 5.623379209375,
-        "logloss": 15.32473471608977,
-        "n": 21
+        "brier": 4.26316959493,
+        "logloss": 11.631046503932776,
+        "n": 16
       },
-      "total_trades": 24,
+      "total_trades": 19,
       "version": 2,
-      "wins": 13
+      "wins": 10
     }
   },
   "stoch_bracket_eth": {
@@ -2387,137 +1009,137 @@
     "last_signal_bar": 1788595200,
     "ml": {
       "cal": {
-        "a": 1.0220953608749377,
-        "b": 0.05901180098179906,
-        "n": 29
+        "a": 1.01257187347325,
+        "b": 0.04732599950512981,
+        "n": 27
       },
       "dims": {
         "rsi": {
           "1": [
-            10.944978770001287,
-            1.7574901671896634
+            10.066360356357272,
+            1.7779112192685398
           ],
           "2": [
-            9.321423988913082,
-            5.347976229502588
+            8.418114278179244,
+            5.410116720037394
           ],
           "3": [
-            2.637042892842346,
-            1.8441090460354976
+            2.667683855309337,
+            1.8655365610061425
           ]
         },
         "ses": {
           "0": [
-            7.19826108406592,
-            1.6915353572628955
+            7.281900849009876,
+            1.711190051365203
           ],
           "1": [
-            12.877987564515074,
-            6.269526065111957
+            11.010210190860082,
+            6.342374448946873
           ],
           "2": [
-            2.8271970031757236,
-            0.988514020352896
+            2.8600474499758985,
+            1.0
           ]
         },
         "strat": {
           "3": [
-            22.90344565175672,
-            8.949575442727747
+            21.152158489845856,
+            9.053564500312076
           ]
         },
         "vol": {
           "0": [
-            2.88227248580986,
+            1.9099699378247483,
             0.0
           ],
           "1": [
-            18.218642170606795,
-            7.961061422374853
+            17.41871315538833,
+            8.053564500312076
           ],
           "2": [
-            1.8025309953400617,
-            0.988514020352896
+            1.8234753966327806,
+            1.0
           ]
         }
       },
-      "dl": 8.949575442727747,
+      "dl": 9.053564500312076,
       "drift": {
-        "cum": -2.1131441105099524,
+        "cum": -1.5724954558918807,
         "events": 0,
         "last_at": null,
-        "mean": 0.5932441396091572,
+        "mean": 0.6115033478756884,
         "min_cum": -3.050211337140287,
-        "n": 29
+        "n": 27
       },
-      "dw": 22.90344565175672,
+      "dw": 21.152158489845856,
       "ftrl": {
         "n": {
-          "adx": 0.5537599330013537,
-          "atrp": 1.1924732509580342,
-          "dc": 2.9684480416261607,
-          "ds": 2.978732650956112,
+          "adx": 0.5497426729758519,
+          "atrp": 1.1833380043537034,
+          "dc": 2.8767513813675563,
+          "ds": 2.903756579912844,
           "fund": 0.0012852172219052545,
-          "hc": 3.8945250076072413,
-          "hs": 2.052655684975032,
-          "rsi": 0.6842914198426228,
-          "rsi=1": 1.5158195497123534,
-          "rsi=2": 2.833706495241532,
+          "hc": 3.770751844884514,
+          "hs": 2.009756116395886,
+          "rsi": 0.6649387791184607,
+          "rsi=1": 1.4586201249401594,
+          "rsi=2": 2.724233188711853,
           "rsi=3": 1.5976546476283873,
           "ses=0": 0.6935843396981709,
-          "ses=1": 4.414903960191053,
+          "ses=1": 4.24823122888918,
           "ses=2": 0.838692392693049,
-          "side": 5.947180692582271,
+          "side": 5.7805079612803985,
           "side_fund": 0.0012852172219052545,
-          "side_rsi": 0.6842914198426228,
-          "side_t20": 3.7481847657599934,
-          "side_t5": 4.97943708410972,
-          "strat=3": 5.947180692582271,
-          "stretch": 5.813305352009907,
-          "t20d": 3.7481847657599934,
-          "t5d": 4.97943708410972,
-          "vol=0": 0.28865717173460215,
-          "vol=1": 4.864721598662002,
+          "side_rsi": 0.6649387791184607,
+          "side_t20": 3.0147472543928644,
+          "side_t5": 4.886538130752148,
+          "strat=3": 5.7805079612803985,
+          "stretch": 5.414598929402991,
+          "t20d": 3.0147472543928644,
+          "t5d": 4.886538130752148,
+          "vol=0": 0.23145774696240803,
+          "vol=1": 4.755248292132324,
           "vol=2": 0.7938019221856683,
-          "volr": 0.5086926309015614
+          "volr": 0.5011049939962223
         },
         "z": {
-          "adx": -0.1929345510119988,
-          "atrp": 1.6164199785466915,
-          "dc": -1.6096329778814706,
-          "ds": 0.42965237336635725,
+          "adx": -0.2626741057412808,
+          "atrp": 1.478582668458378,
+          "dc": -1.9426128689065307,
+          "ds": 0.8006645127003571,
           "fund": 0.035849926386329646,
-          "hc": -2.247176585670739,
-          "hs": -1.2694659939427158,
-          "rsi": 0.8536220987945597,
-          "rsi=1": -2.9648633674589036,
-          "rsi=2": -0.30273570814617906,
+          "hc": -2.670643545585533,
+          "hs": -1.055999491995145,
+          "rsi": 0.8820312592956615,
+          "rsi=1": -2.6977597059359844,
+          "rsi=2": 0.02803374988037191,
           "rsi=3": 0.012836677653302112,
           "ses=0": -2.175414559234276,
-          "ses=1": -0.5732677662629031,
+          "ses=1": -0.0013802416806056594,
           "ses=2": -0.44255267344598936,
-          "side": -2.5647548265051054,
+          "side": -2.6288301817227038,
           "side_fund": 0.035849926386329646,
-          "side_rsi": 0.22046251752631837,
-          "side_t20": -0.10435661691274084,
-          "side_t5": -0.549600720855953,
-          "strat=3": -3.529291733126076,
-          "stretch": 1.174621225115475,
-          "t20d": -1.818677162947743,
-          "t5d": 2.112917134103347,
-          "vol=0": -0.952098971966486,
-          "vol=1": -2.2650363008056043,
+          "side_rsi": 0.026346336930091946,
+          "side_t20": -0.3733581239599554,
+          "side_t5": -0.9731686070121086,
+          "strat=3": -2.92863637931004,
+          "stretch": 1.7918996088974801,
+          "t20d": -0.5865942190980497,
+          "t5d": 2.058226373167832,
+          "vol=0": -0.6882590322341132,
+          "vol=1": -1.9194491569439431,
           "vol=2": -0.17289520204387418,
-          "volr": 1.1761382456352394
+          "volr": 1.0549878010002662
         }
       },
       "gross_loss": 10.0,
-      "gross_profit": 9.37499999999999,
+      "gross_profit": 8.62499999999999,
       "hedge": {
-        "base": 0.4720482156191099,
-        "buckets": 0.15518646719828008,
-        "ftrl": 0.16392931070348726,
-        "pool": 0.16716933981245657,
+        "base": 0.470290635680931,
+        "buckets": 0.15566926620373564,
+        "ftrl": 0.16244758891328503,
+        "pool": 0.1699258425353821,
         "trained": 0.04166666666666667
       },
       "legacy_v1": {
@@ -2555,8 +1177,8 @@
         }
       },
       "metrics": {
-        "acc": 21.0,
-        "base_logloss": 17.123503755084837,
+        "acc": 19.0,
+        "base_logloss": 16.412728189919957,
         "bins": [
           [
             0,
@@ -2589,14 +1211,14 @@
             4.0
           ],
           [
-            14,
-            9.08355,
-            11.0
+            13,
+            8.399034,
+            10.0
           ],
           [
-            9,
-            6.638933,
-            6.0
+            8,
+            5.90874,
+            5.0
           ],
           [
             0,
@@ -2609,13 +1231,13 @@
             0.0
           ]
         ],
-        "brier": 5.845588719257001,
-        "logloss": 17.20408004866556,
-        "n": 29
+        "brier": 5.673262747752001,
+        "logloss": 16.510590392643586,
+        "n": 27
       },
-      "total_trades": 35,
+      "total_trades": 33,
       "version": 2,
-      "wins": 25
+      "wins": 23
     }
   },
   "vwap_bracket_eth": {
@@ -2623,127 +1245,127 @@
     "last_signal_bar": 1788595200,
     "ml": {
       "cal": {
-        "a": 0.9928532481405378,
-        "b": 0.03670348126988635,
-        "n": 12
+        "a": 0.9909671562234508,
+        "b": 0.027903079124493402,
+        "n": 11
       },
       "dims": {
         "rsi": {
           "1": [
-            1.9320015723446622,
-            1.8989693204616522
+            1.943193543596255,
+            1.9099699378247483
           ],
           "2": [
-            3.9428665600517525,
-            1.8769073042185003
+            2.959914412604689,
+            1.8877801176216618
           ],
           "3": [
-            1.909715066001523,
-            1.93267842048869
+            1.9207779328352617,
+            1.943874312681693
           ]
         },
         "ses": {
           "0": [
-            2.9206767398486657,
-            0.933032991536807
+            2.9375960480808594,
+            0.9384379966711427
           ],
           "1": [
-            2.932001572344662,
-            4.775522053632036
+            1.943193543596255,
+            4.803186371456961
           ],
           "2": [
-            1.9319048862046098,
+            1.9430962973590913,
             0.0
           ]
         },
         "strat": {
           "0": [
-            7.7845831983979386,
-            5.7085550451688425
+            6.823885889036206,
+            5.741624368128103
           ]
         },
         "vol": {
           "1": [
-            7.7845831983979386,
-            4.714314621351295
+            6.823885889036206,
+            4.741624368128103
           ],
           "2": [
             0.0,
-            0.9942404238175473
+            1.0
           ]
         }
       },
-      "dl": 5.7085550451688425,
+      "dl": 5.741624368128103,
       "drift": {
-        "cum": -0.5534274346863256,
+        "cum": -0.40455354098949226,
         "events": 0,
         "last_at": null,
-        "mean": 0.7092264601118214,
+        "mean": 0.7209422686297153,
         "min_cum": -0.6058225579354948,
-        "n": 12
+        "n": 11
       },
-      "dw": 7.7845831983979386,
+      "dw": 6.823885889036206,
       "ftrl": {
         "n": {
-          "adx": 0.2330352099297003,
-          "atrp": 0.5224545176907744,
-          "dc": 1.7148015127075278,
-          "ds": 1.3840633674038219,
-          "hc": 2.1665606823886137,
+          "adx": 0.23294542853822048,
+          "atrp": 0.5133553788198076,
+          "dc": 1.557720458196473,
+          "ds": 1.3476340539024472,
+          "hc": 1.9730503143761844,
           "hs": 0.9323041977227361,
-          "rsi": 0.5379809080495748,
+          "rsi": 0.5150168838382003,
           "rsi=1": 0.8500074588089975,
-          "rsi=2": 0.8569263766555097,
+          "rsi=2": 0.6634160086430804,
           "rsi=3": 1.3919310446468425,
           "ses=0": 0.7056274304333525,
-          "ses=1": 1.8850373178470714,
+          "ses=1": 1.6915269498346421,
           "ses=2": 0.5082001318309255,
-          "side": 3.09886488011135,
-          "side_rsi": 0.5379809080495748,
-          "side_t20": 2.8782309751615616,
-          "side_t5": 2.882571291591939,
-          "strat=0": 3.09886488011135,
-          "stretch": 2.2477268323659825,
-          "t20d": 2.8782309751615616,
-          "t5d": 2.882571291591939,
-          "vol=1": 2.6909326890978305,
+          "side": 2.9053545120989206,
+          "side_rsi": 0.5150168838382003,
+          "side_t20": 1.902737334616077,
+          "side_t5": 2.8160017248407074,
+          "strat=0": 2.9053545120989206,
+          "stretch": 2.2353004301998283,
+          "t20d": 1.902737334616077,
+          "t5d": 2.8160017248407074,
+          "vol=1": 2.497422321085401,
           "vol=2": 0.4079321910135195,
-          "volr": 0.27378110273149575
+          "volr": 0.27078403005918233
         },
         "z": {
-          "adx": 0.21383731758093638,
-          "atrp": 1.1164546141114364,
-          "dc": -0.622815098980545,
-          "ds": 0.3169977351590488,
-          "hc": -1.9093874250770348,
-          "hs": 0.4469180358297084,
-          "rsi": -0.03640407832273522,
+          "adx": 0.2043507534029606,
+          "atrp": 1.017475109807067,
+          "dc": -0.9930311968891086,
+          "ds": 0.5044318117496814,
+          "hc": -2.286905696205799,
+          "hs": 0.44691803582970846,
+          "rsi": 0.11428586851244155,
           "rsi=1": -0.530624548343895,
-          "rsi=2": -1.2355702170159613,
+          "rsi=2": -0.7517923863392949,
           "rsi=3": 0.02895541432888859,
           "ses=0": -1.4566481252809118,
-          "ses=1": 1.0331257724536886,
+          "ses=1": 1.429438934942291,
           "ses=2": -1.0730142865483583,
-          "side": 0.5471798095394508,
-          "side_rsi": 0.3242373502759728,
-          "side_t20": 0.5418429846669234,
-          "side_t5": -1.8610007139242621,
-          "strat=0": -1.6688317194812679,
-          "stretch": -1.9459723955731467,
-          "t20d": -0.45111132920107033,
-          "t5d": 1.0967891601643458,
-          "vol=1": -2.240824814319659,
+          "side": 0.10554096478277168,
+          "side_rsi": 0.1713359367094181,
+          "side_t20": -0.3964785664725697,
+          "side_t5": -2.1038934438147163,
+          "strat=0": -1.2048230944931235,
+          "stretch": -1.8315331238959076,
+          "t20d": 0.47669531389835174,
+          "t5d": 1.3451860974908316,
+          "vol=1": -1.761006235808291,
           "vol=2": 0.6386956951581242,
-          "volr": 1.1453557224777486
+          "volr": 1.0886433767066912
         }
       },
       "gross_loss": 6.0,
-      "gross_profit": 4.00000000000001,
+      "gross_profit": 3.5000000000000098,
       "hedge": {
-        "base": 0.47720729337349077,
-        "buckets": 0.15153277121340258,
-        "ftrl": 0.16724815960013242,
-        "pool": 0.16234510914630773,
+        "base": 0.4722322909601574,
+        "buckets": 0.15327123313032262,
+        "ftrl": 0.16685139052782483,
+        "pool": 0.16597841871502858,
         "trained": 0.04166666666666667
       },
       "legacy_v1": {
@@ -2781,8 +1403,8 @@
         }
       },
       "metrics": {
-        "acc": 5.0,
-        "base_logloss": 8.283154523584022,
+        "acc": 4.0,
+        "base_logloss": 7.757550231280223,
         "bins": [
           [
             0,
@@ -2810,9 +1432,9 @@
             3.0
           ],
           [
-            5,
-            2.756168,
-            3.0
+            4,
+            2.196467,
+            2.0
           ],
           [
             2,
@@ -2835,13 +1457,13 @@
             0.0
           ]
         ],
-        "brier": 3.0910256355429997,
-        "logloss": 8.510717521341856,
-        "n": 12
+        "brier": 2.8971624261419997,
+        "logloss": 7.930364954926869,
+        "n": 11
       },
-      "total_trades": 14,
+      "total_trades": 13,
       "version": 2,
-      "wins": 8
+      "wins": 7
     }
   },
   "vwap_revert_eth": {
@@ -2849,127 +1471,127 @@
     "last_signal_bar": 1788595200,
     "ml": {
       "cal": {
-        "a": 0.9875393918616084,
-        "b": 0.009381415281546325,
-        "n": 10
+        "a": 0.9920331084072369,
+        "b": -0.002487949517702936,
+        "n": 9
       },
       "dims": {
         "rsi": {
           "1": [
-            2.9147254847498605,
-            0.9438743126816931
+            2.931610317711987,
+            0.9493421209505188
           ],
           "2": [
-            1.0,
-            3.8643899053792516
+            0.0,
+            3.8867760883643214
           ],
           "3": [
-            0.9659363289248453,
-            1.9435825447680661
+            0.9715319411536056,
+            1.9548416039104162
           ]
         },
         "ses": {
           "0": [
             0.0,
-            1.9323883330345892
+            1.9435825447680661
           ],
           "1": [
-            3.9147254847498605,
-            3.8422984613601754
+            2.931610317711987,
+            3.864556669911939
           ],
           "2": [
-            0.9659363289248453,
-            0.9771599684342458
+            0.9715319411536056,
+            0.982820598545251
           ]
         },
         "strat": {
           "2": [
-            4.880661813674706,
-            6.75184676282901
+            3.9031422588655933,
+            6.790959813225256
           ]
         },
         "vol": {
           "1": [
-            4.880661813674706,
-            5.757606339011463
+            3.9031422588655933,
+            5.790959813225256
           ],
           "2": [
             0.0,
-            0.9942404238175473
+            1.0
           ]
         }
       },
-      "dl": 6.75184676282901,
+      "dl": 6.790959813225256,
       "drift": {
-        "cum": 0.11860954489749222,
+        "cum": -0.01480971378742392,
         "events": 0,
         "last_at": null,
-        "mean": 0.7466118797372435,
+        "mean": 0.7295652954389195,
         "min_cum": -0.11845043937098834,
-        "n": 10
+        "n": 9
       },
-      "dw": 4.880661813674706,
+      "dw": 3.9031422588655933,
       "ftrl": {
         "n": {
-          "adx": 0.19050090239653003,
-          "atrp": 0.4624279176494437,
-          "dc": 1.7313882022167995,
-          "ds": 0.9828461909064414,
-          "hc": 2.124575231661118,
+          "adx": 0.19030550662965084,
+          "atrp": 0.442625003166522,
+          "dc": 1.3895247870649565,
+          "ds": 0.9035632400503877,
+          "hc": 1.7034288656532213,
           "hs": 0.5896591614621232,
-          "rsi": 0.3487813522659941,
+          "rsi": 0.2988035890852817,
           "rsi=1": 0.8548796553563,
-          "rsi=2": 1.087009256628186,
+          "rsi=2": 0.665862890620289,
           "rsi=3": 0.7723454811387553,
           "ses=0": 0.24910780753417658,
-          "ses=1": 1.823826783671978,
+          "ses=1": 1.402680417664081,
           "ses=2": 0.6412998019170868,
-          "side": 2.7142343931232413,
-          "side_rsi": 0.3487813522659941,
-          "side_t20": 2.878812407721777,
-          "side_t5": 1.6805299474355349,
-          "strat=2": 2.7142343931232413,
-          "stretch": 2.1134256939306666,
-          "t20d": 2.878812407721777,
-          "t5d": 1.6805299474355349,
-          "vol=1": 2.549002294181204,
+          "side": 2.2930880271153447,
+          "side_rsi": 0.2988035890852817,
+          "side_t20": 0.7557964370573184,
+          "side_t5": 1.5356512444907884,
+          "strat=2": 2.2930880271153447,
+          "stretch": 2.086381488658459,
+          "t20d": 0.7557964370573184,
+          "t5d": 1.5356512444907884,
+          "vol=1": 2.1278559281733074,
           "vol=2": 0.16523209894203705,
-          "volr": 0.14937752415330122
+          "volr": 0.14285484385678449
         },
         "z": {
-          "adx": 0.057207269773197886,
-          "atrp": 0.06703071571214254,
-          "dc": 2.2268799533573937,
-          "ds": 2.37506414370665,
-          "hc": 1.567421787256777,
-          "hs": 0.5501291396815526,
-          "rsi": 0.8706710035016735,
+          "adx": 0.043225343667280654,
+          "atrp": -0.0732326187161406,
+          "dc": 1.5478242683371086,
+          "ds": 2.6036456148016294,
+          "hc": 0.8636272161436991,
+          "hs": 0.5501291396815527,
+          "rsi": 1.0652751335904067,
           "rsi=1": -1.730229893722087,
-          "rsi=2": 1.1039995393110908,
+          "rsi=2": 1.564406230029896,
           "rsi=3": 0.3748204361778972,
           "ses=0": 0.49910701010322084,
-          "ses=1": -0.7797723474924323,
+          "ses=1": -0.12311264763821754,
           "ses=2": -0.15528696817241386,
-          "side": -3.5996979149935586,
-          "side_rsi": 0.02639746937408268,
-          "side_t20": -0.4734243265990634,
-          "side_t5": -1.40860543435074,
-          "strat=2": -0.38173572805367145,
-          "stretch": -0.05017139376496685,
-          "t20d": -0.018631668442809335,
-          "t5d": 2.1554649688534666,
-          "vol=1": -0.8047119298916867,
+          "side": -4.039073206232268,
+          "side_rsi": -0.19238473752820348,
+          "side_t20": -1.3529189614494836,
+          "side_t5": -1.745965808003355,
+          "strat=2": 0.25496923844965286,
+          "stretch": 0.11392704552790316,
+          "t20d": 1.0096176926372626,
+          "t5d": 2.4745599044504103,
+          "vol=1": -0.14865664915353863,
           "vol=2": 0.40648751388208354,
-          "volr": 0.3368085746662609
+          "volr": 0.2546335761276214
         }
       },
       "gross_loss": 6.104481957564261,
-      "gross_profit": 4.389536690973427,
+      "gross_profit": 3.5624108755373345,
       "hedge": {
-        "base": 0.46665222434834136,
-        "buckets": 0.15534066438904895,
-        "ftrl": 0.1690802750868995,
-        "pool": 0.16726016950904368,
+        "base": 0.45660446393445486,
+        "buckets": 0.1584806619235492,
+        "ftrl": 0.1726998063997854,
+        "pool": 0.17054840107554378,
         "trained": 0.04166666666666667
       },
       "legacy_v1": {
@@ -3008,7 +1630,7 @@
       },
       "metrics": {
         "acc": 3.0,
-        "base_logloss": 7.352709199127094,
+        "base_logloss": 6.5921799918300135,
         "bins": [
           [
             0,
@@ -3031,9 +1653,9 @@
             1.0
           ],
           [
-            6,
-            2.7381189999999997,
-            4.0
+            5,
+            2.331562,
+            3.0
           ],
           [
             2,
@@ -3061,13 +1683,13 @@
             0.0
           ]
         ],
-        "brier": 2.7615421824640007,
-        "logloss": 7.466118797372435,
-        "n": 10
+        "brier": 2.4093675882150007,
+        "logloss": 6.566087658950275,
+        "n": 9
       },
-      "total_trades": 12,
+      "total_trades": 11,
       "version": 2,
-      "wins": 5
+      "wins": 4
     }
   },
   "zscore_revert_btc": {
@@ -3075,137 +1697,131 @@
     "last_signal_bar": 1788595200,
     "ml": {
       "cal": {
-        "a": 0.9739342520202204,
-        "b": -0.01791808170144761,
-        "n": 11
+        "a": 0.9651374115116101,
+        "b": -0.03227703922174186,
+        "n": 9
       },
       "dims": {
         "rsi": {
           "0": [
-            0.933032991536807,
+            0.9438743126816931,
             0.0
           ],
           "1": [
-            5.769217178207368,
-            0.933032991536807
+            4.824632812496452,
+            0.9438743126816931
           ],
           "2": [
-            4.759117348613308,
-            2.9093226879300156
+            3.8086226874675106,
+            2.943127389221447
           ],
           "3": [
             0.0,
-            0.988514020352896
+            1.0
           ]
         },
         "ses": {
           "0": [
-            1.8823123093528358,
+            1.904183724860935,
             0.0
           ],
           "1": [
-            5.65850551121125,
-            1.9321627194957698
+            5.724254178196869,
+            1.9546133688685512
           ],
           "2": [
-            3.9205496977933967,
-            2.898706980323949
+            1.9486919095878514,
+            2.9323883330345892
           ]
         },
         "strat": {
           "4": [
-            11.461367518357482,
-            4.830869699819719
+            9.577129812645655,
+            4.887001701903141
           ]
         },
         "vol": {
-          "0": [
-            0.9942404238175473,
-            0.0
-          ],
           "1": [
-            10.467127094539935,
-            3.853709731385473
+            9.577129812645655,
+            3.8984876815502445
           ],
           "2": [
             0.0,
-            0.9771599684342458
+            0.988514020352896
           ]
         }
       },
-      "dl": 4.830869699819719,
+      "dl": 4.887001701903141,
       "drift": {
-        "cum": 0.5152570251843265,
+        "cum": 1.1164968781379003,
         "events": 0,
         "last_at": null,
-        "mean": 0.7105616739948614,
+        "mean": 0.7692390125205559,
         "min_cum": -0.6527176232179898,
-        "n": 11
+        "n": 9
       },
-      "dw": 11.461367518357482,
+      "dw": 9.577129812645655,
       "ftrl": {
         "n": {
-          "adx": 0.08329079253121711,
-          "atrp": 1.0036438408472015,
-          "dc": 2.592824472593201,
-          "ds": 0.1411111311389599,
-          "hc": 1.2818692820439779,
-          "hs": 1.4520663216881824,
-          "rsi": 0.18506180767935382,
-          "rsi=1": 0.36556212244109093,
-          "rsi=2": 2.051829301369091,
+          "adx": 0.025008308536230792,
+          "atrp": 0.9302496959538417,
+          "dc": 2.337179106637079,
+          "ds": 0.08029393360328976,
+          "hc": 1.2027536411710298,
+          "hs": 1.214719399069339,
+          "rsi": 0.17606698614873195,
+          "rsi=1": 0.266067388491867,
+          "rsi=2": 1.8348614718265233,
           "rsi=3": 0.41208137000462314,
           "ses=0": 0.16351173208092168,
           "ses=1": 1.2096393650868058,
-          "ses=2": 1.4563216966470773,
-          "side": 2.733935603732161,
-          "side_rsi": 0.18506180767935382,
-          "side_t20": 1.1848308542471684,
-          "side_t5": 0.1754759980143109,
-          "strat=4": 2.829472793814805,
-          "stretch": 2.128879413580635,
-          "t20d": 1.1848308542471684,
-          "t5d": 0.1754759980143109,
-          "vol=0": 0.21696782954256766,
-          "vol=1": 2.0271160200612663,
+          "ses=2": 1.1398591331552859,
+          "side": 2.417473040240369,
+          "side_rsi": 0.17606698614873195,
+          "side_t20": 0.405849634298942,
+          "side_t5": 0.13056161274561492,
+          "strat=4": 2.5130102303230135,
+          "stretch": 2.0349703809239648,
+          "t20d": 0.405849634298942,
+          "t5d": 0.13056161274561492,
+          "vol=1": 1.9276212861120423,
           "vol=2": 0.5853889442109711,
-          "volr": 0.14594663349556086
+          "volr": 0.11449435523513053
         },
         "z": {
-          "adx": 0.4057655423108745,
-          "atrp": -0.6952870649437631,
-          "dc": 2.30869355346027,
-          "ds": 0.26286672110799114,
-          "hc": -1.0772100662414263,
-          "hs": 0.7074450321028306,
-          "rsi": 1.0201978885422454,
-          "rsi=1": -1.479722679703241,
-          "rsi=2": 1.1787786419976953,
+          "adx": 0.05737997494581732,
+          "atrp": -1.0502399699796017,
+          "dc": 2.8825316156869727,
+          "ds": 0.4775691725432506,
+          "hc": -1.445334588774594,
+          "hs": 0.024930042932568487,
+          "rsi": 1.008545602115175,
+          "rsi=1": -1.1025093055575585,
+          "rsi=2": 1.5934229394008903,
           "rsi=3": 0.6419356431953465,
           "ses=0": -0.5902262437361407,
           "ses=1": 0.9947306938351884,
-          "ses=2": -0.060690159607832486,
-          "side": -4.451833782705678,
-          "side_rsi": -0.24782356427891078,
-          "side_t20": -0.38368977141152916,
-          "side_t5": 0.30514175942921773,
-          "strat=4": 0.09770749541567883,
-          "stretch": 1.0027363598685979,
-          "t20d": -0.4789699528409518,
-          "t5d": 0.8806461131552084,
-          "vol=0": -0.46579805661098206,
-          "vol=1": -0.2144681025832593,
+          "ses=2": 0.6854667679737193,
+          "side": -4.43951250326896,
+          "side_rsi": -0.37950712753649724,
+          "side_t20": -0.5650719870410015,
+          "side_t5": 0.040863707209255626,
+          "strat=4": 0.8533503264320406,
+          "stretch": 1.415304494463033,
+          "t20d": 0.611425996119898,
+          "t5d": 0.7076851576284339,
+          "vol=1": 0.09979715686691061,
           "vol=2": 0.7651071455756842,
-          "volr": 0.6199861535298126
+          "volr": 0.36966760597831616
         }
       },
       "gross_loss": 2.3326611302313047,
-      "gross_profit": 5.726577810352293,
+      "gross_profit": 5.140050058557348,
       "hedge": {
-        "base": 0.46538382289522456,
-        "buckets": 0.15178663499914227,
-        "ftrl": 0.17065161400168763,
-        "pool": 0.17051126143727918,
+        "base": 0.46305783328218564,
+        "buckets": 0.15192408773666474,
+        "ftrl": 0.17427072590280066,
+        "pool": 0.16908068641168275,
         "trained": 0.04166666666666667
       },
       "legacy_v1": {
@@ -3247,8 +1863,8 @@
         }
       },
       "metrics": {
-        "acc": 7.0,
-        "base_logloss": 7.706053160676107,
+        "acc": 5.0,
+        "base_logloss": 6.873419721377777,
         "bins": [
           [
             0,
@@ -3276,14 +1892,14 @@
             0.0
           ],
           [
-            1,
-            0.598156,
-            1.0
+            0,
+            0.0,
+            0.0
           ],
           [
-            3,
-            2.0643649999999996,
-            2.0
+            2,
+            1.3799039999999998,
+            1.0
           ],
           [
             7,
@@ -3301,13 +1917,13 @@
             0.0
           ]
         ],
-        "brier": 2.797027320486,
-        "logloss": 7.816178413943474,
-        "n": 11
+        "brier": 2.535983859629,
+        "logloss": 6.9231511126850025,
+        "n": 9
       },
-      "total_trades": 17,
+      "total_trades": 15,
       "version": 2,
-      "wins": 12
+      "wins": 10
     }
   }
 }
