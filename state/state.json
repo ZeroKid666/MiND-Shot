@@ -768,6 +768,74 @@
       },
       "version": 1
     },
+    "paper_ledger_v1": {
+      "rsi2_bracket_eth:1788638400:short": {
+        "cost_assumptions": null,
+        "entry": {
+          "accounting_version": 1,
+          "asset": "ETH",
+          "detected_at": null,
+          "duration_sec": 74130,
+          "entry": 2477.87,
+          "entry_ml_probability": null,
+          "exit_style": "bracket",
+          "init_sl": 2523.8162749637454,
+          "last_bar": 1788696000,
+          "live_pnl_leveraged": -2.99,
+          "live_pnl_pct": -0.299,
+          "ml_snap": {
+            "_pred": {
+              "experts": {
+                "base": 0.563493,
+                "buckets": 0.58213,
+                "ftrl": 0.505835,
+                "pool": 0.470542
+              },
+              "p": 0.544139
+            },
+            "p_tr": null,
+            "rsi_b": 2,
+            "ses_b": 2,
+            "sid": "rsi2_bracket_eth",
+            "side": "short",
+            "strat_b": 1,
+            "t": 1788624000,
+            "v": 2,
+            "vol_b": 1,
+            "x": {
+              "adx": -0.3600447225748301,
+              "atrp": -0.3818393356454608,
+              "dc": -0.2225209339563146,
+              "ds": -0.9749279121818236,
+              "hc": -0.5000000000000004,
+              "hs": -0.8660254037844384,
+              "rsi": 0.10726836732334377,
+              "side": -1.0,
+              "side_rsi": -0.10726836732334377,
+              "side_t20": -2.0918706429672365,
+              "side_t5": 0.04847801578353961,
+              "stretch": 0.27942830294831394,
+              "t20d": 2.0918706429672365,
+              "t5d": -0.04847801578353961,
+              "volr": -0.23941993583581966
+            }
+          },
+          "opened_bar": 1788638400,
+          "side": "short",
+          "sl": 2523.8162749637454,
+          "strategy_id": "rsi2_bracket_eth",
+          "target": null,
+          "tf": "4h",
+          "tp": 2454.896862518127
+        },
+        "entry_delivery_ok": null,
+        "fill_model": "theoretical_candle_open_not_alert_execution",
+        "id": "rsi2_bracket_eth:1788638400:short",
+        "legacy_import": true,
+        "recorded_at": 1788713043,
+        "status": "open"
+      }
+    },
     "paper_mode": false,
     "risk_per_trade_pct": 15.0,
     "sl_cooldowns": {}
@@ -777,14 +845,14 @@
       "accounting_version": 1,
       "asset": "ETH",
       "detected_at": null,
-      "duration_sec": 74130,
+      "duration_sec": 74643,
       "entry": 2477.87,
       "entry_ml_probability": null,
       "exit_style": "bracket",
       "init_sl": 2523.8162749637454,
       "last_bar": 1788696000,
-      "live_pnl_leveraged": -2.99,
-      "live_pnl_pct": -0.299,
+      "live_pnl_leveraged": -2.58,
+      "live_pnl_pct": -0.258,
       "ml_snap": {
         "_pred": {
           "experts": {
