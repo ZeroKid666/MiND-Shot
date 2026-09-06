@@ -6,6 +6,7 @@
     "cur_win_streak": 0,
     "daily_loss_limit_r": -3.0,
     "daily_r": {},
+    "delivery_outbox": {},
     "funding_pause_threshold": 0.05,
     "heatmap": [
       [
@@ -696,6 +697,10 @@
       ]
     ],
     "journal": [],
+    "last_poll_health": {
+      "at": 1788713458,
+      "errors": []
+    },
     "last_weekly_summary": null,
     "max_concurrent_trades": 4,
     "max_loss_streak": 0,
@@ -837,6 +842,25 @@
       }
     },
     "paper_mode": false,
+    "paper_report": {
+      "calibration": {
+        "bins": [],
+        "brier": null,
+        "log_loss": null,
+        "n": 0,
+        "target": "theoretical_gross_win_not_net_execution"
+      },
+      "legacy": 1,
+      "limitations": [
+        "Sampled prices may miss intrapoll TP/SL touches.",
+        "No funding, order-book fills or Telegram receipt-time execution.",
+        "R sum is not portfolio return; costs are configured scenarios."
+      ],
+      "probabilities_validated": false,
+      "sampled_closed": 0,
+      "sampled_net_r_sum": null,
+      "signals": 1
+    },
     "risk_per_trade_pct": 15.0,
     "sl_cooldowns": {}
   },
@@ -845,14 +869,14 @@
       "accounting_version": 1,
       "asset": "ETH",
       "detected_at": null,
-      "duration_sec": 74643,
+      "duration_sec": 75058,
       "entry": 2477.87,
       "entry_ml_probability": null,
       "exit_style": "bracket",
       "init_sl": 2523.8162749637454,
       "last_bar": 1788696000,
-      "live_pnl_leveraged": -2.58,
-      "live_pnl_pct": -0.258,
+      "live_pnl_leveraged": -2.01,
+      "live_pnl_pct": -0.201,
       "ml_snap": {
         "_pred": {
           "experts": {
