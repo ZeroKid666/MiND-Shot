@@ -32,7 +32,7 @@ import time
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional, Tuple
 
-from . import config, context, intelligence, market, ml, notifier, whale, paper, delivery
+from . import config, context, intelligence, market, ml, notifier, whale, paper, delivery, telegram_ui
 from .market import TF_MIN
 from .models import C, T
 from .state import (
@@ -319,6 +319,7 @@ def run_one_poll() -> Dict[str, Any]:
     gs["paper_report"] = paper.report(gs)
     save_state(state)
     delivery.flush(gs, lambda: save_state(state))
+    telegram_ui.poll(state, lambda: save_state(state))
     if os.environ.get("GITHUB_STEP_SUMMARY"):
         with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as summary:
             summary.write("## Paper statistics\n```json\n" + json.dumps(gs["paper_report"], indent=2) + "\n```\n")
