@@ -26,12 +26,13 @@ from __future__ import annotations
 import copy
 import json
 import logging
+import os
 import sys
 import time
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional, Tuple
 
-from . import config, context, intelligence, market, ml, notifier, whale, paper
+from . import config, context, intelligence, market, ml, notifier, whale, paper, delivery
 from .market import TF_MIN
 from .models import C, T
 from .state import (
@@ -154,7 +155,10 @@ def _advance_open_trade(
     for ev in events:
         res["events"].append(ev)
         payload, text = notifier.event_alert(ev, trade, strategy)
-        delivery_ok = notifier.deliver(payload, text)
+        entry_attempt = gs.get("delivery_outbox", {}).get(paper.trade_id(trade) + ":entry")
+        if entry_attempt and entry_attempt["status"] == "pending":
+            entry_attempt["status"] = "superseded"
+        delivery.enqueue(gs, paper.trade_id(trade) + ":exit", payload, text)
     if closed and info:
         paper.record_close(gs, trade, info, delivery_ok)
         ml.update(st["ml"], trade.ml_snap, info["won"], info["gross_profit"], info["gross_loss"],
@@ -219,7 +223,8 @@ def _maybe_enter(
                                 "ev_ok": (ml_conf > breakeven) if breakeven else None}
             payload, text = notifier.entry_alert(trade, strategy, ml_conf,
                                                  adx=series["adx"][confirm_idx], breakeven=breakeven)
-            row["entry_delivery_ok"] = notifier.deliver(payload, text)
+            paper.observe_open(row, candles[-1][C], trade.detected_at)
+            delivery.enqueue(gs, paper.trade_id(trade) + ":entry", payload, text)
             log.info("[%s] NEW %s @ %s  ml=%.1f%%", strategy.id, trade.side.upper(),
                      notifier.fmt(trade.entry), ml_conf * 100)
     st["last_signal_bar"] = candles[confirm_idx][T]
@@ -236,6 +241,7 @@ def process_strategy(
     trained_model: Optional[Dict[str, Any]] = None,
     funding: Optional[float] = None,
 ) -> None:
+    paper.observe_poll(gs, strategy, candles, series, int(time.time()))
     st = ensure_strategy(state, strategy.id)
     res = _base_result(strategy, candles)
     confirm_idx = len(candles) - 2
@@ -305,10 +311,17 @@ def run_one_poll() -> Dict[str, Any]:
                              trained_model, funding)
         except Exception as err:  # noqa: BLE001 — one bad strategy must not sink the poll
             log.exception("strategy %s errored: %s", strategy.id, err)
+            results.append({"strategy": strategy.id, "error": "strategy processing failed"})
 
     # Persist trade-lifecycle state NOW — it must never depend on the best-effort
     # enrichment below succeeding (a whale-flow hiccup must not roll back trades).
+    gs["last_poll_health"] = {"at": int(time.time()), "errors": [r["error"] for r in results if r.get("error")]}
+    gs["paper_report"] = paper.report(gs)
     save_state(state)
+    delivery.flush(gs, lambda: save_state(state))
+    if os.environ.get("GITHUB_STEP_SUMMARY"):
+        with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as summary:
+            summary.write("## Paper statistics\n```json\n" + json.dumps(gs["paper_report"], indent=2) + "\n```\n")
 
     try:
         whale_ctx = whale.fetch_whale_flow()

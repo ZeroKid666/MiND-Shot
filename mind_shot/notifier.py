@@ -106,17 +106,17 @@ def entry_alert(trade: Trade, strategy: Strategy, ml_conf: float, adx: float | N
     ev_str = ""
     if breakeven is not None:
         edge_ok = ml_conf > breakeven
-        ev_str = (f"🧮 Win odds <b>{ml_conf * 100:.0f}%</b> vs <b>{breakeven * 100:.0f}%</b> breakeven"
+        ev_str = (f"🧮 Model estimate <b>{ml_conf * 100:.0f}%</b> vs <b>{breakeven * 100:.0f}%</b> breakeven"
                   f"   ·   {'edge ✓' if edge_ok else 'thin edge ⚠ — consider passing'}")
 
     lines = [
         f"{dot} <b>{side_word}</b>   ·   <code>{_esc(trade.asset)}/USD</code>   ·   <b>{_esc(trade.tf)}</b>   ·   ⚡<code>{lev}×</code>",
         _RULE,
         f"🧩 <b>{_esc(strategy.name)}</b>   {wr}".rstrip(),
-        f"🧠 ML <b>{ml_conf * 100:.0f}%</b>{adx_str}",
+        f"🧠 ML estimate (unvalidated) <b>{ml_conf * 100:.0f}%</b>{adx_str}",
     ] + ([ev_str] if ev_str else []) + [
         "",
-        f"📍 <b>Entry</b>    <code>{fmt(trade.entry)}</code>",
+        f"📍 <b>Reference entry</b>    <code>{fmt(trade.entry)}</code>",
         f"🛡 <b>Stop</b>     <code>{fmt(trade.sl)}</code>   <b>−{sl_move:.2f}%</b>   ·   −${sl_usd:.2f}",
     ]
 
