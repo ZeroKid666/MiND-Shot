@@ -698,7 +698,7 @@
     ],
     "journal": [],
     "last_poll_health": {
-      "at": 1788713458,
+      "at": 1788713865,
       "errors": []
     },
     "last_weekly_summary": null,
@@ -862,21 +862,25 @@
       "signals": 1
     },
     "risk_per_trade_pct": 15.0,
-    "sl_cooldowns": {}
+    "sl_cooldowns": {},
+    "telegram_ui": {
+      "last_ok_at": 1788713866,
+      "offset": 937337736
+    }
   },
   "rsi2_bracket_eth": {
     "active_trade": {
       "accounting_version": 1,
       "asset": "ETH",
       "detected_at": null,
-      "duration_sec": 75058,
+      "duration_sec": 75465,
       "entry": 2477.87,
       "entry_ml_probability": null,
       "exit_style": "bracket",
       "init_sl": 2523.8162749637454,
       "last_bar": 1788696000,
-      "live_pnl_leveraged": -2.01,
-      "live_pnl_pct": -0.201,
+      "live_pnl_leveraged": -2.31,
+      "live_pnl_pct": -0.231,
       "ml_snap": {
         "_pred": {
           "experts": {
