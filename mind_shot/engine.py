@@ -31,7 +31,7 @@ import time
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional, Tuple
 
-from . import config, context, intelligence, market, ml, notifier, whale
+from . import config, context, intelligence, market, ml, notifier, whale, paper
 from .market import TF_MIN
 from .models import C, T
 from .state import (
@@ -148,12 +148,15 @@ def _advance_open_trade(
 ) -> None:
     """Walk the open trade over any new bars; alert, close, and teach the ML."""
     trade = Trade.from_dict(st["active_trade"])
+    paper.record_open(gs, trade, legacy=True)
+    delivery_ok = None
     events, closed, info = manage_trade(trade, strategy, candles, series)
     for ev in events:
         res["events"].append(ev)
         payload, text = notifier.event_alert(ev, trade, strategy)
-        notifier.deliver(payload, text)
+        delivery_ok = notifier.deliver(payload, text)
     if closed and info:
+        paper.record_close(gs, trade, info, delivery_ok)
         ml.update(st["ml"], trade.ml_snap, info["won"], info["gross_profit"], info["gross_loss"],
                   shared=gs.setdefault("ml_shared", ml.empty_shared()))
         _record_close(gs, trade, info)
@@ -207,6 +210,7 @@ def _maybe_enter(
         if trade is not None:
             trade.detected_at = int(time.time())
             trade.entry_ml_probability = ml_conf
+            row = paper.record_open(gs, trade)
             st["active_trade"] = trade.to_dict()
             res["active_trade"] = st["active_trade"]
             breakeven = ml.breakeven_p(strategy.id)
@@ -215,7 +219,7 @@ def _maybe_enter(
                                 "ev_ok": (ml_conf > breakeven) if breakeven else None}
             payload, text = notifier.entry_alert(trade, strategy, ml_conf,
                                                  adx=series["adx"][confirm_idx], breakeven=breakeven)
-            notifier.deliver(payload, text)
+            row["entry_delivery_ok"] = notifier.deliver(payload, text)
             log.info("[%s] NEW %s @ %s  ml=%.1f%%", strategy.id, trade.side.upper(),
                      notifier.fmt(trade.entry), ml_conf * 100)
     st["last_signal_bar"] = candles[confirm_idx][T]
