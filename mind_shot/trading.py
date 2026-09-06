@@ -41,6 +41,9 @@ class Trade:
     live_pnl_pct: float = 0.0
     live_pnl_leveraged: float = 0.0
     duration_sec: int = 0
+    detected_at: Optional[int] = None
+    entry_ml_probability: Optional[float] = None
+    accounting_version: int = 1
 
     # ── serialisation (state.json round-trips through plain dicts) ──
     def to_dict(self) -> Dict[str, Any]:
@@ -77,8 +80,8 @@ def open_trade(
 
     Matches the backtest exactly: the signal and the ATR stop/target distance come
     from the closed bar, but the fill is the OPEN of the next bar (``confirm_idx+1``,
-    the just-opened bar — known, not look-ahead). Management then starts on the bar
-    after the entry bar.
+    the just-opened bar — known, not look-ahead). Management includes the entry bar under this candle-open simulation.
+    This is a theoretical fill, not an executable price at alert delivery.
     """
     side = strategy.entry(series, confirm_idx)
     if side is None:
@@ -105,7 +108,8 @@ def open_trade(
         tp=tp,
         exit_style=strategy.exit_style.value,
         opened_bar=candles[exec_idx][T],
-        last_bar=candles[exec_idx][T],
+        last_bar=candles[confirm_idx][T],
+        accounting_version=2,
         ml_snap=ml_snap,
         target=target,
     )
@@ -163,7 +167,7 @@ def manage_trade(
             events.append({"type": kind, "price": price, "time": candle[T]})
             if not forming:
                 trade.last_bar = candle[T]
-            return events, True, _close_info(trade, kind, price)
+            return events, True, _close_info(trade, kind, price, candle[T])
 
         if not forming:
             # Signal-based (revert) exits still need a CLOSED bar — the forming
@@ -174,7 +178,7 @@ def manage_trade(
                 price = candles[exit_idx][O]
                 events.append({"type": "exit", "price": price, "time": candles[exit_idx][T]})
                 trade.last_bar = candle[T]
-                return events, True, _close_info(trade, "exit", price)
+                return events, True, _close_info(trade, "exit", price, candles[exit_idx][T])
 
         if is_revert and strategy.mean_price_key is not None and series[strategy.mean_price_key][i] is not None:
             trade.target = series[strategy.mean_price_key][i]
@@ -184,12 +188,13 @@ def manage_trade(
     return events, False, None
 
 
-def _close_info(trade: Trade, kind: str, exit_price: float) -> Dict[str, Any]:
+def _close_info(trade: Trade, kind: str, exit_price: float, exit_bar: int) -> Dict[str, Any]:
     risk = trade.risk_per_unit
     sign = trade.side_enum.sign
     pnl_r = ((exit_price - trade.entry) * sign / risk) if risk > 0 else 0.0
     won = pnl_r > 0
     return {
+        "exit_bar": exit_bar,
         "kind": kind,
         "exit_price": exit_price,
         "pnl_r": round(pnl_r, 3),

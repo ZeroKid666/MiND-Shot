@@ -23,6 +23,7 @@ Risk gates enforced at entry (first blocking reason wins):
 """
 from __future__ import annotations
 
+import copy
 import json
 import logging
 import sys
@@ -107,7 +108,16 @@ def _record_close(gs: Dict[str, Any], trade: Trade, info: Dict[str, Any]) -> Non
     gs["journal"].append({
         "strategy": trade.strategy_id, "asset": trade.asset, "tf": trade.tf, "side": trade.side,
         "entry": trade.entry, "exit": info["exit_price"], "kind": info["kind"],
-        "pnl_r": info["pnl_r"], "won": won, "opened_at": trade.opened_bar, "closed_at": trade.last_bar,
+        "pnl_r": info["pnl_r"], "won": won, "opened_at": trade.opened_bar, "closed_at": info["exit_bar"],
+        "closed_at_semantics": "candle_open_time",
+        "close_detected_at": int(time.time()),
+        "entry_detected_at": trade.detected_at,
+        "entry_ml_probability": trade.entry_ml_probability,
+        "ml_snapshot": copy.deepcopy(trade.ml_snap),
+        "initial_stop": trade.init_sl, "stop": trade.sl, "take_profit": trade.tp,
+        "accounting_version": trade.accounting_version,
+        "fill_model": "theoretical_candle_open",
+        "costs_included": False,
     })
     if len(gs["journal"]) > config.JOURNAL_CAP:
         gs["journal"] = gs["journal"][-config.JOURNAL_CAP:]
@@ -195,6 +205,8 @@ def _maybe_enter(
     else:
         trade = open_trade(strategy, candles, confirm_idx, series, snap)
         if trade is not None:
+            trade.detected_at = int(time.time())
+            trade.entry_ml_probability = ml_conf
             st["active_trade"] = trade.to_dict()
             res["active_trade"] = st["active_trade"]
             breakeven = ml.breakeven_p(strategy.id)
