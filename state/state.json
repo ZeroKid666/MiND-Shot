@@ -778,7 +778,7 @@
       }
     ],
     "last_poll_health": {
-      "at": 1788743883,
+      "at": 1788744562,
       "errors": []
     },
     "last_weekly_summary": null,
@@ -1003,7 +1003,7 @@
         "observed_execution": {
           "entry": 2510.58,
           "entry_at": 1788740252,
-          "last_observed_at": 1788743883,
+          "last_observed_at": 1788744562,
           "model": "sampled_price_v1",
           "status": "open"
         },
@@ -1036,7 +1036,7 @@
       "rsi2_bracket_eth": 1788738709.582999
     },
     "telegram_ui": {
-      "last_ok_at": 1788743886,
+      "last_ok_at": 1788744562,
       "offset": 937337738
     }
   },
@@ -1277,14 +1277,14 @@
       "accounting_version": 2,
       "asset": "ETH",
       "detected_at": 1788740252,
-      "duration_sec": 4683,
+      "duration_sec": 5362,
       "entry": 2514.72,
       "entry_ml_probability": 0.6802360534619649,
       "exit_style": "bracket",
       "init_sl": 2574.6665805476464,
       "last_bar": 1788724800,
-      "live_pnl_leveraged": 2.86,
-      "live_pnl_pct": 0.286,
+      "live_pnl_leveraged": 4.15,
+      "live_pnl_pct": 0.415,
       "ml_snap": {
         "_pred": {
           "experts": {
