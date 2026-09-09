@@ -1153,7 +1153,7 @@
       }
     ],
     "last_poll_health": {
-      "at": 1788981207,
+      "at": 1788981933,
       "errors": []
     },
     "last_weekly_summary": null,
@@ -1912,7 +1912,7 @@
       "rsi2_bracket_eth": 1788738709.582999
     },
     "telegram_ui": {
-      "last_ok_at": 1788981208,
+      "last_ok_at": 1788981933,
       "offset": 937337738
     }
   },
