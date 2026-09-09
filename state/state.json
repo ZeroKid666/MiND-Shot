@@ -1008,7 +1008,7 @@
       }
     ],
     "last_poll_health": {
-      "at": 1788922813,
+      "at": 1788923659,
       "errors": []
     },
     "last_weekly_summary": null,
@@ -1569,7 +1569,7 @@
         "observed_execution": {
           "entry": 78878.9,
           "entry_at": 1788797398,
-          "last_observed_at": 1788922813,
+          "last_observed_at": 1788923659,
           "model": "sampled_price_v1",
           "status": "open"
         },
@@ -1621,7 +1621,7 @@
       "rsi2_bracket_eth": 1788738709.582999
     },
     "telegram_ui": {
-      "last_ok_at": 1788922814,
+      "last_ok_at": 1788923660,
       "offset": 937337738
     }
   },
@@ -2550,14 +2550,14 @@
       "accounting_version": 2,
       "asset": "BTC",
       "detected_at": 1788797398,
-      "duration_sec": 126013,
+      "duration_sec": 126859,
       "entry": 78821.6,
       "entry_ml_probability": 0.6642375303674044,
       "exit_style": "revert",
       "init_sl": 76777.66722445795,
       "last_bar": 1788897600,
-      "live_pnl_leveraged": -0.99,
-      "live_pnl_pct": -0.099,
+      "live_pnl_leveraged": -2.68,
+      "live_pnl_pct": -0.268,
       "ml_snap": {
         "_pred": {
           "experts": {
@@ -2599,7 +2599,7 @@
       "side": "long",
       "sl": 76777.66722445795,
       "strategy_id": "zscore_revert_btc",
-      "target": 79278.81499999997,
+      "target": 79272.16499999998,
       "tf": "4h",
       "tp": null
     },
