@@ -1185,7 +1185,7 @@
       }
     ],
     "last_poll_health": {
-      "at": 1789026758,
+      "at": 1789027176,
       "errors": []
     },
     "last_weekly_summary": null,
@@ -1634,7 +1634,7 @@
         "observed_execution": {
           "entry": 2465.96,
           "entry_at": 1788984308,
-          "last_observed_at": 1789026758,
+          "last_observed_at": 1789027176,
           "model": "sampled_price_v1",
           "status": "open"
         },
@@ -1936,7 +1936,7 @@
         "observed_execution": {
           "entry": 2465.96,
           "entry_at": 1788984308,
-          "last_observed_at": 1789026758,
+          "last_observed_at": 1789027176,
           "model": "sampled_price_v1",
           "status": "open"
         },
@@ -2014,7 +2014,7 @@
         "observed_execution": {
           "entry": 2465.96,
           "entry_at": 1788984308,
-          "last_observed_at": 1789026758,
+          "last_observed_at": 1789027176,
           "model": "sampled_price_v1",
           "status": "open"
         },
@@ -2204,7 +2204,7 @@
         "observed_execution": {
           "entry": 78198.8,
           "entry_at": 1788984308,
-          "last_observed_at": 1789026758,
+          "last_observed_at": 1789027176,
           "model": "sampled_price_v1",
           "status": "open"
         },
@@ -2256,7 +2256,7 @@
       "rsi2_bracket_eth": 1788738709.582999
     },
     "telegram_ui": {
-      "last_ok_at": 1789026759,
+      "last_ok_at": 1789027177,
       "offset": 937337738
     }
   },
@@ -2265,14 +2265,14 @@
       "accounting_version": 2,
       "asset": "ETH",
       "detected_at": 1788984308,
-      "duration_sec": 42758,
+      "duration_sec": 43176,
       "entry": 2465.29,
       "entry_ml_probability": 0.617716982491203,
       "exit_style": "bracket",
       "init_sl": 2418.3915674110217,
       "last_bar": 1788998400,
-      "live_pnl_leveraged": 3.35,
-      "live_pnl_pct": 0.335,
+      "live_pnl_leveraged": 3.05,
+      "live_pnl_pct": 0.305,
       "ml_snap": {
         "_pred": {
           "experts": {
@@ -2789,14 +2789,14 @@
       "accounting_version": 2,
       "asset": "ETH",
       "detected_at": 1788984308,
-      "duration_sec": 42758,
+      "duration_sec": 43176,
       "entry": 2465.29,
       "entry_ml_probability": 0.6254711296774819,
       "exit_style": "bracket",
       "init_sl": 2418.3915674110217,
       "last_bar": 1788998400,
-      "live_pnl_leveraged": 3.35,
-      "live_pnl_pct": 0.335,
+      "live_pnl_leveraged": 3.05,
+      "live_pnl_pct": 0.305,
       "ml_snap": {
         "_pred": {
           "experts": {
@@ -3071,14 +3071,14 @@
       "accounting_version": 2,
       "asset": "ETH",
       "detected_at": 1788984308,
-      "duration_sec": 42758,
+      "duration_sec": 43176,
       "entry": 2465.29,
       "entry_ml_probability": 0.4960128775593865,
       "exit_style": "revert",
       "init_sl": 2402.758756548029,
       "last_bar": 1788998400,
-      "live_pnl_leveraged": 3.35,
-      "live_pnl_pct": 0.335,
+      "live_pnl_leveraged": 3.05,
+      "live_pnl_pct": 0.305,
       "ml_snap": {
         "_pred": {
           "experts": {
@@ -3120,7 +3120,7 @@
       "side": "long",
       "sl": 2402.758756548029,
       "strategy_id": "vwap_revert_eth",
-      "target": 2486.266607059489,
+      "target": 2486.2619699282204,
       "tf": "4h",
       "tp": null
     },
@@ -3353,14 +3353,14 @@
       "accounting_version": 2,
       "asset": "BTC",
       "detected_at": 1788984308,
-      "duration_sec": 42758,
+      "duration_sec": 43176,
       "entry": 78241.7,
       "entry_ml_probability": 0.6944470330455187,
       "exit_style": "revert",
       "init_sl": 75964.8660817216,
       "last_bar": 1788998400,
-      "live_pnl_leveraged": -1.31,
-      "live_pnl_pct": -0.131,
+      "live_pnl_leveraged": -1.62,
+      "live_pnl_pct": -0.162,
       "ml_snap": {
         "_pred": {
           "experts": {
@@ -3402,7 +3402,7 @@
       "side": "long",
       "sl": 75964.8660817216,
       "strategy_id": "zscore_revert_btc",
-      "target": 78805.405,
+      "target": 78804.20499999999,
       "tf": "4h",
       "tp": null
     },
