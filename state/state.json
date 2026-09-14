@@ -1839,7 +1839,7 @@
       }
     ],
     "last_poll_health": {
-      "at": 1789352519,
+      "at": 1789353258,
       "errors": []
     },
     "last_weekly_summary": null,
@@ -2748,9 +2748,22 @@
         "observed_execution": {
           "entry": 2484.51,
           "entry_at": 1789344695,
-          "last_observed_at": 1789352519,
+          "exit": 2505.54,
+          "exit_at": 1789353258,
+          "kind": "tp_observed",
+          "last_observed_at": 1789353258,
           "model": "sampled_price_v1",
-          "status": "open"
+          "result": {
+            "entry_fill": 2485.006902,
+            "exit_fill": 2505.038892,
+            "fees_per_unit": 2.4950228969999997,
+            "gross_per_unit": 21.029999999999745,
+            "net_per_unit": 17.536967102999952,
+            "net_r": 0.24211296271513535,
+            "net_won": true,
+            "slippage_per_unit": 0.9980099999997947
+          },
+          "status": "closed"
         },
         "outcome": {
           "exit_bar": 1789344000,
@@ -3590,8 +3603,8 @@
         "R sum is not portfolio return; costs are configured scenarios."
       ],
       "probabilities_validated": false,
-      "sampled_closed": 13,
-      "sampled_net_r_sum": 3.7788707306550235,
+      "sampled_closed": 14,
+      "sampled_net_r_sum": 4.02098369337016,
       "signals": 15
     },
     "risk_per_trade_pct": 15.0,
@@ -3601,7 +3614,7 @@
       "zscore_revert_btc": 1789329623.887974
     },
     "telegram_ui": {
-      "last_ok_at": 1789352520,
+      "last_ok_at": 1789353259,
       "offset": 937337738
     }
   },
