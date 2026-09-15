@@ -2296,7 +2296,7 @@
       }
     ],
     "last_poll_health": {
-      "at": 1789513576,
+      "at": 1789514331,
       "errors": []
     },
     "last_weekly_summary": null,
@@ -4745,7 +4745,7 @@
       "zscore_revert_btc": 1789329623.887974
     },
     "telegram_ui": {
-      "last_ok_at": 1789513577,
+      "last_ok_at": 1789514332,
       "offset": 937337738
     }
   },
