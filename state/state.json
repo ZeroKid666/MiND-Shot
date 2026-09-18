@@ -2694,7 +2694,7 @@
       }
     ],
     "last_poll_health": {
-      "at": 1789721746,
+      "at": 1789722279,
       "errors": []
     },
     "last_weekly_summary": null,
@@ -3603,9 +3603,22 @@
         "observed_execution": {
           "entry": 2444.31,
           "entry_at": 1789632219,
-          "last_observed_at": 1789721746,
+          "exit": 2506.62,
+          "exit_at": 1789722279,
+          "kind": "sl_observed",
+          "last_observed_at": 1789722279,
           "model": "sampled_price_v1",
-          "status": "open"
+          "result": {
+            "entry_fill": 2443.821138,
+            "exit_fill": 2507.1213239999997,
+            "fees_per_unit": 2.4754712309999998,
+            "gross_per_unit": -62.309999999999945,
+            "net_per_unit": -65.77565723099994,
+            "net_r": -1.1094424680042587,
+            "net_won": false,
+            "slippage_per_unit": 0.9901859999999942
+          },
+          "status": "closed"
         },
         "outcome": {
           "exit_bar": 1789718400,
@@ -4474,7 +4487,7 @@
         "observed_execution": {
           "entry": 2481.3,
           "entry_at": 1789704144,
-          "last_observed_at": 1789721746,
+          "last_observed_at": 1789722279,
           "model": "sampled_price_v1",
           "status": "open"
         },
@@ -5784,7 +5797,7 @@
         "observed_execution": {
           "entry": 77752.9,
           "entry_at": 1789719069,
-          "last_observed_at": 1789721746,
+          "last_observed_at": 1789722279,
           "model": "sampled_price_v1",
           "status": "open"
         },
@@ -5833,8 +5846,8 @@
         "R sum is not portfolio return; costs are configured scenarios."
       ],
       "probabilities_validated": false,
-      "sampled_closed": 24,
-      "sampled_net_r_sum": 0.2631551951109244,
+      "sampled_closed": 25,
+      "sampled_net_r_sum": -0.8462872728933343,
       "signals": 28
     },
     "risk_per_trade_pct": 15.0,
@@ -5846,7 +5859,7 @@
       "zscore_revert_btc": 1789329623.887974
     },
     "telegram_ui": {
-      "last_ok_at": 1789721746,
+      "last_ok_at": 1789722279,
       "offset": 937337738
     }
   },
@@ -6087,14 +6100,14 @@
       "accounting_version": 2,
       "asset": "ETH",
       "detected_at": 1789704144,
-      "duration_sec": 17746,
+      "duration_sec": 18279,
       "entry": 2479.56,
       "entry_ml_probability": 0.7245757917277046,
       "exit_style": "bracket",
       "init_sl": 2555.055431132196,
       "last_bar": 1789704000,
-      "live_pnl_leveraged": -8.59,
-      "live_pnl_pct": -0.859,
+      "live_pnl_leveraged": -10.91,
+      "live_pnl_pct": -1.091,
       "ml_snap": {
         "_pred": {
           "experts": {
@@ -6831,14 +6844,14 @@
       "accounting_version": 2,
       "asset": "BTC",
       "detected_at": 1789719069,
-      "duration_sec": 3346,
+      "duration_sec": 3879,
       "entry": 77820.1,
       "entry_ml_probability": 0.6659785396898369,
       "exit_style": "revert",
       "init_sl": 80282.97080709788,
       "last_bar": 1789704000,
-      "live_pnl_leveraged": -3.66,
-      "live_pnl_pct": -0.366,
+      "live_pnl_leveraged": -5.97,
+      "live_pnl_pct": -0.597,
       "ml_snap": {
         "_pred": {
           "experts": {
@@ -6880,7 +6893,7 @@
       "side": "short",
       "sl": 80282.97080709788,
       "strategy_id": "zscore_revert_btc",
-      "target": 76520.34499999999,
+      "target": 76529.33499999998,
       "tf": "4h",
       "tp": null
     },
