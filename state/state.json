@@ -2618,7 +2618,7 @@
       }
     ],
     "last_poll_health": {
-      "at": 1789707046,
+      "at": 1789707467,
       "errors": []
     },
     "last_weekly_summary": null,
@@ -3515,7 +3515,7 @@
         "observed_execution": {
           "entry": 2444.31,
           "entry_at": 1789632219,
-          "last_observed_at": 1789707046,
+          "last_observed_at": 1789707467,
           "model": "sampled_price_v1",
           "status": "open"
         },
@@ -4377,7 +4377,7 @@
         "observed_execution": {
           "entry": 2481.3,
           "entry_at": 1789704144,
-          "last_observed_at": 1789707046,
+          "last_observed_at": 1789707467,
           "model": "sampled_price_v1",
           "status": "open"
         },
@@ -5671,7 +5671,7 @@
       "zscore_revert_btc": 1789329623.887974
     },
     "telegram_ui": {
-      "last_ok_at": 1789707046,
+      "last_ok_at": 1789707467,
       "offset": 937337738
     }
   },
@@ -5680,14 +5680,14 @@
       "accounting_version": 2,
       "asset": "ETH",
       "detected_at": 1789632219,
-      "duration_sec": 75046,
+      "duration_sec": 75467,
       "entry": 2444.48,
       "entry_ml_probability": 0.5701440560748957,
       "exit_style": "bracket",
       "init_sl": 2503.597127659104,
       "last_bar": 1789689600,
-      "live_pnl_leveraged": -12.99,
-      "live_pnl_pct": -1.299,
+      "live_pnl_leveraged": -15.03,
+      "live_pnl_pct": -1.503,
       "ml_snap": {
         "_pred": {
           "experts": {
@@ -5968,14 +5968,14 @@
       "accounting_version": 2,
       "asset": "ETH",
       "detected_at": 1789704144,
-      "duration_sec": 3046,
+      "duration_sec": 3467,
       "entry": 2479.56,
       "entry_ml_probability": 0.7245757917277046,
       "exit_style": "bracket",
       "init_sl": 2555.055431132196,
       "last_bar": 1789689600,
-      "live_pnl_leveraged": 1.34,
-      "live_pnl_pct": 0.134,
+      "live_pnl_leveraged": -0.67,
+      "live_pnl_pct": -0.067,
       "ml_snap": {
         "_pred": {
           "experts": {
