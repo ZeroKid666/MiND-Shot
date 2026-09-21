@@ -3212,7 +3212,7 @@
       }
     ],
     "last_poll_health": {
-      "at": 1789966343,
+      "at": 1789966819,
       "errors": []
     },
     "last_weekly_summary": null,
@@ -6361,7 +6361,7 @@
         "observed_execution": {
           "entry": 2610.25,
           "entry_at": 1789776181,
-          "last_observed_at": 1789966343,
+          "last_observed_at": 1789966819,
           "model": "sampled_price_v1",
           "status": "open"
         },
@@ -6992,7 +6992,7 @@
       "zscore_revert_btc": 1789739493.034685
     },
     "telegram_ui": {
-      "last_ok_at": 1789966344,
+      "last_ok_at": 1789966820,
       "offset": 937337738
     }
   },
