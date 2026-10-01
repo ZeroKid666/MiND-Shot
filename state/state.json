@@ -3983,7 +3983,7 @@
       }
     ],
     "last_poll_health": {
-      "at": 1790802159,
+      "at": 1790814525,
       "errors": []
     },
     "last_weekly_summary": null,
@@ -6432,7 +6432,7 @@
         "observed_execution": {
           "entry": 2683.37,
           "entry_at": 1790802159,
-          "last_observed_at": 1790802159,
+          "last_observed_at": 1790814525,
           "model": "sampled_price_v1",
           "status": "open"
         },
@@ -8958,13 +8958,13 @@
       "zscore_revert_btc": 1789739493.034685
     },
     "telegram_ui": {
-      "last_ok_at": 1790802160,
+      "last_ok_at": 1790814525,
       "offset": 937337738
     }
   },
   "rsi2_bracket_eth": {
     "active_trade": null,
-    "last_signal_bar": 1790784000,
+    "last_signal_bar": 1790798400,
     "ml": {
       "cal": {
         "a": 0.9809742204247202,
@@ -9199,14 +9199,14 @@
       "accounting_version": 2,
       "asset": "ETH",
       "detected_at": 1790802159,
-      "duration_sec": 0,
+      "duration_sec": 16125,
       "entry": 2669.95,
       "entry_ml_probability": 0.7463987512915358,
       "exit_style": "bracket",
       "init_sl": 2598.823565488126,
-      "last_bar": 1790784000,
-      "live_pnl_leveraged": 0.0,
-      "live_pnl_pct": 0.0,
+      "last_bar": 1790798400,
+      "live_pnl_leveraged": 5.18,
+      "live_pnl_pct": 0.518,
       "ml_snap": {
         "_pred": {
           "experts": {
@@ -9488,7 +9488,7 @@
   },
   "vwap_bracket_eth": {
     "active_trade": null,
-    "last_signal_bar": 1790784000,
+    "last_signal_bar": 1790798400,
     "ml": {
       "cal": {
         "a": 0.9854039221865559,
@@ -9714,7 +9714,7 @@
   },
   "vwap_revert_eth": {
     "active_trade": null,
-    "last_signal_bar": 1790784000,
+    "last_signal_bar": 1790798400,
     "ml": {
       "cal": {
         "a": 0.9854033835522845,
@@ -9940,7 +9940,7 @@
   },
   "zscore_revert_btc": {
     "active_trade": null,
-    "last_signal_bar": 1790784000,
+    "last_signal_bar": 1790798400,
     "ml": {
       "cal": {
         "a": 0.9664796177925793,
