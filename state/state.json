@@ -5046,7 +5046,7 @@
       }
     ],
     "last_poll_health": {
-      "at": 1791574816,
+      "at": 1791588534,
       "errors": []
     },
     "last_weekly_summary": null,
@@ -11513,13 +11513,13 @@
       "zscore_revert_btc": 1791478080.430735
     },
     "telegram_ui": {
-      "last_ok_at": 1791574816,
+      "last_ok_at": 1791588534,
       "offset": 937337738
     }
   },
   "rsi2_bracket_eth": {
     "active_trade": null,
-    "last_signal_bar": 1791547200,
+    "last_signal_bar": 1791561600,
     "ml": {
       "cal": {
         "a": 0.9693702006232161,
@@ -11757,7 +11757,7 @@
   },
   "stoch_bracket_eth": {
     "active_trade": null,
-    "last_signal_bar": 1791547200,
+    "last_signal_bar": 1791561600,
     "ml": {
       "cal": {
         "a": 1.0063772547822276,
@@ -11999,7 +11999,7 @@
   },
   "vwap_bracket_eth": {
     "active_trade": null,
-    "last_signal_bar": 1791547200,
+    "last_signal_bar": 1791561600,
     "ml": {
       "cal": {
         "a": 0.9805388983400758,
@@ -12231,7 +12231,7 @@
   },
   "vwap_revert_eth": {
     "active_trade": null,
-    "last_signal_bar": 1791547200,
+    "last_signal_bar": 1791561600,
     "ml": {
       "cal": {
         "a": 0.981907145190836,
@@ -12463,7 +12463,7 @@
   },
   "zscore_revert_btc": {
     "active_trade": null,
-    "last_signal_bar": 1791547200,
+    "last_signal_bar": 1791561600,
     "ml": {
       "cal": {
         "a": 0.9493202408132189,
