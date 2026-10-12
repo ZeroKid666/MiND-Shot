@@ -5054,7 +5054,7 @@
       }
     ],
     "last_poll_health": {
-      "at": 1791756467,
+      "at": 1791767760,
       "errors": []
     },
     "last_weekly_summary": null,
@@ -11539,7 +11539,7 @@
         "observed_execution": {
           "entry": 83890.3,
           "entry_at": 1791742878,
-          "last_observed_at": 1791756467,
+          "last_observed_at": 1791767760,
           "model": "sampled_price_v1",
           "status": "open"
         },
@@ -11601,13 +11601,13 @@
       "zscore_revert_btc": 1791478080.430735
     },
     "telegram_ui": {
-      "last_ok_at": 1791756467,
+      "last_ok_at": 1791767761,
       "offset": 937337738
     }
   },
   "rsi2_bracket_eth": {
     "active_trade": null,
-    "last_signal_bar": 1791734400,
+    "last_signal_bar": 1791748800,
     "ml": {
       "cal": {
         "a": 0.9693702006232161,
@@ -11845,7 +11845,7 @@
   },
   "stoch_bracket_eth": {
     "active_trade": null,
-    "last_signal_bar": 1791734400,
+    "last_signal_bar": 1791748800,
     "ml": {
       "cal": {
         "a": 1.0063772547822276,
@@ -12087,7 +12087,7 @@
   },
   "vwap_bracket_eth": {
     "active_trade": null,
-    "last_signal_bar": 1791734400,
+    "last_signal_bar": 1791748800,
     "ml": {
       "cal": {
         "a": 0.9805388983400758,
@@ -12319,7 +12319,7 @@
   },
   "vwap_revert_eth": {
     "active_trade": null,
-    "last_signal_bar": 1791734400,
+    "last_signal_bar": 1791748800,
     "ml": {
       "cal": {
         "a": 0.981907145190836,
@@ -12554,14 +12554,14 @@
       "accounting_version": 2,
       "asset": "BTC",
       "detected_at": 1791742878,
-      "duration_sec": 22067,
+      "duration_sec": 33360,
       "entry": 83924.2,
       "entry_ml_probability": 0.5918488830646644,
       "exit_style": "revert",
       "init_sl": 85603.38993241629,
-      "last_bar": 1791734400,
-      "live_pnl_leveraged": 4.33,
-      "live_pnl_pct": 0.433,
+      "last_bar": 1791748800,
+      "live_pnl_leveraged": -0.71,
+      "live_pnl_pct": -0.071,
       "ml_snap": {
         "_pred": {
           "experts": {
@@ -12605,7 +12605,7 @@
       "side": "short",
       "sl": 85603.38993241629,
       "strategy_id": "zscore_revert_btc",
-      "target": 82858.435,
+      "target": 82975.80999999998,
       "tf": "4h",
       "tp": null
     },
