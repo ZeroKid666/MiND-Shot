@@ -7196,7 +7196,7 @@
       }
     ],
     "last_poll_health": {
-      "at": 1795536741,
+      "at": 1795567305,
       "errors": []
     },
     "last_weekly_summary": null,
@@ -11999,7 +11999,7 @@
         "observed_execution": {
           "entry": 1674.46,
           "entry_at": 1795536741,
-          "last_observed_at": 1795536741,
+          "last_observed_at": 1795567305,
           "model": "sampled_price_v1",
           "status": "open"
         },
@@ -16879,13 +16879,13 @@
       "zscore_revert_btc": 1791478080.430735
     },
     "telegram_ui": {
-      "last_ok_at": 1795536741,
+      "last_ok_at": 1795567305,
       "offset": 937337738
     }
   },
   "rsi2_bracket_eth": {
     "active_trade": null,
-    "last_signal_bar": 1795521600,
+    "last_signal_bar": 1795550400,
     "ml": {
       "cal": {
         "a": 0.9682589763006669,
@@ -17126,14 +17126,14 @@
       "accounting_version": 2,
       "asset": "ETH",
       "detected_at": 1795536741,
-      "duration_sec": 0,
+      "duration_sec": 31305,
       "entry": 1679.12,
       "entry_ml_probability": 0.7297492882417,
       "exit_style": "bracket",
       "init_sl": 1595.9491832296299,
-      "last_bar": 1795521600,
-      "live_pnl_leveraged": 0.0,
-      "live_pnl_pct": 0.0,
+      "last_bar": 1795550400,
+      "live_pnl_leveraged": -4.66,
+      "live_pnl_pct": -0.466,
       "ml_snap": {
         "_pred": {
           "experts": {
@@ -17421,7 +17421,7 @@
   },
   "vwap_bracket_eth": {
     "active_trade": null,
-    "last_signal_bar": 1795521600,
+    "last_signal_bar": 1795550400,
     "ml": {
       "cal": {
         "a": 0.9833863695575413,
@@ -17653,7 +17653,7 @@
   },
   "vwap_revert_eth": {
     "active_trade": null,
-    "last_signal_bar": 1795521600,
+    "last_signal_bar": 1795550400,
     "ml": {
       "cal": {
         "a": 0.9846750224913838,
@@ -17885,7 +17885,7 @@
   },
   "zscore_revert_btc": {
     "active_trade": null,
-    "last_signal_bar": 1795521600,
+    "last_signal_bar": 1795550400,
     "ml": {
       "cal": {
         "a": 0.9809962058650518,
