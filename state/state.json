@@ -7732,7 +7732,7 @@
       }
     ],
     "last_poll_health": {
-      "at": 1795832339,
+      "at": 1795862217,
       "errors": []
     },
     "last_weekly_summary": null,
@@ -10323,9 +10323,22 @@
         "observed_execution": {
           "entry": 1700.38,
           "entry_at": 1795659038,
-          "last_observed_at": 1795832339,
+          "exit": 1651.5,
+          "exit_at": 1795862217,
+          "kind": "tp_observed",
+          "last_observed_at": 1795862217,
           "model": "sampled_price_v1",
-          "status": "open"
+          "result": {
+            "entry_fill": 1700.0399240000002,
+            "exit_fill": 1651.8302999999999,
+            "fees_per_unit": 1.6759351120000001,
+            "gross_per_unit": 48.88000000000011,
+            "net_per_unit": 46.533688888000306,
+            "net_r": 0.9446249840628234,
+            "net_won": true,
+            "slippage_per_unit": 0.6703759999998056
+          },
+          "status": "closed"
         },
         "outcome": {
           "exit_bar": 1795752000,
@@ -10410,7 +10423,7 @@
         "observed_execution": {
           "entry": 1671.12,
           "entry_at": 1795832339,
-          "last_observed_at": 1795832339,
+          "last_observed_at": 1795862217,
           "model": "sampled_price_v1",
           "status": "open"
         },
@@ -18173,8 +18186,8 @@
         "R sum is not portfolio return; costs are configured scenarios."
       ],
       "probabilities_validated": false,
-      "sampled_closed": 89,
-      "sampled_net_r_sum": 19.442623587968747,
+      "sampled_closed": 90,
+      "sampled_net_r_sum": 20.387248572031574,
       "signals": 93
     },
     "risk_per_trade_pct": 15.0,
@@ -18186,7 +18199,7 @@
       "zscore_revert_btc": 1791478080.430735
     },
     "telegram_ui": {
-      "last_ok_at": 1795832340,
+      "last_ok_at": 1795862217,
       "offset": 937337738
     }
   },
@@ -18195,14 +18208,14 @@
       "accounting_version": 2,
       "asset": "ETH",
       "detected_at": 1795832339,
-      "duration_sec": 0,
+      "duration_sec": 38217,
       "entry": 1662.44,
       "entry_ml_probability": 0.5762910325433906,
       "exit_style": "bracket",
       "init_sl": 1608.1462077030124,
-      "last_bar": 1795809600,
-      "live_pnl_leveraged": 0.0,
-      "live_pnl_pct": 0.0,
+      "last_bar": 1795838400,
+      "live_pnl_leveraged": -6.58,
+      "live_pnl_pct": -0.658,
       "ml_snap": {
         "_pred": {
           "experts": {
@@ -18486,7 +18499,7 @@
   },
   "stoch_bracket_eth": {
     "active_trade": null,
-    "last_signal_bar": 1795809600,
+    "last_signal_bar": 1795838400,
     "ml": {
       "cal": {
         "a": 1.008695882943391,
@@ -18728,7 +18741,7 @@
   },
   "vwap_bracket_eth": {
     "active_trade": null,
-    "last_signal_bar": 1795809600,
+    "last_signal_bar": 1795838400,
     "ml": {
       "cal": {
         "a": 0.9869375628708208,
@@ -18960,7 +18973,7 @@
   },
   "vwap_revert_eth": {
     "active_trade": null,
-    "last_signal_bar": 1795809600,
+    "last_signal_bar": 1795838400,
     "ml": {
       "cal": {
         "a": 0.9877394852055735,
@@ -19192,7 +19205,7 @@
   },
   "zscore_revert_btc": {
     "active_trade": null,
-    "last_signal_bar": 1795809600,
+    "last_signal_bar": 1795838400,
     "ml": {
       "cal": {
         "a": 0.9861922120189702,
